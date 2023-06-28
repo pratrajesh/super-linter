@@ -7,12 +7,12 @@
 #########################################
 # Get dependency images as build stages #
 #########################################
-FROM tenable/terrascan:1.18.1 as terrascan
-FROM alpine/terragrunt:1.5.1 as terragrunt
-FROM assignuser/chktex-alpine:v0.1.1 as chktex
-FROM dotenvlinter/dotenv-linter:3.3.0 as dotenv-linter
-FROM ghcr.io/awkbar-devops/clang-format:v1.0.2 as clang-format
-FROM ghcr.io/terraform-linters/tflint-bundle:v0.46.1.1 as tflint
+##FROM tenable/terrascan:1.18.1 as terrascan
+##FROM alpine/terragrunt:1.5.1 as terragrunt
+##FROM assignuser/chktex-alpine:v0.1.1 as chktex
+##FROM dotenvlinter/dotenv-linter:3.3.0 as dotenv-linter
+##FROM ghcr.io/awkbar-devops/clang-format:v1.0.2 as clang-format
+##FROM ghcr.io/terraform-linters/tflint-bundle:v0.46.1.1 as tflint
 FROM ghcr.io/yannh/kubeconform:v0.6.2 as kubeconfrm
 FROM golangci/golangci-lint:v1.53.3 as golangci-lint
 FROM hadolint/hadolint:latest-alpine as dockerfile-lint
@@ -124,18 +124,18 @@ COPY --from=terraform /bin/terraform /usr/bin/
 ##################
 # Install TFLint #
 ##################
-COPY --from=tflint /usr/local/bin/tflint /usr/bin/
-COPY --from=tflint /root/.tflint.d /root/.tflint.d
+##COPY --from=tflint /usr/local/bin/tflint /usr/bin/
+##COPY --from=tflint /root/.tflint.d /root/.tflint.d
 
 #####################
 # Install Terrascan #
 #####################
-COPY --from=terrascan /go/bin/terrascan /usr/bin/
+##COPY --from=terrascan /go/bin/terrascan /usr/bin/
 
 ######################
 # Install Terragrunt #
 ######################
-COPY --from=terragrunt /usr/local/bin/terragrunt /usr/bin/
+##COPY --from=terragrunt /usr/local/bin/terragrunt /usr/bin/
 
 ######################
 # Install protolint #
@@ -155,7 +155,7 @@ COPY --from=dockerfile-lint /bin/hadolint /usr/bin/hadolint
 ##################
 # Install chktex #
 ##################
-COPY --from=chktex /usr/bin/chktex /usr/bin/
+##COPY --from=chktex /usr/bin/chktex /usr/bin/
 
 #################
 # Install shfmt #
@@ -165,7 +165,7 @@ COPY --from=shfmt /bin/shfmt /usr/bin/
 ########################
 # Install clang-format #
 ########################
-COPY --from=clang-format /usr/bin/clang-format /usr/bin/
+##COPY --from=clang-format /usr/bin/clang-format /usr/bin/
 
 ####################
 # Install GitLeaks #
@@ -329,13 +329,13 @@ COPY --from=base_image /lib/ /lib/
 COPY --from=base_image /bin/ /bin/
 COPY --from=base_image /node_modules/ /node_modules/
 COPY --from=base_image /home/r-library /home/r-library
-COPY --from=base_image /root/.tflint.d/ /root/.tflint.d/
+##COPY --from=base_image /root/.tflint.d/ /root/.tflint.d/
 COPY --from=python_builder /venvs/ /venvs/
 
 ##################################
 # Configure TFLint plugin folder #
 ##################################
-ENV TFLINT_PLUGIN_DIR="/root/.tflint.d/plugins"
+##ENV TFLINT_PLUGIN_DIR="/root/.tflint.d/plugins"
 
 ########################################
 # Add node packages to path and dotnet #
@@ -409,7 +409,7 @@ ENV PATH="${PATH}:/var/cache/dotnet/tools:/usr/share/dotnet"
 #########################
 # Install dotenv-linter #
 #########################
-COPY --from=dotenv-linter /dotenv-linter /usr/bin/
+##COPY --from=dotenv-linter /dotenv-linter /usr/bin/
 
 ###################################
 # Install DotNet and Dependencies #
