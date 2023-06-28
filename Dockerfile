@@ -18,12 +18,12 @@
 ##FROM hadolint/hadolint:latest-alpine as dockerfile-lint
 ##FROM hashicorp/terraform:1.5.1 as terraform
 ##FROM koalaman/shellcheck:v0.9.0 as shellcheck
-FROM mstruebing/editorconfig-checker:2.7.0 as editorconfig-checker
-FROM mvdan/shfmt:v3.7.0 as shfmt
-FROM rhysd/actionlint:1.6.25 as actionlint
-FROM scalameta/scalafmt:v3.7.3 as scalafmt
-FROM zricethezav/gitleaks:v8.17.0 as gitleaks
-FROM yoheimuta/protolint:0.44.0 as protolint
+##FROM mstruebing/editorconfig-checker:2.7.0 as editorconfig-checker
+##FROM mvdan/shfmt:v3.7.0 as shfmt
+##FROM rhysd/actionlint:1.6.25 as actionlint
+##FROM scalameta/scalafmt:v3.7.3 as scalafmt
+##FROM zricethezav/gitleaks:v8.17.0 as gitleaks
+##FROM yoheimuta/protolint:0.44.0 as protolint
 
 ##################
 # Get base image #
@@ -140,12 +140,12 @@ RUN curl --retry 5 --retry-delay 5 -sL https://cpanmin.us/ | perl - -nq --no-wge
 ######################
 # Install protolint #
 ######################
-COPY --from=protolint /usr/local/bin/protolint /usr/bin/
+##COPY --from=protolint /usr/local/bin/protolint /usr/bin/
 
 ################################
 # Install editorconfig-checker #
 ################################
-COPY --from=editorconfig-checker /usr/bin/ec /usr/bin/editorconfig-checker
+##COPY --from=editorconfig-checker /usr/bin/ec /usr/bin/editorconfig-checker
 
 ###############################
 # Install hadolint dockerfile #
@@ -160,7 +160,7 @@ COPY --from=editorconfig-checker /usr/bin/ec /usr/bin/editorconfig-checker
 #################
 # Install shfmt #
 #################
-COPY --from=shfmt /bin/shfmt /usr/bin/
+##COPY --from=shfmt /bin/shfmt /usr/bin/
 
 ########################
 # Install clang-format #
@@ -170,17 +170,17 @@ COPY --from=shfmt /bin/shfmt /usr/bin/
 ####################
 # Install GitLeaks #
 ####################
-COPY --from=gitleaks /usr/bin/gitleaks /usr/bin/
+##COPY --from=gitleaks /usr/bin/gitleaks /usr/bin/
 
 ####################
 # Install scalafmt #
 ####################
-COPY --from=scalafmt /bin/scalafmt /usr/bin/
+##COPY --from=scalafmt /bin/scalafmt /usr/bin/
 
 ######################
 # Install actionlint #
 ######################
-COPY --from=actionlint /usr/local/bin/actionlint /usr/bin/
+##COPY --from=actionlint /usr/local/bin/actionlint /usr/bin/
 
 ######################
 # Install kubeconform #
