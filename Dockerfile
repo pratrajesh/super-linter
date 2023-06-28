@@ -312,7 +312,7 @@ RUN apk add --no-cache bash git git-lfs
 ####################################################
 # Install Composer after all Libs have been copied #
 ####################################################
-RUN sh -c 'curl --retry 5 --retry-delay 5 --show-error -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer'
+##RUN sh -c 'curl --retry 5 --retry-delay 5 --show-error -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer'
 
 #################################
 # Copy the libraries into image #
