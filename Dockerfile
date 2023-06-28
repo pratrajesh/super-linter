@@ -13,11 +13,11 @@
 ##FROM dotenvlinter/dotenv-linter:3.3.0 as dotenv-linter
 ##FROM ghcr.io/awkbar-devops/clang-format:v1.0.2 as clang-format
 ##FROM ghcr.io/terraform-linters/tflint-bundle:v0.46.1.1 as tflint
-FROM ghcr.io/yannh/kubeconform:v0.6.2 as kubeconfrm
-FROM golangci/golangci-lint:v1.53.3 as golangci-lint
-FROM hadolint/hadolint:latest-alpine as dockerfile-lint
-FROM hashicorp/terraform:1.5.1 as terraform
-FROM koalaman/shellcheck:v0.9.0 as shellcheck
+##FROM ghcr.io/yannh/kubeconform:v0.6.2 as kubeconfrm
+##FROM golangci/golangci-lint:v1.53.3 as golangci-lint
+##FROM hadolint/hadolint:latest-alpine as dockerfile-lint
+##FROM hashicorp/terraform:1.5.1 as terraform
+##FROM koalaman/shellcheck:v0.9.0 as shellcheck
 FROM mstruebing/editorconfig-checker:2.7.0 as editorconfig-checker
 FROM mvdan/shfmt:v3.7.0 as shfmt
 FROM rhysd/actionlint:1.6.25 as actionlint
@@ -109,17 +109,17 @@ RUN curl --retry 5 --retry-delay 5 -sL https://cpanmin.us/ | perl - -nq --no-wge
 ######################
 # Install shellcheck #
 ######################
-COPY --from=shellcheck /bin/shellcheck /usr/bin/
+##COPY --from=shellcheck /bin/shellcheck /usr/bin/
 
 #####################
 # Install Go Linter #
 #####################
-COPY --from=golangci-lint /usr/bin/golangci-lint /usr/bin/
+##COPY --from=golangci-lint /usr/bin/golangci-lint /usr/bin/
 
 #####################
 # Install Terraform #
 #####################
-COPY --from=terraform /bin/terraform /usr/bin/
+##COPY --from=terraform /bin/terraform /usr/bin/
 
 ##################
 # Install TFLint #
@@ -150,7 +150,7 @@ COPY --from=editorconfig-checker /usr/bin/ec /usr/bin/editorconfig-checker
 ###############################
 # Install hadolint dockerfile #
 ###############################
-COPY --from=dockerfile-lint /bin/hadolint /usr/bin/hadolint
+##COPY --from=dockerfile-lint /bin/hadolint /usr/bin/hadolint
 
 ##################
 # Install chktex #
@@ -185,7 +185,7 @@ COPY --from=actionlint /usr/local/bin/actionlint /usr/bin/
 ######################
 # Install kubeconform #
 ######################
-COPY --from=kubeconfrm /kubeconform /usr/bin/
+##COPY --from=kubeconfrm /kubeconform /usr/bin/
 
 #################
 # Install Lintr #
