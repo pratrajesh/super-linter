@@ -55,9 +55,39 @@ ARG TARGETARCH
 RUN apk add --no-cache \
     bash \
     ca-certificates \
+    cargo \
+    coreutils \
     curl \
+    file \
+    gcc \
+    g++ \
+    git git-lfs \
+    go \
+    gnupg \
+    icu-libs \
+    jpeg-dev \
     jq \
-    npm nodejs-current
+    krb5-libs \
+    libc-dev libcurl libffi-dev libgcc \
+    libintl libssl1.1 libstdc++ \
+    libxml2-dev libxml2-utils \
+    linux-headers \
+    lttng-ust-dev \
+    make \
+    musl-dev \
+    net-snmp-dev \
+    npm nodejs-current \
+    openjdk11-jre \
+    openssh-client \
+    openssl-dev \
+    perl perl-dev \
+    py3-setuptools python3-dev  \
+    py3-pyflakes \
+    R R-dev R-doc \
+    readline-dev \
+    ruby ruby-dev ruby-bundler ruby-rdoc \
+    rustup \
+    zlib zlib-dev
 
 ########################################
 # Copy dependencies files to container #
