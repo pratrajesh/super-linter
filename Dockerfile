@@ -33,15 +33,15 @@ FROM python:3.11.4-alpine3.17 as base_image
 ################################
 # Set ARG values used in Build #
 ################################
-ARG CHECKSTYLE_VERSION='10.3.4'
+##ARG CHECKSTYLE_VERSION='10.3.4'
 ARG CLJ_KONDO_VERSION='2023.05.18'
 # Dart Linter
 ## stable dart sdk: https://dart.dev/get-dart#release-channels
-ARG DART_VERSION='2.8.4'
+##ARG DART_VERSION='2.8.4'
 ARG GOOGLE_JAVA_FORMAT_VERSION='1.15.0'
 ## install alpine-pkg-glibc (glibc compatibility layer package for Alpine Linux)
 ARG GLIBC_VERSION='2.34-r0'
-ARG KTLINT_VERSION='0.47.1'
+##ARG KTLINT_VERSION='0.47.1'
 # PowerShell & PSScriptAnalyzer linter
 ARG PSSA_VERSION='1.21.0'
 ARG PWSH_DIRECTORY='/usr/lib/microsoft/powershell'
@@ -206,14 +206,14 @@ COPY dependencies/sgerrand.rsa.pub /etc/apk/keys/sgerrand.rsa.pub
 ##################
 # Install ktlint #
 ##################
-COPY scripts/install-ktlint.sh /
-RUN --mount=type=secret,id=GITHUB_TOKEN /install-ktlint.sh && rm -rf /install-ktlint.sh
+##COPY scripts/install-ktlint.sh /
+##RUN --mount=type=secret,id=GITHUB_TOKEN /install-ktlint.sh && rm -rf /install-ktlint.sh
 
 ####################
 # Install dart-sdk #
 ####################
-COPY scripts/install-dart-sdk.sh /
-RUN --mount=type=secret,id=GITHUB_TOKEN /install-dart-sdk.sh && rm -rf /install-dart-sdk.sh
+##COPY scripts/install-dart-sdk.sh /
+##RUN --mount=type=secret,id=GITHUB_TOKEN /install-dart-sdk.sh && rm -rf /install-dart-sdk.sh
 
 ################################
 # Install Bash-Exec #
@@ -228,20 +228,20 @@ RUN apk add --no-cache rakudo zef
 ######################
 # Install CheckStyle #
 ######################
-COPY scripts/install-checkstyle.sh /
-RUN --mount=type=secret,id=GITHUB_TOKEN /install-checkstyle.sh && rm -rf /install-checkstyle.sh
+##COPY scripts/install-checkstyle.sh /
+##RUN --mount=type=secret,id=GITHUB_TOKEN /install-checkstyle.sh && rm -rf /install-checkstyle.sh
 
 ##############################
 # Install google-java-format #
 ##############################
-COPY scripts/install-google-java-format.sh /
-RUN --mount=type=secret,id=GITHUB_TOKEN /install-google-java-format.sh && rm -rf /install-google-java-format.sh
+##COPY scripts/install-google-java-format.sh /
+##RUN --mount=type=secret,id=GITHUB_TOKEN /install-google-java-format.sh && rm -rf /install-google-java-format.sh
 
 #################################
 # Install luacheck and luarocks #
 #################################
-COPY scripts/install-lua.sh /
-RUN --mount=type=secret,id=GITHUB_TOKEN /install-lua.sh && rm -rf /install-lua.sh
+##COPY scripts/install-lua.sh /
+##RUN --mount=type=secret,id=GITHUB_TOKEN /install-lua.sh && rm -rf /install-lua.sh
 
 ################################################################################
 # Grab small clean image to build python packages ##############################
