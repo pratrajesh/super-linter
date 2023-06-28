@@ -91,7 +91,7 @@ ANSIBLE_FILE_NAME="${ANSIBLE_CONFIG_FILE:-.ansible-lint.yml}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 ARM_FILE_NAME=".arm-ttk.psd1"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-CLOJURE_FILE_NAME=".clj-kondo/config.edn"
+##CLOJURE_FILE_NAME=".clj-kondo/config.edn"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 CLOUDFORMATION_FILE_NAME=".cfnlintrc.yml"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
@@ -277,7 +277,7 @@ LINTER_NAMES_ARRAY['ARM']="arm-ttk"
 ##LINTER_NAMES_ARRAY['BASH']="shellcheck"
 LINTER_NAMES_ARRAY['BASH_EXEC']="bash-exec"
 ##LINTER_NAMES_ARRAY['CLANG_FORMAT']="clang-format"
-LINTER_NAMES_ARRAY['CLOJURE']="clj-kondo"
+##LINTER_NAMES_ARRAY['CLOJURE']="clj-kondo"
 LINTER_NAMES_ARRAY['CLOUDFORMATION']="cfn-lint"
 LINTER_NAMES_ARRAY['COFFEESCRIPT']="coffeelint"
 LINTER_NAMES_ARRAY['CPP']="cpplint"
@@ -903,7 +903,7 @@ LINTER_COMMANDS_ARRAY['ARM']="Import-Module ${ARM_TTK_PSD1} ; \${config} = \$(Im
 ##fi
 LINTER_COMMANDS_ARRAY['BASH_EXEC']="bash-exec"
 ##LINTER_COMMANDS_ARRAY['CLANG_FORMAT']="clang-format --Werror --dry-run"
-LINTER_COMMANDS_ARRAY['CLOJURE']="clj-kondo --config ${CLOJURE_LINTER_RULES} --lint"
+##LINTER_COMMANDS_ARRAY['CLOJURE']="clj-kondo --config ${CLOJURE_LINTER_RULES} --lint"
 LINTER_COMMANDS_ARRAY['CLOUDFORMATION']="cfn-lint --config-file ${CLOUDFORMATION_LINTER_RULES}"
 LINTER_COMMANDS_ARRAY['COFFEESCRIPT']="coffeelint -f ${COFFEESCRIPT_LINTER_RULES}"
 LINTER_COMMANDS_ARRAY['CPP']="cpplint"
@@ -1048,7 +1048,7 @@ for LANGUAGE in "${LANGUAGE_ARRAY[@]}"; do
   VALIDATE_LANGUAGE_VARIABLE_VALUE="${!VALIDATE_LANGUAGE_VARIABLE_NAME}"
   debug "Setting VALIDATE_LANGUAGE_VARIABLE_VALUE to ${VALIDATE_LANGUAGE_VARIABLE_VALUE}..."
 
-  if [ "${VALIDATE_LANGUAGE_VARIABLE_VALUE}" = "true" ]; then
+  ##if [ "${VALIDATE_LANGUAGE_VARIABLE_VALUE}" = "true" ]; then
     # Check if we need an .editorconfig file
     # shellcheck disable=SC2153
    ## if [ "${LANGUAGE}" = "EDITORCONFIG" ] || [ "${LANGUAGE}" = "SHELL_SHFMT" ]; then
@@ -1062,9 +1062,9 @@ for LANGUAGE in "${LANGUAGE_ARRAY[@]}"; do
      ## info "No .lintr configuration file found, using defaults."
      ## cp "$R_LINTER_RULES" "$GITHUB_WORKSPACE"
     # Check if there's local configuration for the Raku linter
-    elif [ "${LANGUAGE}" = "RAKU" ] && [ -e "${GITHUB_WORKSPACE}/META6.json" ]; then
-      cd "${GITHUB_WORKSPACE}" && zef install --deps-only --/test .
-    fi
+   ## elif [ "${LANGUAGE}" = "RAKU" ] && [ -e "${GITHUB_WORKSPACE}/META6.json" ]; then
+   ##   cd "${GITHUB_WORKSPACE}" && zef install --deps-only --/test .
+   ## fi
 
     LINTER_NAME="${LINTER_NAMES_ARRAY["${LANGUAGE}"]}"
     if [ -z "${LINTER_NAME}" ]; then
