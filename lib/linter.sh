@@ -219,15 +219,15 @@ JAVASCRIPT_DEFAULT_STYLE=$(echo "${JAVASCRIPT_DEFAULT_STYLE}" | tr -d ' ')
 # lowercase
 JAVASCRIPT_DEFAULT_STYLE=$(echo "${JAVASCRIPT_DEFAULT_STYLE}" | tr '[:upper:]' '[:lower:]')
 # Check and set
-if [ "${JAVASCRIPT_DEFAULT_STYLE}" == "prettier" ]; then
+##if [ "${JAVASCRIPT_DEFAULT_STYLE}" == "prettier" ]; then
   # Set to prettier
   ##JAVASCRIPT_STYLE_NAME='JAVASCRIPT_PRETTIER'
   ##JAVASCRIPT_STYLE='prettier'
-else
+##else
   # Default to standard
   JAVASCRIPT_STYLE_NAME='JAVASCRIPT_STANDARD'
   JAVASCRIPT_STYLE='standard'
-fi
+##fi
 
 #################################################
 # Parse if we are using JS standard or prettier #
@@ -237,15 +237,15 @@ TYPESCRIPT_DEFAULT_STYLE=$(echo "${TYPESCRIPT_DEFAULT_STYLE}" | tr -d ' ')
 # lowercase
 TYPESCRIPT_DEFAULT_STYLE=$(echo "${TYPESCRIPT_DEFAULT_STYLE}" | tr '[:upper:]' '[:lower:]')
 # Check and set
-if [ "${TYPESCRIPT_DEFAULT_STYLE}" == "prettier" ]; then
+##if [ "${TYPESCRIPT_DEFAULT_STYLE}" == "prettier" ]; then
   # Set to prettier
   ##TYPESCRIPT_STYLE_NAME='TYPESCRIPT_PRETTIER'
   ##TYPESCRIPT_STYLE='prettier'
-else
+##else
   # Default to standard
   TYPESCRIPT_STYLE_NAME='TYPESCRIPT_STANDARD'
   TYPESCRIPT_STYLE='ts-standard'
-fi
+##fi
 
 ##################
 # Language array #
