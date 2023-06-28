@@ -34,7 +34,7 @@ FROM python:3.11.4-alpine3.17 as base_image
 # Set ARG values used in Build #
 ################################
 ##ARG CHECKSTYLE_VERSION='10.3.4'
-ARG CLJ_KONDO_VERSION='2023.05.18'
+##ARG CLJ_KONDO_VERSION='2023.05.18'
 # Dart Linter
 ## stable dart sdk: https://dart.dev/get-dart#release-channels
 ##ARG DART_VERSION='2.8.4'
@@ -190,14 +190,14 @@ RUN curl --retry 5 --retry-delay 5 -sL https://cpanmin.us/ | perl - -nq --no-wge
 #################
 # Install Lintr #
 #################
-COPY scripts/install-lintr.sh /
-RUN /install-lintr.sh && rm -rf /install-lintr.sh
+##COPY scripts/install-lintr.sh /
+##RUN /install-lintr.sh && rm -rf /install-lintr.sh
 
 #####################
 # Install clj-kondo #
 #####################
-COPY scripts/install-clj-kondo.sh /
-RUN /install-clj-kondo.sh && rm -rf /install-clj-kondo.sh
+##COPY scripts/install-clj-kondo.sh /
+##RUN /install-clj-kondo.sh && rm -rf /install-clj-kondo.sh
 
 # Source: https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub
 # Store the key here because the above host is sometimes down, and breaks our builds
