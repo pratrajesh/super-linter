@@ -191,7 +191,7 @@ SQLFLUFF_FILE_NAME="${SQLFLUFF_CONFIG_FILE:-/.sqlfluff}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 ##TERRAFORM_TERRASCAN_FILE_NAME="${TERRAFORM_TERRASCAN_CONFIG_FILE:-terrascan.toml}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-NATURAL_LANGUAGE_FILE_NAME="${NATURAL_LANGUAGE_CONFIG_FILE:-.textlintrc}"
+##NATURAL_LANGUAGE_FILE_NAME="${NATURAL_LANGUAGE_CONFIG_FILE:-.textlintrc}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 TSX_FILE_NAME="${TYPESCRIPT_ES_CONFIG_FILE:-.eslintrc.yml}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
@@ -307,7 +307,7 @@ LINTER_NAMES_ARRAY['JSX']="eslint"
 ##LINTER_NAMES_ARRAY['LATEX']="chktex"
 ##LINTER_NAMES_ARRAY['LUA']="lua"
 LINTER_NAMES_ARRAY['MARKDOWN']="markdownlint"
-LINTER_NAMES_ARRAY['NATURAL_LANGUAGE']="textlint"
+##LINTER_NAMES_ARRAY['NATURAL_LANGUAGE']="textlint"
 LINTER_NAMES_ARRAY['OPENAPI']="spectral"
 LINTER_NAMES_ARRAY['PERL']="perl"
 ##LINTER_NAMES_ARRAY['PHP_BUILTIN']="php"
@@ -952,7 +952,7 @@ if [ -n "${MARKDOWN_CUSTOM_RULE_GLOBS}" ]; then
     fi
   done
 fi
-LINTER_COMMANDS_ARRAY['NATURAL_LANGUAGE']="textlint -c ${NATURAL_LANGUAGE_LINTER_RULES}"
+##LINTER_COMMANDS_ARRAY['NATURAL_LANGUAGE']="textlint -c ${NATURAL_LANGUAGE_LINTER_RULES}"
 LINTER_COMMANDS_ARRAY['OPENAPI']="spectral lint -r ${OPENAPI_LINTER_RULES} -D"
 if [ "${PERL_PERLCRITIC_OPTIONS}" == "null" ] || [ -z "${PERL_PERLCRITIC_OPTIONS}" ]; then
   LINTER_COMMANDS_ARRAY['PERL']="perlcritic"
