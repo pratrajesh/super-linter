@@ -132,7 +132,7 @@ JSX_FILE_NAME="${JAVASCRIPT_ES_CONFIG_FILE:-.eslintrc.yml}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 KUBERNETES_KUBECONFORM_OPTIONS="${KUBERNETES_KUBECONFORM_OPTIONS:-null}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-LATEX_FILE_NAME=".chktexrc"
+##LATEX_FILE_NAME=".chktexrc"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 ##LUA_FILE_NAME=".luacheckrc"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
@@ -301,7 +301,7 @@ LINTER_NAMES_ARRAY['JSX']="eslint"
 ##LINTER_NAMES_ARRAY['KOTLIN']="ktlint"
 ##LINTER_NAMES_ARRAY['KOTLIN_ANDROID']="ktlint"
 LINTER_NAMES_ARRAY['KUBERNETES_KUBECONFORM']="kubeconform"
-LINTER_NAMES_ARRAY['LATEX']="chktex"
+##LINTER_NAMES_ARRAY['LATEX']="chktex"
 ##LINTER_NAMES_ARRAY['LUA']="lua"
 LINTER_NAMES_ARRAY['MARKDOWN']="markdownlint"
 LINTER_NAMES_ARRAY['NATURAL_LANGUAGE']="textlint"
@@ -936,7 +936,7 @@ if [ "${KUBERNETES_KUBECONFORM_OPTIONS}" == "null" ] || [ -z "${KUBERNETES_KUBEC
 else
   LINTER_COMMANDS_ARRAY['KUBERNETES_KUBECONFORM']="kubeconform -strict ${KUBERNETES_KUBECONFORM_OPTIONS}"
 fi
-LINTER_COMMANDS_ARRAY['LATEX']="chktex -q -l ${LATEX_LINTER_RULES}"
+##LINTER_COMMANDS_ARRAY['LATEX']="chktex -q -l ${LATEX_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['LUA']="luacheck --config ${LUA_LINTER_RULES}"
 LINTER_COMMANDS_ARRAY['MARKDOWN']="markdownlint -c ${MARKDOWN_LINTER_RULES}"
 if [ -n "${MARKDOWN_CUSTOM_RULE_GLOBS}" ]; then
