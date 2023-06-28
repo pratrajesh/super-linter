@@ -100,13 +100,13 @@ CSS_FILE_NAME="${CSS_FILE_NAME:-.stylelintrc.json}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 ##DART_FILE_NAME="analysis_options.yml"
 ##DOCKERFILE_HADOLINT_FILE_NAME="${DOCKERFILE_HADOLINT_FILE_NAME:-.hadolint.yaml}"
-EDITORCONFIG_FILE_NAME="${EDITORCONFIG_FILE_NAME:-.ecrc}"
+##EDITORCONFIG_FILE_NAME="${EDITORCONFIG_FILE_NAME:-.ecrc}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-GITHUB_ACTIONS_FILE_NAME="${GITHUB_ACTIONS_CONFIG_FILE:-actionlint.yml}"
+##GITHUB_ACTIONS_FILE_NAME="${GITHUB_ACTIONS_CONFIG_FILE:-actionlint.yml}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 GITHUB_ACTIONS_COMMAND_ARGS="${GITHUB_ACTIONS_COMMAND_ARGS:-null}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-GITLEAKS_FILE_NAME="${GITLEAKS_CONFIG_FILE:-.gitleaks.toml}"
+##GITLEAKS_FILE_NAME="${GITLEAKS_CONFIG_FILE:-.gitleaks.toml}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 GHERKIN_FILE_NAME=".gherkin-lintrc"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
@@ -154,7 +154,7 @@ PERL_PERLCRITIC_OPTIONS="${PERL_PERLCRITIC_OPTIONS:-null}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 POWERSHELL_FILE_NAME=".powershell-psscriptanalyzer.psd1"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-PROTOBUF_FILE_NAME="${PROTOBUF_CONFIG_FILE:-.protolintrc.yml}"
+##PROTOBUF_FILE_NAME="${PROTOBUF_CONFIG_FILE:-.protolintrc.yml}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 PYTHON_BLACK_FILE_NAME="${PYTHON_BLACK_CONFIG_FILE:-.python-black}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
@@ -170,7 +170,7 @@ PYTHON_PYLINT_FILE_NAME="${PYTHON_PYLINT_CONFIG_FILE:-.python-lint}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 RUBY_FILE_NAME="${RUBY_CONFIG_FILE:-.ruby-lint.yml}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-SCALAFMT_FILE_NAME="${SCALAFMT_CONFIG_FILE:-.scalafmt.conf}"
+##SCALAFMT_FILE_NAME="${SCALAFMT_CONFIG_FILE:-.scalafmt.conf}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 SNAKEMAKE_SNAKEFMT_FILE_NAME="${SNAKEMAKE_SNAKEFMT_CONFIG_FILE:-.snakefmt.toml}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
@@ -252,19 +252,22 @@ fi
 ##################
 LANGUAGE_ARRAY=('ANSIBLE' 'ARM' 'BASH' 'BASH_EXEC'
   'CLOUDFORMATION' 'CLOJURE' 'COFFEESCRIPT' 'CPP' 'CSHARP' 'CSS'
-  'EDITORCONFIG' 'ENV' 'GITHUB_ACTIONS'
-  'GITLEAKS' 'GHERKIN' 'GO' 'GOOGLE_JAVA_FORMAT' 'GROOVY' 'HTML' 'JAVA'
+  'ENV' 'GITHUB_ACTIONS'
+  'GHERKIN' 'GO' 'GOOGLE_JAVA_FORMAT' 'GROOVY' 'HTML' 'JAVA'
   'JAVASCRIPT_ES' "${JAVASCRIPT_STYLE_NAME}" 'JSCPD' 'JSON' 'JSONC' 'JSX'
   'KOTLIN' 'KOTLIN_ANDROID' 'LATEX' 'MARKDOWN'
   'NATURAL_LANGUAGE' 'OPENAPI' 'PERL'  
   'POWERSHELL' 'PROTOBUF' 'PYTHON_BLACK' 'PYTHON_PYLINT'
   'PYTHON_FLAKE8' 'PYTHON_ISORT' 'PYTHON_MYPY' 'RAKU' 'RUBY' 'RUST_2015'
-  'RUST_2018' 'RUST_2021' 'RUST_CLIPPY' 'SCALAFMT' 'SHELL_SHFMT'
+  'RUST_2018' 'RUST_2021' 'RUST_CLIPPY'
   'SNAKEMAKE_LINT' 'SNAKEMAKE_SNAKEFMT' 'STATES' 'SQL' 'SQLFLUFF' 'TEKTON'
   'TSX'
   'TYPESCRIPT_ES' "${TYPESCRIPT_STYLE_NAME}" 'XML' 'YAML')
 
-## removed 'PHP_PHPSTAN' 'PHP_BUILTIN' 'PHP_PHPCS' 'PHP_PSALM' 'DART' 'R' 'LUA' 'TERRAFORM_TERRASCAN' 'TERRAGRUNT' 'CLANG_FORMAT' 'TERRAFORM_TFLINT' 'KUBERNETES_KUBECONFORM' 'DOCKERFILE_HADOLINT' 'TERRAFORM_FMT' from LANGUAGE_ARRAY
+## removed 'SHELL_SHFMT' 'SCALAFMT' 'GITLEAKS' from LANGUAGE_ARRAY
+
+
+## removed 'PHP_PHPSTAN' 'PHP_BUILTIN' 'PHP_PHPCS' 'PHP_PSALM' 'DART' 'R' 'LUA' 'TERRAFORM_TERRASCAN' 'TERRAGRUNT' 'CLANG_FORMAT' 'TERRAFORM_TFLINT' 'KUBERNETES_KUBECONFORM' 'DOCKERFILE_HADOLINT' 'TERRAFORM_FMT' 'EDITORCONFIG' from LANGUAGE_ARRAY
 ##############################
 # Linter command names array #
 ##############################
@@ -282,10 +285,10 @@ LINTER_NAMES_ARRAY['CSHARP']="dotnet-format"
 LINTER_NAMES_ARRAY['CSS']="stylelint"
 ##LINTER_NAMES_ARRAY['DART']="dart"
 ##LINTER_NAMES_ARRAY['DOCKERFILE_HADOLINT']="hadolint"
-LINTER_NAMES_ARRAY['EDITORCONFIG']="editorconfig-checker"
+##LINTER_NAMES_ARRAY['EDITORCONFIG']="editorconfig-checker"
 ##LINTER_NAMES_ARRAY['ENV']="dotenv-linter"
-LINTER_NAMES_ARRAY['GITHUB_ACTIONS']="actionlint"
-LINTER_NAMES_ARRAY['GITLEAKS']="gitleaks"
+##LINTER_NAMES_ARRAY['GITHUB_ACTIONS']="actionlint"
+##LINTER_NAMES_ARRAY['GITLEAKS']="gitleaks"
 LINTER_NAMES_ARRAY['GHERKIN']="gherkin-lint"
 ##LINTER_NAMES_ARRAY['GO']="golangci-lint"
 ##LINTER_NAMES_ARRAY['GOOGLE_JAVA_FORMAT']="google-java-format"
@@ -312,7 +315,7 @@ LINTER_NAMES_ARRAY['PERL']="perl"
 ##LINTER_NAMES_ARRAY['PHP_PHPSTAN']="phpstan"
 ##LINTER_NAMES_ARRAY['PHP_PSALM']="psalm"
 LINTER_NAMES_ARRAY['POWERSHELL']="pwsh"
-LINTER_NAMES_ARRAY['PROTOBUF']="protolint"
+##LINTER_NAMES_ARRAY['PROTOBUF']="protolint"
 LINTER_NAMES_ARRAY['PYTHON_BLACK']="black"
 LINTER_NAMES_ARRAY['PYTHON_PYLINT']="pylint"
 LINTER_NAMES_ARRAY['PYTHON_FLAKE8']="flake8"
@@ -325,8 +328,8 @@ LINTER_NAMES_ARRAY['RUST_2015']="rustfmt"
 LINTER_NAMES_ARRAY['RUST_2018']="rustfmt"
 LINTER_NAMES_ARRAY['RUST_2021']="rustfmt"
 LINTER_NAMES_ARRAY['RUST_CLIPPY']="clippy"
-LINTER_NAMES_ARRAY['SCALAFMT']="scalafmt"
-LINTER_NAMES_ARRAY['SHELL_SHFMT']="shfmt"
+##LINTER_NAMES_ARRAY['SCALAFMT']="scalafmt"
+##LINTER_NAMES_ARRAY['SHELL_SHFMT']="shfmt"
 LINTER_NAMES_ARRAY['SNAKEMAKE_LINT']="snakemake"
 LINTER_NAMES_ARRAY['SNAKEMAKE_SNAKEFMT']="snakefmt"
 LINTER_NAMES_ARRAY['STATES']="asl-validator"
@@ -908,14 +911,14 @@ LINTER_COMMANDS_ARRAY['CSHARP']="dotnet-format --folder --check --exclude / --in
 LINTER_COMMANDS_ARRAY['CSS']="stylelint --config ${CSS_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['DART']="dartanalyzer --fatal-infos --fatal-warnings --options ${DART_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['DOCKERFILE_HADOLINT']="hadolint -c ${DOCKERFILE_HADOLINT_LINTER_RULES}"
-LINTER_COMMANDS_ARRAY['EDITORCONFIG']="editorconfig-checker -config ${EDITORCONFIG_LINTER_RULES}"
+##LINTER_COMMANDS_ARRAY['EDITORCONFIG']="editorconfig-checker -config ${EDITORCONFIG_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['ENV']="dotenv-linter"
-if [ "${GITHUB_ACTIONS_COMMAND_ARGS}" = "null" ]; then
-  LINTER_COMMANDS_ARRAY['GITHUB_ACTIONS']="actionlint -config-file ${GITHUB_ACTIONS_LINTER_RULES}"
-else
-  LINTER_COMMANDS_ARRAY['GITHUB_ACTIONS']="actionlint -config-file ${GITHUB_ACTIONS_LINTER_RULES} ${GITHUB_ACTIONS_COMMAND_ARGS}"
-fi
-LINTER_COMMANDS_ARRAY['GITLEAKS']="gitleaks detect --no-banner --no-git -c ${GITLEAKS_LINTER_RULES} -v -s"
+##if [ "${GITHUB_ACTIONS_COMMAND_ARGS}" = "null" ]; then
+##  LINTER_COMMANDS_ARRAY['GITHUB_ACTIONS']="actionlint -config-file ${GITHUB_ACTIONS_LINTER_RULES}"
+##else
+##  LINTER_COMMANDS_ARRAY['GITHUB_ACTIONS']="actionlint -config-file ${GITHUB_ACTIONS_LINTER_RULES} ${GITHUB_ACTIONS_COMMAND_ARGS}"
+##fi
+##LINTER_COMMANDS_ARRAY['GITLEAKS']="gitleaks detect --no-banner --no-git -c ${GITLEAKS_LINTER_RULES} -v -s"
 LINTER_COMMANDS_ARRAY['GHERKIN']="gherkin-lint -c ${GHERKIN_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['GO']="golangci-lint run --fast -c ${GO_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['GOOGLE_JAVA_FORMAT']="java -jar /usr/bin/google-java-format --dry-run --set-exit-if-changed"
@@ -961,7 +964,7 @@ fi
 ##LINTER_COMMANDS_ARRAY['PHP_PHPSTAN']="phpstan analyse --no-progress --no-ansi --memory-limit 1G -c ${PHP_PHPSTAN_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['PHP_PSALM']="psalm --config=${PHP_PSALM_LINTER_RULES}"
 LINTER_COMMANDS_ARRAY['POWERSHELL']="Invoke-ScriptAnalyzer -EnableExit -Settings ${POWERSHELL_LINTER_RULES} -Path"
-LINTER_COMMANDS_ARRAY['PROTOBUF']="protolint lint --config_path ${PROTOBUF_LINTER_RULES}"
+##LINTER_COMMANDS_ARRAY['PROTOBUF']="protolint lint --config_path ${PROTOBUF_LINTER_RULES}"
 LINTER_COMMANDS_ARRAY['PYTHON_BLACK']="black --config ${PYTHON_BLACK_LINTER_RULES} --diff --check"
 LINTER_COMMANDS_ARRAY['PYTHON_PYLINT']="pylint --rcfile ${PYTHON_PYLINT_LINTER_RULES}"
 LINTER_COMMANDS_ARRAY['PYTHON_FLAKE8']="flake8 --config=${PYTHON_FLAKE8_LINTER_RULES}"
@@ -974,8 +977,8 @@ LINTER_COMMANDS_ARRAY['RUST_2015']="rustfmt --check --edition 2015"
 LINTER_COMMANDS_ARRAY['RUST_2018']="rustfmt --check --edition 2018"
 LINTER_COMMANDS_ARRAY['RUST_2021']="rustfmt --check --edition 2021"
 LINTER_COMMANDS_ARRAY['RUST_CLIPPY']="clippy"
-LINTER_COMMANDS_ARRAY['SCALAFMT']="scalafmt --config ${SCALAFMT_LINTER_RULES} --test"
-LINTER_COMMANDS_ARRAY['SHELL_SHFMT']="shfmt -d"
+##LINTER_COMMANDS_ARRAY['SCALAFMT']="scalafmt --config ${SCALAFMT_LINTER_RULES} --test"
+##LINTER_COMMANDS_ARRAY['SHELL_SHFMT']="shfmt -d"
 LINTER_COMMANDS_ARRAY['SNAKEMAKE_LINT']="snakemake --lint -s"
 LINTER_COMMANDS_ARRAY['SNAKEMAKE_SNAKEFMT']="snakefmt --config ${SNAKEMAKE_SNAKEFMT_LINTER_RULES} --check --compact-diff"
 LINTER_COMMANDS_ARRAY['STATES']="asl-validator --json-path"
@@ -1026,7 +1029,7 @@ RunAdditionalInstalls
 ###############
 # Run linters #
 ###############
-EDITORCONFIG_FILE_PATH="${GITHUB_WORKSPACE}"/.editorconfig
+##EDITORCONFIG_FILE_PATH="${GITHUB_WORKSPACE}"/.editorconfig
 
 ####################################
 # Print ENV before running linters #
@@ -1048,13 +1051,13 @@ for LANGUAGE in "${LANGUAGE_ARRAY[@]}"; do
   if [ "${VALIDATE_LANGUAGE_VARIABLE_VALUE}" = "true" ]; then
     # Check if we need an .editorconfig file
     # shellcheck disable=SC2153
-    if [ "${LANGUAGE}" = "EDITORCONFIG" ] || [ "${LANGUAGE}" = "SHELL_SHFMT" ]; then
-      if [ -e "${EDITORCONFIG_FILE_PATH}" ]; then
-        debug "Found an EditorConfig file at ${EDITORCONFIG_FILE_PATH}"
-      else
-        debug "No .editorconfig found at: $EDITORCONFIG_FILE_PATH. Skipping ${LANGUAGE} linting..."
-        continue
-      fi
+   ## if [ "${LANGUAGE}" = "EDITORCONFIG" ] || [ "${LANGUAGE}" = "SHELL_SHFMT" ]; then
+     ## if [ -e "${EDITORCONFIG_FILE_PATH}" ]; then
+       ## debug "Found an EditorConfig file at ${EDITORCONFIG_FILE_PATH}"
+      ##else
+       ## debug "No .editorconfig found at: $EDITORCONFIG_FILE_PATH. Skipping ${LANGUAGE} linting..."
+        ##continue
+      ##fi
     ##elif [ "${LANGUAGE}" = "R" ] && [ ! -f "${GITHUB_WORKSPACE}/.lintr" ] && ((${#FILE_ARRAY_R[@]})); then
      ## info "No .lintr configuration file found, using defaults."
      ## cp "$R_LINTER_RULES" "$GITHUB_WORKSPACE"
