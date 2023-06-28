@@ -108,13 +108,13 @@ GITHUB_ACTIONS_COMMAND_ARGS="${GITHUB_ACTIONS_COMMAND_ARGS:-null}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 ##GITLEAKS_FILE_NAME="${GITLEAKS_CONFIG_FILE:-.gitleaks.toml}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-GHERKIN_FILE_NAME=".gherkin-lintrc"
+##GHERKIN_FILE_NAME=".gherkin-lintrc"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 ##GO_FILE_NAME=".golangci.yml"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 GROOVY_FILE_NAME=".groovylintrc.json"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-HTML_FILE_NAME=".htmlhintrc"
+##HTML_FILE_NAME=".htmlhintrc"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 JAVA_FILE_NAME="${JAVA_FILE_NAME:-sun_checks.xml}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
@@ -126,7 +126,7 @@ JAVASCRIPT_STYLE=''      # Variable for the style
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 JAVASCRIPT_STANDARD_FILE_NAME="${JAVASCRIPT_ES_CONFIG_FILE:-.eslintrc.yml}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-JSCPD_FILE_NAME="${JSCPD_CONFIG_FILE:-.jscpd.json}"
+##JSCPD_FILE_NAME="${JSCPD_CONFIG_FILE:-.jscpd.json}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 JSX_FILE_NAME="${JAVASCRIPT_ES_CONFIG_FILE:-.eslintrc.yml}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
@@ -183,9 +183,9 @@ SSH_INSECURE_NO_VERIFY_GITHUB_KEY="${SSH_INSECURE_NO_VERIFY_GITHUB_KEY:-false}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 # SSL_CERT_SECRET="${SSL_CERT_SECRET}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-SQL_FILE_NAME="${SQL_CONFIG_FILE:-.sql-config.json}"
+##SQL_FILE_NAME="${SQL_CONFIG_FILE:-.sql-config.json}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-SQLFLUFF_FILE_NAME="${SQLFLUFF_CONFIG_FILE:-/.sqlfluff}"
+##SQLFLUFF_FILE_NAME="${SQLFLUFF_CONFIG_FILE:-/.sqlfluff}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 ##TERRAFORM_TFLINT_FILE_NAME="${TERRAFORM_TFLINT_CONFIG_FILE:-.tflint.hcl}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
@@ -221,8 +221,8 @@ JAVASCRIPT_DEFAULT_STYLE=$(echo "${JAVASCRIPT_DEFAULT_STYLE}" | tr '[:upper:]' '
 # Check and set
 if [ "${JAVASCRIPT_DEFAULT_STYLE}" == "prettier" ]; then
   # Set to prettier
-  JAVASCRIPT_STYLE_NAME='JAVASCRIPT_PRETTIER'
-  JAVASCRIPT_STYLE='prettier'
+  ##JAVASCRIPT_STYLE_NAME='JAVASCRIPT_PRETTIER'
+  ##JAVASCRIPT_STYLE='prettier'
 else
   # Default to standard
   JAVASCRIPT_STYLE_NAME='JAVASCRIPT_STANDARD'
@@ -239,8 +239,8 @@ TYPESCRIPT_DEFAULT_STYLE=$(echo "${TYPESCRIPT_DEFAULT_STYLE}" | tr '[:upper:]' '
 # Check and set
 if [ "${TYPESCRIPT_DEFAULT_STYLE}" == "prettier" ]; then
   # Set to prettier
-  TYPESCRIPT_STYLE_NAME='TYPESCRIPT_PRETTIER'
-  TYPESCRIPT_STYLE='prettier'
+  ##TYPESCRIPT_STYLE_NAME='TYPESCRIPT_PRETTIER'
+  ##TYPESCRIPT_STYLE='prettier'
 else
   # Default to standard
   TYPESCRIPT_STYLE_NAME='TYPESCRIPT_STANDARD'
@@ -253,18 +253,18 @@ fi
 LANGUAGE_ARRAY=('ANSIBLE' 'ARM' 'BASH' 'BASH_EXEC'
   'CLOUDFORMATION' 'CLOJURE' 'COFFEESCRIPT' 'CPP' 'CSHARP' 'CSS'
   'ENV' 'GITHUB_ACTIONS'
-  'GHERKIN' 'GO' 'GOOGLE_JAVA_FORMAT' 'GROOVY' 'HTML' 'JAVA'
-  'JAVASCRIPT_ES' "${JAVASCRIPT_STYLE_NAME}" 'JSCPD' 'JSON' 'JSONC' 'JSX'
+  'GO' 'GOOGLE_JAVA_FORMAT' 'GROOVY' 'HTML' 'JAVA'
+  'JAVASCRIPT_ES' "${JAVASCRIPT_STYLE_NAME}" 'JSON' 'JSONC' 'JSX'
   'KOTLIN' 'KOTLIN_ANDROID' 'LATEX' 'MARKDOWN'
   'NATURAL_LANGUAGE' 'OPENAPI' 'PERL'  
   'POWERSHELL' 'PROTOBUF' 'PYTHON_BLACK' 'PYTHON_PYLINT'
   'PYTHON_FLAKE8' 'PYTHON_ISORT' 'PYTHON_MYPY' 'RAKU' 'RUBY' 'RUST_2015'
   'RUST_2018' 'RUST_2021' 'RUST_CLIPPY'
-  'SNAKEMAKE_LINT' 'SNAKEMAKE_SNAKEFMT' 'STATES' 'SQL' 'SQLFLUFF' 'TEKTON'
+  'SNAKEMAKE_LINT' 'SNAKEMAKE_SNAKEFMT' 'STATES'
   'TSX'
   'TYPESCRIPT_ES' "${TYPESCRIPT_STYLE_NAME}" 'XML' 'YAML')
 
-## removed 'SHELL_SHFMT' 'SCALAFMT' 'GITLEAKS' from LANGUAGE_ARRAY
+## removed 'SHELL_SHFMT' 'SCALAFMT' 'GITLEAKS' 'GHERKIN' 'JSCPD' 'SQL' 'SQLFLUFF' 'TEKTON'  from LANGUAGE_ARRAY
 
 
 ## removed 'PHP_PHPSTAN' 'PHP_BUILTIN' 'PHP_PHPCS' 'PHP_PSALM' 'DART' 'R' 'LUA' 'TERRAFORM_TERRASCAN' 'TERRAGRUNT' 'CLANG_FORMAT' 'TERRAFORM_TFLINT' 'KUBERNETES_KUBECONFORM' 'DOCKERFILE_HADOLINT' 'TERRAFORM_FMT' 'EDITORCONFIG' from LANGUAGE_ARRAY
@@ -289,15 +289,15 @@ LINTER_NAMES_ARRAY['CSHARP']="dotnet-format"
 ##LINTER_NAMES_ARRAY['ENV']="dotenv-linter"
 ##LINTER_NAMES_ARRAY['GITHUB_ACTIONS']="actionlint"
 ##LINTER_NAMES_ARRAY['GITLEAKS']="gitleaks"
-LINTER_NAMES_ARRAY['GHERKIN']="gherkin-lint"
+##LINTER_NAMES_ARRAY['GHERKIN']="gherkin-lint"
 ##LINTER_NAMES_ARRAY['GO']="golangci-lint"
 ##LINTER_NAMES_ARRAY['GOOGLE_JAVA_FORMAT']="google-java-format"
 LINTER_NAMES_ARRAY['GROOVY']="npm-groovy-lint"
-LINTER_NAMES_ARRAY['HTML']="htmlhint"
+##LINTER_NAMES_ARRAY['HTML']="htmlhint"
 ##LINTER_NAMES_ARRAY['JAVA']="checkstyle"
 LINTER_NAMES_ARRAY['JAVASCRIPT_ES']="eslint"
 LINTER_NAMES_ARRAY["${JAVASCRIPT_STYLE_NAME}"]="${JAVASCRIPT_STYLE}"
-LINTER_NAMES_ARRAY['JSCPD']="jscpd"
+##LINTER_NAMES_ARRAY['JSCPD']="jscpd"
 LINTER_NAMES_ARRAY['JSON']="eslint"
 LINTER_NAMES_ARRAY['JSONC']="eslint"
 LINTER_NAMES_ARRAY['JSX']="eslint"
@@ -306,7 +306,7 @@ LINTER_NAMES_ARRAY['JSX']="eslint"
 ##LINTER_NAMES_ARRAY['KUBERNETES_KUBECONFORM']="kubeconform"
 ##LINTER_NAMES_ARRAY['LATEX']="chktex"
 ##LINTER_NAMES_ARRAY['LUA']="lua"
-LINTER_NAMES_ARRAY['MARKDOWN']="markdownlint"
+##LINTER_NAMES_ARRAY['MARKDOWN']="markdownlint"
 ##LINTER_NAMES_ARRAY['NATURAL_LANGUAGE']="textlint"
 LINTER_NAMES_ARRAY['OPENAPI']="spectral"
 LINTER_NAMES_ARRAY['PERL']="perl"
@@ -332,10 +332,10 @@ LINTER_NAMES_ARRAY['RUST_CLIPPY']="clippy"
 ##LINTER_NAMES_ARRAY['SHELL_SHFMT']="shfmt"
 LINTER_NAMES_ARRAY['SNAKEMAKE_LINT']="snakemake"
 LINTER_NAMES_ARRAY['SNAKEMAKE_SNAKEFMT']="snakefmt"
-LINTER_NAMES_ARRAY['STATES']="asl-validator"
-LINTER_NAMES_ARRAY['SQL']="sql-lint"
-LINTER_NAMES_ARRAY['SQLFLUFF']="sqlfluff"
-LINTER_NAMES_ARRAY['TEKTON']="tekton-lint"
+##LINTER_NAMES_ARRAY['STATES']="asl-validator"
+##LINTER_NAMES_ARRAY['SQL']="sql-lint"
+##LINTER_NAMES_ARRAY['SQLFLUFF']="sqlfluff"
+##LINTER_NAMES_ARRAY['TEKTON']="tekton-lint"
 ##LINTER_NAMES_ARRAY['TERRAFORM_FMT']="terraform"
 ##LINTER_NAMES_ARRAY['TERRAFORM_TFLINT']="tflint"
 ##LINTER_NAMES_ARRAY['TERRAFORM_TERRASCAN']="terrascan"
@@ -919,16 +919,16 @@ LINTER_COMMANDS_ARRAY['CSHARP']="dotnet-format --folder --check --exclude / --in
 ##  LINTER_COMMANDS_ARRAY['GITHUB_ACTIONS']="actionlint -config-file ${GITHUB_ACTIONS_LINTER_RULES} ${GITHUB_ACTIONS_COMMAND_ARGS}"
 ##fi
 ##LINTER_COMMANDS_ARRAY['GITLEAKS']="gitleaks detect --no-banner --no-git -c ${GITLEAKS_LINTER_RULES} -v -s"
-LINTER_COMMANDS_ARRAY['GHERKIN']="gherkin-lint -c ${GHERKIN_LINTER_RULES}"
+##LINTER_COMMANDS_ARRAY['GHERKIN']="gherkin-lint -c ${GHERKIN_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['GO']="golangci-lint run --fast -c ${GO_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['GOOGLE_JAVA_FORMAT']="java -jar /usr/bin/google-java-format --dry-run --set-exit-if-changed"
 LINTER_COMMANDS_ARRAY['GROOVY']="npm-groovy-lint -c ${GROOVY_LINTER_RULES} --failon warning --no-insight"
-LINTER_COMMANDS_ARRAY['HTML']="htmlhint --config ${HTML_LINTER_RULES}"
+##LINTER_COMMANDS_ARRAY['HTML']="htmlhint --config ${HTML_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['JAVA']="java -jar /usr/bin/checkstyle -c ${JAVA_LINTER_RULES}"
 LINTER_COMMANDS_ARRAY['JAVASCRIPT_ES']="eslint --no-eslintrc -c ${JAVASCRIPT_ES_LINTER_RULES}"
 LINTER_COMMANDS_ARRAY['JAVASCRIPT_STANDARD']="standard ${JAVASCRIPT_STANDARD_LINTER_RULES}"
-LINTER_COMMANDS_ARRAY['JAVASCRIPT_PRETTIER']="prettier --check"
-LINTER_COMMANDS_ARRAY['JSCPD']="jscpd --config ${JSCPD_LINTER_RULES}"
+##LINTER_COMMANDS_ARRAY['JAVASCRIPT_PRETTIER']="prettier --check"
+##LINTER_COMMANDS_ARRAY['JSCPD']="jscpd --config ${JSCPD_LINTER_RULES}"
 LINTER_COMMANDS_ARRAY['JSON']="eslint --no-eslintrc -c ${JAVASCRIPT_ES_LINTER_RULES} --ext .json"
 LINTER_COMMANDS_ARRAY['JSONC']="eslint --no-eslintrc -c ${JAVASCRIPT_ES_LINTER_RULES} --ext .json5,.jsonc"
 LINTER_COMMANDS_ARRAY['JSX']="eslint --no-eslintrc -c ${JSX_LINTER_RULES}"
@@ -941,7 +941,7 @@ LINTER_COMMANDS_ARRAY['JSX']="eslint --no-eslintrc -c ${JSX_LINTER_RULES}"
 ##fi
 ##LINTER_COMMANDS_ARRAY['LATEX']="chktex -q -l ${LATEX_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['LUA']="luacheck --config ${LUA_LINTER_RULES}"
-LINTER_COMMANDS_ARRAY['MARKDOWN']="markdownlint -c ${MARKDOWN_LINTER_RULES}"
+##LINTER_COMMANDS_ARRAY['MARKDOWN']="markdownlint -c ${MARKDOWN_LINTER_RULES}"
 if [ -n "${MARKDOWN_CUSTOM_RULE_GLOBS}" ]; then
   IFS="," read -r -a MARKDOWN_CUSTOM_RULE_GLOBS_ARRAY <<<"${MARKDOWN_CUSTOM_RULE_GLOBS}"
   for glob in "${MARKDOWN_CUSTOM_RULE_GLOBS_ARRAY[@]}"; do
@@ -981,10 +981,10 @@ LINTER_COMMANDS_ARRAY['RUST_CLIPPY']="clippy"
 ##LINTER_COMMANDS_ARRAY['SHELL_SHFMT']="shfmt -d"
 LINTER_COMMANDS_ARRAY['SNAKEMAKE_LINT']="snakemake --lint -s"
 LINTER_COMMANDS_ARRAY['SNAKEMAKE_SNAKEFMT']="snakefmt --config ${SNAKEMAKE_SNAKEFMT_LINTER_RULES} --check --compact-diff"
-LINTER_COMMANDS_ARRAY['STATES']="asl-validator --json-path"
-LINTER_COMMANDS_ARRAY['SQL']="sql-lint --config ${SQL_LINTER_RULES}"
-LINTER_COMMANDS_ARRAY['SQLFLUFF']="sqlfluff lint --config ${SQLFLUFF_LINTER_RULES}"
-LINTER_COMMANDS_ARRAY['TEKTON']="tekton-lint"
+##LINTER_COMMANDS_ARRAY['STATES']="asl-validator --json-path"
+##LINTER_COMMANDS_ARRAY['SQL']="sql-lint --config ${SQL_LINTER_RULES}"
+##LINTER_COMMANDS_ARRAY['SQLFLUFF']="sqlfluff lint --config ${SQLFLUFF_LINTER_RULES}"
+##LINTER_COMMANDS_ARRAY['TEKTON']="tekton-lint"
 ##LINTER_COMMANDS_ARRAY['TERRAFORM_FMT']="terraform fmt -check -diff"
 ##LINTER_COMMANDS_ARRAY['TERRAFORM_TFLINT']="tflint -c ${TERRAFORM_TFLINT_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['TERRAFORM_TERRASCAN']="terrascan scan -i terraform -t all -c ${TERRAFORM_TERRASCAN_LINTER_RULES} -f"
@@ -992,7 +992,7 @@ LINTER_COMMANDS_ARRAY['TEKTON']="tekton-lint"
 LINTER_COMMANDS_ARRAY['TSX']="eslint --no-eslintrc -c ${TSX_LINTER_RULES}"
 LINTER_COMMANDS_ARRAY['TYPESCRIPT_ES']="eslint --no-eslintrc -c ${TYPESCRIPT_ES_LINTER_RULES}"
 LINTER_COMMANDS_ARRAY['TYPESCRIPT_STANDARD']="ts-standard --parser @typescript-eslint/parser --plugin @typescript-eslint/eslint-plugin --project ${TYPESCRIPT_STANDARD_TSCONFIG_LINTER_RULES} ${TYPESCRIPT_STANDARD_LINTER_RULES}"
-LINTER_COMMANDS_ARRAY['TYPESCRIPT_PRETTIER']="prettier --check"
+##LINTER_COMMANDS_ARRAY['TYPESCRIPT_PRETTIER']="prettier --check"
 LINTER_COMMANDS_ARRAY['XML']="xmllint"
 if [ "${YAML_ERROR_ON_WARNING}" == 'false' ]; then
   LINTER_COMMANDS_ARRAY['YAML']="yamllint -c ${YAML_LINTER_RULES} -f parsable"
@@ -1013,8 +1013,8 @@ debug "---------------------------------------------"
 CheckSSLCert
 
 # Check if we need to lint the whole codebase with JSCPD
-VALIDATE_JSCPD_ALL_CODEBASE="${VALIDATE_JSCPD_ALL_CODEBASE:-"false"}"
-export VALIDATE_JSCPD_ALL_CODEBASE
+##VALIDATE_JSCPD_ALL_CODEBASE="${VALIDATE_JSCPD_ALL_CODEBASE:-"false"}"
+##export VALIDATE_JSCPD_ALL_CODEBASE
 
 ###########################################
 # Build the list of files for each linter #
