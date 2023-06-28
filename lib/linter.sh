@@ -166,7 +166,7 @@ PYTHON_MYPY_FILE_NAME="${PYTHON_MYPY_CONFIG_FILE:-.mypy.ini}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 PYTHON_PYLINT_FILE_NAME="${PYTHON_PYLINT_CONFIG_FILE:-.python-lint}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-R_FILE_NAME=".lintr"
+##R_FILE_NAME=".lintr"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 RUBY_FILE_NAME="${RUBY_CONFIG_FILE:-.ruby-lint.yml}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
@@ -258,13 +258,13 @@ LANGUAGE_ARRAY=('ANSIBLE' 'ARM' 'BASH' 'BASH_EXEC' 'CLANG_FORMAT'
   'KUBERNETES_KUBECONFORM' 'KOTLIN' 'KOTLIN_ANDROID' 'LATEX' 'LUA' 'MARKDOWN'
   'NATURAL_LANGUAGE' 'OPENAPI' 'PERL'  
   'POWERSHELL' 'PROTOBUF' 'PYTHON_BLACK' 'PYTHON_PYLINT'
-  'PYTHON_FLAKE8' 'PYTHON_ISORT' 'PYTHON_MYPY' 'R' 'RAKU' 'RUBY' 'RUST_2015'
+  'PYTHON_FLAKE8' 'PYTHON_ISORT' 'PYTHON_MYPY' 'RAKU' 'RUBY' 'RUST_2015'
   'RUST_2018' 'RUST_2021' 'RUST_CLIPPY' 'SCALAFMT' 'SHELL_SHFMT'
   'SNAKEMAKE_LINT' 'SNAKEMAKE_SNAKEFMT' 'STATES' 'SQL' 'SQLFLUFF' 'TEKTON'
   'TERRAFORM_FMT' 'TERRAFORM_TFLINT' 'TERRAFORM_TERRASCAN' 'TERRAGRUNT' 'TSX'
   'TYPESCRIPT_ES' "${TYPESCRIPT_STYLE_NAME}" 'XML' 'YAML')
 
-## removed 'PHP_PHPSTAN' 'PHP_BUILTIN' 'PHP_PHPCS' 'PHP_PSALM' 'DART' from LANGUAGE_ARRAY
+## removed 'PHP_PHPSTAN' 'PHP_BUILTIN' 'PHP_PHPCS' 'PHP_PSALM' 'DART' 'R' from LANGUAGE_ARRAY
 ##############################
 # Linter command names array #
 ##############################
@@ -318,7 +318,7 @@ LINTER_NAMES_ARRAY['PYTHON_PYLINT']="pylint"
 LINTER_NAMES_ARRAY['PYTHON_FLAKE8']="flake8"
 LINTER_NAMES_ARRAY['PYTHON_ISORT']="isort"
 LINTER_NAMES_ARRAY['PYTHON_MYPY']="mypy"
-LINTER_NAMES_ARRAY['R']="R"
+##LINTER_NAMES_ARRAY['R']="R"
 LINTER_NAMES_ARRAY['RAKU']="raku"
 LINTER_NAMES_ARRAY['RUBY']="rubocop"
 LINTER_NAMES_ARRAY['RUST_2015']="rustfmt"
@@ -967,7 +967,7 @@ LINTER_COMMANDS_ARRAY['PYTHON_PYLINT']="pylint --rcfile ${PYTHON_PYLINT_LINTER_R
 LINTER_COMMANDS_ARRAY['PYTHON_FLAKE8']="flake8 --config=${PYTHON_FLAKE8_LINTER_RULES}"
 LINTER_COMMANDS_ARRAY['PYTHON_ISORT']="isort --check --diff --sp ${PYTHON_ISORT_LINTER_RULES}"
 LINTER_COMMANDS_ARRAY['PYTHON_MYPY']="mypy --config-file ${PYTHON_MYPY_LINTER_RULES} --install-types --non-interactive"
-LINTER_COMMANDS_ARRAY['R']="lintr"
+##LINTER_COMMANDS_ARRAY['R']="lintr"
 LINTER_COMMANDS_ARRAY['RAKU']="raku"
 LINTER_COMMANDS_ARRAY['RUBY']="rubocop -c ${RUBY_LINTER_RULES} --force-exclusion --ignore-unrecognized-cops"
 LINTER_COMMANDS_ARRAY['RUST_2015']="rustfmt --check --edition 2015"
@@ -1055,9 +1055,9 @@ for LANGUAGE in "${LANGUAGE_ARRAY[@]}"; do
         debug "No .editorconfig found at: $EDITORCONFIG_FILE_PATH. Skipping ${LANGUAGE} linting..."
         continue
       fi
-    elif [ "${LANGUAGE}" = "R" ] && [ ! -f "${GITHUB_WORKSPACE}/.lintr" ] && ((${#FILE_ARRAY_R[@]})); then
-      info "No .lintr configuration file found, using defaults."
-      cp "$R_LINTER_RULES" "$GITHUB_WORKSPACE"
+    ##elif [ "${LANGUAGE}" = "R" ] && [ ! -f "${GITHUB_WORKSPACE}/.lintr" ] && ((${#FILE_ARRAY_R[@]})); then
+     ## info "No .lintr configuration file found, using defaults."
+     ## cp "$R_LINTER_RULES" "$GITHUB_WORKSPACE"
     # Check if there's local configuration for the Raku linter
     elif [ "${LANGUAGE}" = "RAKU" ] && [ -e "${GITHUB_WORKSPACE}/META6.json" ]; then
       cd "${GITHUB_WORKSPACE}" && zef install --deps-only --/test .
