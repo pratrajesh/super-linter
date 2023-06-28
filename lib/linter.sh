@@ -1048,7 +1048,7 @@ for LANGUAGE in "${LANGUAGE_ARRAY[@]}"; do
   VALIDATE_LANGUAGE_VARIABLE_VALUE="${!VALIDATE_LANGUAGE_VARIABLE_NAME}"
   debug "Setting VALIDATE_LANGUAGE_VARIABLE_VALUE to ${VALIDATE_LANGUAGE_VARIABLE_VALUE}..."
 
-  ##if [ "${VALIDATE_LANGUAGE_VARIABLE_VALUE}" = "true" ]; then
+  if [ "${VALIDATE_LANGUAGE_VARIABLE_VALUE}" = "true" ]; then
     # Check if we need an .editorconfig file
     # shellcheck disable=SC2153
    ## if [ "${LANGUAGE}" = "EDITORCONFIG" ] || [ "${LANGUAGE}" = "SHELL_SHFMT" ]; then
