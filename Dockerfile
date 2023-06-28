@@ -306,8 +306,8 @@ RUN apk add --no-cache bash git git-lfs
 ##############################
 # Install Phive dependencies #
 ##############################
-COPY scripts/install-phive.sh /
-RUN --mount=type=secret,id=GITHUB_TOKEN /install-phive.sh && rm -rf /install-phive.sh
+##COPY scripts/install-phive.sh /
+##RUN --mount=type=secret,id=GITHUB_TOKEN /install-phive.sh && rm -rf /install-phive.sh
 
 ####################################################
 # Install Composer after all Libs have been copied #
