@@ -99,7 +99,7 @@ COFFEESCRIPT_FILE_NAME=".coffee-lint.json"
 CSS_FILE_NAME="${CSS_FILE_NAME:-.stylelintrc.json}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 ##DART_FILE_NAME="analysis_options.yml"
-DOCKERFILE_HADOLINT_FILE_NAME="${DOCKERFILE_HADOLINT_FILE_NAME:-.hadolint.yaml}"
+##DOCKERFILE_HADOLINT_FILE_NAME="${DOCKERFILE_HADOLINT_FILE_NAME:-.hadolint.yaml}"
 EDITORCONFIG_FILE_NAME="${EDITORCONFIG_FILE_NAME:-.ecrc}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 GITHUB_ACTIONS_FILE_NAME="${GITHUB_ACTIONS_CONFIG_FILE:-actionlint.yml}"
@@ -110,7 +110,7 @@ GITLEAKS_FILE_NAME="${GITLEAKS_CONFIG_FILE:-.gitleaks.toml}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 GHERKIN_FILE_NAME=".gherkin-lintrc"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-GO_FILE_NAME=".golangci.yml"
+##GO_FILE_NAME=".golangci.yml"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 GROOVY_FILE_NAME=".groovylintrc.json"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
@@ -130,7 +130,7 @@ JSCPD_FILE_NAME="${JSCPD_CONFIG_FILE:-.jscpd.json}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 JSX_FILE_NAME="${JAVASCRIPT_ES_CONFIG_FILE:-.eslintrc.yml}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-KUBERNETES_KUBECONFORM_OPTIONS="${KUBERNETES_KUBECONFORM_OPTIONS:-null}"
+##KUBERNETES_KUBECONFORM_OPTIONS="${KUBERNETES_KUBECONFORM_OPTIONS:-null}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 ##LATEX_FILE_NAME=".chktexrc"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
@@ -252,19 +252,19 @@ fi
 ##################
 LANGUAGE_ARRAY=('ANSIBLE' 'ARM' 'BASH' 'BASH_EXEC'
   'CLOUDFORMATION' 'CLOJURE' 'COFFEESCRIPT' 'CPP' 'CSHARP' 'CSS'
-  'DOCKERFILE_HADOLINT' 'EDITORCONFIG' 'ENV' 'GITHUB_ACTIONS'
+  'EDITORCONFIG' 'ENV' 'GITHUB_ACTIONS'
   'GITLEAKS' 'GHERKIN' 'GO' 'GOOGLE_JAVA_FORMAT' 'GROOVY' 'HTML' 'JAVA'
   'JAVASCRIPT_ES' "${JAVASCRIPT_STYLE_NAME}" 'JSCPD' 'JSON' 'JSONC' 'JSX'
-  'KUBERNETES_KUBECONFORM' 'KOTLIN' 'KOTLIN_ANDROID' 'LATEX' 'MARKDOWN'
+  'KOTLIN' 'KOTLIN_ANDROID' 'LATEX' 'MARKDOWN'
   'NATURAL_LANGUAGE' 'OPENAPI' 'PERL'  
   'POWERSHELL' 'PROTOBUF' 'PYTHON_BLACK' 'PYTHON_PYLINT'
   'PYTHON_FLAKE8' 'PYTHON_ISORT' 'PYTHON_MYPY' 'RAKU' 'RUBY' 'RUST_2015'
   'RUST_2018' 'RUST_2021' 'RUST_CLIPPY' 'SCALAFMT' 'SHELL_SHFMT'
   'SNAKEMAKE_LINT' 'SNAKEMAKE_SNAKEFMT' 'STATES' 'SQL' 'SQLFLUFF' 'TEKTON'
-  'TERRAFORM_FMT' 'TSX'
+  'TSX'
   'TYPESCRIPT_ES' "${TYPESCRIPT_STYLE_NAME}" 'XML' 'YAML')
 
-## removed 'PHP_PHPSTAN' 'PHP_BUILTIN' 'PHP_PHPCS' 'PHP_PSALM' 'DART' 'R' 'LUA' 'TERRAFORM_TERRASCAN' 'TERRAGRUNT' 'CLANG_FORMAT' 'TERRAFORM_TFLINT' from LANGUAGE_ARRAY
+## removed 'PHP_PHPSTAN' 'PHP_BUILTIN' 'PHP_PHPCS' 'PHP_PSALM' 'DART' 'R' 'LUA' 'TERRAFORM_TERRASCAN' 'TERRAGRUNT' 'CLANG_FORMAT' 'TERRAFORM_TFLINT' 'KUBERNETES_KUBECONFORM' 'DOCKERFILE_HADOLINT' 'TERRAFORM_FMT' from LANGUAGE_ARRAY
 ##############################
 # Linter command names array #
 ##############################
@@ -281,13 +281,13 @@ LINTER_NAMES_ARRAY['CPP']="cpplint"
 LINTER_NAMES_ARRAY['CSHARP']="dotnet-format"
 LINTER_NAMES_ARRAY['CSS']="stylelint"
 ##LINTER_NAMES_ARRAY['DART']="dart"
-LINTER_NAMES_ARRAY['DOCKERFILE_HADOLINT']="hadolint"
+##LINTER_NAMES_ARRAY['DOCKERFILE_HADOLINT']="hadolint"
 LINTER_NAMES_ARRAY['EDITORCONFIG']="editorconfig-checker"
 ##LINTER_NAMES_ARRAY['ENV']="dotenv-linter"
 LINTER_NAMES_ARRAY['GITHUB_ACTIONS']="actionlint"
 LINTER_NAMES_ARRAY['GITLEAKS']="gitleaks"
 LINTER_NAMES_ARRAY['GHERKIN']="gherkin-lint"
-LINTER_NAMES_ARRAY['GO']="golangci-lint"
+##LINTER_NAMES_ARRAY['GO']="golangci-lint"
 ##LINTER_NAMES_ARRAY['GOOGLE_JAVA_FORMAT']="google-java-format"
 LINTER_NAMES_ARRAY['GROOVY']="npm-groovy-lint"
 LINTER_NAMES_ARRAY['HTML']="htmlhint"
@@ -300,7 +300,7 @@ LINTER_NAMES_ARRAY['JSONC']="eslint"
 LINTER_NAMES_ARRAY['JSX']="eslint"
 ##LINTER_NAMES_ARRAY['KOTLIN']="ktlint"
 ##LINTER_NAMES_ARRAY['KOTLIN_ANDROID']="ktlint"
-LINTER_NAMES_ARRAY['KUBERNETES_KUBECONFORM']="kubeconform"
+##LINTER_NAMES_ARRAY['KUBERNETES_KUBECONFORM']="kubeconform"
 ##LINTER_NAMES_ARRAY['LATEX']="chktex"
 ##LINTER_NAMES_ARRAY['LUA']="lua"
 LINTER_NAMES_ARRAY['MARKDOWN']="markdownlint"
@@ -333,7 +333,7 @@ LINTER_NAMES_ARRAY['STATES']="asl-validator"
 LINTER_NAMES_ARRAY['SQL']="sql-lint"
 LINTER_NAMES_ARRAY['SQLFLUFF']="sqlfluff"
 LINTER_NAMES_ARRAY['TEKTON']="tekton-lint"
-LINTER_NAMES_ARRAY['TERRAFORM_FMT']="terraform"
+##LINTER_NAMES_ARRAY['TERRAFORM_FMT']="terraform"
 ##LINTER_NAMES_ARRAY['TERRAFORM_TFLINT']="tflint"
 ##LINTER_NAMES_ARRAY['TERRAFORM_TERRASCAN']="terrascan"
 ##LINTER_NAMES_ARRAY['TERRAGRUNT']="terragrunt"
@@ -893,11 +893,11 @@ GetStandardRules "typescript"
 declare -A LINTER_COMMANDS_ARRAY
 LINTER_COMMANDS_ARRAY['ANSIBLE']="ansible-lint -c ${ANSIBLE_LINTER_RULES}"
 LINTER_COMMANDS_ARRAY['ARM']="Import-Module ${ARM_TTK_PSD1} ; \${config} = \$(Import-PowerShellDataFile -Path ${ARM_LINTER_RULES}) ; Test-AzTemplate @config -TemplatePath"
-if [ -z "${BASH_SEVERITY}" ]; then
-  LINTER_COMMANDS_ARRAY['BASH']="shellcheck --color --external-sources"
-else
-  LINTER_COMMANDS_ARRAY['BASH']="shellcheck --color --external-sources --severity=${BASH_SEVERITY}"
-fi
+##if [ -z "${BASH_SEVERITY}" ]; then
+ ## LINTER_COMMANDS_ARRAY['BASH']="shellcheck --color --external-sources"
+##else
+ ## LINTER_COMMANDS_ARRAY['BASH']="shellcheck --color --external-sources --severity=${BASH_SEVERITY}"
+##fi
 LINTER_COMMANDS_ARRAY['BASH_EXEC']="bash-exec"
 ##LINTER_COMMANDS_ARRAY['CLANG_FORMAT']="clang-format --Werror --dry-run"
 LINTER_COMMANDS_ARRAY['CLOJURE']="clj-kondo --config ${CLOJURE_LINTER_RULES} --lint"
@@ -907,7 +907,7 @@ LINTER_COMMANDS_ARRAY['CPP']="cpplint"
 LINTER_COMMANDS_ARRAY['CSHARP']="dotnet-format --folder --check --exclude / --include"
 LINTER_COMMANDS_ARRAY['CSS']="stylelint --config ${CSS_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['DART']="dartanalyzer --fatal-infos --fatal-warnings --options ${DART_LINTER_RULES}"
-LINTER_COMMANDS_ARRAY['DOCKERFILE_HADOLINT']="hadolint -c ${DOCKERFILE_HADOLINT_LINTER_RULES}"
+##LINTER_COMMANDS_ARRAY['DOCKERFILE_HADOLINT']="hadolint -c ${DOCKERFILE_HADOLINT_LINTER_RULES}"
 LINTER_COMMANDS_ARRAY['EDITORCONFIG']="editorconfig-checker -config ${EDITORCONFIG_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['ENV']="dotenv-linter"
 if [ "${GITHUB_ACTIONS_COMMAND_ARGS}" = "null" ]; then
@@ -917,7 +917,7 @@ else
 fi
 LINTER_COMMANDS_ARRAY['GITLEAKS']="gitleaks detect --no-banner --no-git -c ${GITLEAKS_LINTER_RULES} -v -s"
 LINTER_COMMANDS_ARRAY['GHERKIN']="gherkin-lint -c ${GHERKIN_LINTER_RULES}"
-LINTER_COMMANDS_ARRAY['GO']="golangci-lint run --fast -c ${GO_LINTER_RULES}"
+##LINTER_COMMANDS_ARRAY['GO']="golangci-lint run --fast -c ${GO_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['GOOGLE_JAVA_FORMAT']="java -jar /usr/bin/google-java-format --dry-run --set-exit-if-changed"
 LINTER_COMMANDS_ARRAY['GROOVY']="npm-groovy-lint -c ${GROOVY_LINTER_RULES} --failon warning --no-insight"
 LINTER_COMMANDS_ARRAY['HTML']="htmlhint --config ${HTML_LINTER_RULES}"
@@ -931,11 +931,11 @@ LINTER_COMMANDS_ARRAY['JSONC']="eslint --no-eslintrc -c ${JAVASCRIPT_ES_LINTER_R
 LINTER_COMMANDS_ARRAY['JSX']="eslint --no-eslintrc -c ${JSX_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['KOTLIN']="ktlint"
 ##LINTER_COMMANDS_ARRAY['KOTLIN_ANDROID']="ktlint --android"
-if [ "${KUBERNETES_KUBECONFORM_OPTIONS}" == "null" ] || [ -z "${KUBERNETES_KUBECONFORM_OPTIONS}" ]; then
-  LINTER_COMMANDS_ARRAY['KUBERNETES_KUBECONFORM']="kubeconform -strict"
-else
-  LINTER_COMMANDS_ARRAY['KUBERNETES_KUBECONFORM']="kubeconform -strict ${KUBERNETES_KUBECONFORM_OPTIONS}"
-fi
+##if [ "${KUBERNETES_KUBECONFORM_OPTIONS}" == "null" ] || [ -z "${KUBERNETES_KUBECONFORM_OPTIONS}" ]; then
+ ## LINTER_COMMANDS_ARRAY['KUBERNETES_KUBECONFORM']="kubeconform -strict"
+##else
+ ## LINTER_COMMANDS_ARRAY['KUBERNETES_KUBECONFORM']="kubeconform -strict ${KUBERNETES_KUBECONFORM_OPTIONS}"
+##fi
 ##LINTER_COMMANDS_ARRAY['LATEX']="chktex -q -l ${LATEX_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['LUA']="luacheck --config ${LUA_LINTER_RULES}"
 LINTER_COMMANDS_ARRAY['MARKDOWN']="markdownlint -c ${MARKDOWN_LINTER_RULES}"
@@ -982,7 +982,7 @@ LINTER_COMMANDS_ARRAY['STATES']="asl-validator --json-path"
 LINTER_COMMANDS_ARRAY['SQL']="sql-lint --config ${SQL_LINTER_RULES}"
 LINTER_COMMANDS_ARRAY['SQLFLUFF']="sqlfluff lint --config ${SQLFLUFF_LINTER_RULES}"
 LINTER_COMMANDS_ARRAY['TEKTON']="tekton-lint"
-LINTER_COMMANDS_ARRAY['TERRAFORM_FMT']="terraform fmt -check -diff"
+##LINTER_COMMANDS_ARRAY['TERRAFORM_FMT']="terraform fmt -check -diff"
 ##LINTER_COMMANDS_ARRAY['TERRAFORM_TFLINT']="tflint -c ${TERRAFORM_TFLINT_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['TERRAFORM_TERRASCAN']="terrascan scan -i terraform -t all -c ${TERRAFORM_TERRASCAN_LINTER_RULES} -f"
 ##LINTER_COMMANDS_ARRAY['TERRAGRUNT']="terragrunt hclfmt --terragrunt-check --terragrunt-log-level error --terragrunt-hclfmt-file"
