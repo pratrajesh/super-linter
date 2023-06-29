@@ -87,13 +87,13 @@ export VERSION_FILE                                       # Workaround SC2034
 # Rules files #
 ###############
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-##ANSIBLE_FILE_NAME="${ANSIBLE_CONFIG_FILE:-.ansible-lint.yml}"
+ANSIBLE_FILE_NAME="${ANSIBLE_CONFIG_FILE:-.ansible-lint.yml}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 ARM_FILE_NAME=".arm-ttk.psd1"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 ##CLOJURE_FILE_NAME=".clj-kondo/config.edn"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-##CLOUDFORMATION_FILE_NAME=".cfnlintrc.yml"
+CLOUDFORMATION_FILE_NAME=".cfnlintrc.yml"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 COFFEESCRIPT_FILE_NAME=".coffee-lint.json"
 ##CSS_FILE_NAME="${CSS_FILE_NAME:-.stylelintrc.json}"
@@ -156,15 +156,15 @@ POWERSHELL_FILE_NAME=".powershell-psscriptanalyzer.psd1"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 ##PROTOBUF_FILE_NAME="${PROTOBUF_CONFIG_FILE:-.protolintrc.yml}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-##PYTHON_BLACK_FILE_NAME="${PYTHON_BLACK_CONFIG_FILE:-.python-black}"
+PYTHON_BLACK_FILE_NAME="${PYTHON_BLACK_CONFIG_FILE:-.python-black}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-##PYTHON_FLAKE8_FILE_NAME="${PYTHON_FLAKE8_CONFIG_FILE:-.flake8}"
+PYTHON_FLAKE8_FILE_NAME="${PYTHON_FLAKE8_CONFIG_FILE:-.flake8}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-##PYTHON_ISORT_FILE_NAME="${PYTHON_ISORT_CONFIG_FILE:-.isort.cfg}"
+PYTHON_ISORT_FILE_NAME="${PYTHON_ISORT_CONFIG_FILE:-.isort.cfg}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-##PYTHON_MYPY_FILE_NAME="${PYTHON_MYPY_CONFIG_FILE:-.mypy.ini}"
+PYTHON_MYPY_FILE_NAME="${PYTHON_MYPY_CONFIG_FILE:-.mypy.ini}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-##PYTHON_PYLINT_FILE_NAME="${PYTHON_PYLINT_CONFIG_FILE:-.python-lint}"
+PYTHON_PYLINT_FILE_NAME="${PYTHON_PYLINT_CONFIG_FILE:-.python-lint}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 ##R_FILE_NAME=".lintr"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
@@ -172,7 +172,7 @@ RUBY_FILE_NAME="${RUBY_CONFIG_FILE:-.ruby-lint.yml}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 ##SCALAFMT_FILE_NAME="${SCALAFMT_CONFIG_FILE:-.scalafmt.conf}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-##SNAKEMAKE_SNAKEFMT_FILE_NAME="${SNAKEMAKE_SNAKEFMT_CONFIG_FILE:-.snakefmt.toml}"
+SNAKEMAKE_SNAKEFMT_FILE_NAME="${SNAKEMAKE_SNAKEFMT_CONFIG_FILE:-.snakefmt.toml}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 SUPPRESS_FILE_TYPE_WARN="${SUPPRESS_FILE_TYPE_WARN:-false}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
@@ -250,21 +250,21 @@ TYPESCRIPT_DEFAULT_STYLE=$(echo "${TYPESCRIPT_DEFAULT_STYLE}" | tr '[:upper:]' '
 ##################
 # Language array #
 ##################
-LANGUAGE_ARRAY=('ARM' 'BASH' 'BASH_EXEC'
+LANGUAGE_ARRAY=('ANSIBLE' 'ARM' 'BASH' 'BASH_EXEC'
   'CLOUDFORMATION' 'CLOJURE' 'COFFEESCRIPT' 'CPP' 'CSHARP' 'CSS'
   'ENV' 'GITHUB_ACTIONS'
   'GO' 'GOOGLE_JAVA_FORMAT' 'GROOVY' 'HTML' 'JAVA'
   'JAVASCRIPT_ES' "${JAVASCRIPT_STYLE_NAME}" 'JSON' 'JSONC' 'JSX'
   'KOTLIN' 'KOTLIN_ANDROID' 'LATEX' 'MARKDOWN'
   'NATURAL_LANGUAGE' 'OPENAPI' 'PERL'  
-  'POWERSHELL' 'PROTOBUF'
-  'RAKU' 'RUBY' 'RUST_2015'
+  'POWERSHELL' 'PROTOBUF' 'PYTHON_BLACK' 'PYTHON_PYLINT'
+  'PYTHON_FLAKE8' 'PYTHON_ISORT' 'PYTHON_MYPY' 'RAKU' 'RUBY' 'RUST_2015'
   'RUST_2018' 'RUST_2021' 'RUST_CLIPPY'
-  'STATES'
+  'SNAKEMAKE_LINT' 'SNAKEMAKE_SNAKEFMT' 'STATES'
   'TSX'
   'TYPESCRIPT_ES' "${TYPESCRIPT_STYLE_NAME}" 'XML' 'YAML')
 
-## removed 'SHELL_SHFMT' 'SCALAFMT' 'GITLEAKS' 'GHERKIN' 'JSCPD' 'SQL' 'SQLFLUFF' 'TEKTON' 'ANSIBLE' 'PYTHON_BLACK' 'PYTHON_FLAKE8' 'PYTHON_ISORT' 'PYTHON_MYPY' 'PYTHON_PYLINT' 'SNAKEMAKE_SNAKEFMT' 'SNAKEMAKE_LINT' from LANGUAGE_ARRAY
+## removed 'SHELL_SHFMT' 'SCALAFMT' 'GITLEAKS' 'GHERKIN' 'JSCPD' 'SQL' 'SQLFLUFF' 'TEKTON'  from LANGUAGE_ARRAY
 
 
 ## removed 'PHP_PHPSTAN' 'PHP_BUILTIN' 'PHP_PHPCS' 'PHP_PSALM' 'DART' 'R' 'LUA' 'TERRAFORM_TERRASCAN' 'TERRAGRUNT' 'CLANG_FORMAT' 'TERRAFORM_TFLINT' 'KUBERNETES_KUBECONFORM' 'DOCKERFILE_HADOLINT' 'TERRAFORM_FMT' 'EDITORCONFIG' from LANGUAGE_ARRAY
@@ -272,15 +272,15 @@ LANGUAGE_ARRAY=('ARM' 'BASH' 'BASH_EXEC'
 # Linter command names array #
 ##############################
 declare -A LINTER_NAMES_ARRAY
-##LINTER_NAMES_ARRAY['ANSIBLE']="ansible-lint"
+LINTER_NAMES_ARRAY['ANSIBLE']="ansible-lint"
 LINTER_NAMES_ARRAY['ARM']="arm-ttk"
 ##LINTER_NAMES_ARRAY['BASH']="shellcheck"
 LINTER_NAMES_ARRAY['BASH_EXEC']="bash-exec"
 ##LINTER_NAMES_ARRAY['CLANG_FORMAT']="clang-format"
 ##LINTER_NAMES_ARRAY['CLOJURE']="clj-kondo"
-##LINTER_NAMES_ARRAY['CLOUDFORMATION']="cfn-lint"
+LINTER_NAMES_ARRAY['CLOUDFORMATION']="cfn-lint"
 LINTER_NAMES_ARRAY['COFFEESCRIPT']="coffeelint"
-##LINTER_NAMES_ARRAY['CPP']="cpplint"
+LINTER_NAMES_ARRAY['CPP']="cpplint"
 LINTER_NAMES_ARRAY['CSHARP']="dotnet-format"
 ##LINTER_NAMES_ARRAY['CSS']="stylelint"
 ##LINTER_NAMES_ARRAY['DART']="dart"
@@ -316,11 +316,11 @@ LINTER_NAMES_ARRAY['PERL']="perl"
 ##LINTER_NAMES_ARRAY['PHP_PSALM']="psalm"
 LINTER_NAMES_ARRAY['POWERSHELL']="pwsh"
 ##LINTER_NAMES_ARRAY['PROTOBUF']="protolint"
-##LINTER_NAMES_ARRAY['PYTHON_BLACK']="black"
-##LINTER_NAMES_ARRAY['PYTHON_PYLINT']="pylint"
-##LINTER_NAMES_ARRAY['PYTHON_FLAKE8']="flake8"
-##LINTER_NAMES_ARRAY['PYTHON_ISORT']="isort"
-##LINTER_NAMES_ARRAY['PYTHON_MYPY']="mypy"
+LINTER_NAMES_ARRAY['PYTHON_BLACK']="black"
+LINTER_NAMES_ARRAY['PYTHON_PYLINT']="pylint"
+LINTER_NAMES_ARRAY['PYTHON_FLAKE8']="flake8"
+LINTER_NAMES_ARRAY['PYTHON_ISORT']="isort"
+LINTER_NAMES_ARRAY['PYTHON_MYPY']="mypy"
 ##LINTER_NAMES_ARRAY['R']="R"
 LINTER_NAMES_ARRAY['RAKU']="raku"
 LINTER_NAMES_ARRAY['RUBY']="rubocop"
@@ -330,8 +330,8 @@ LINTER_NAMES_ARRAY['RUBY']="rubocop"
 LINTER_NAMES_ARRAY['RUST_CLIPPY']="clippy"
 ##LINTER_NAMES_ARRAY['SCALAFMT']="scalafmt"
 ##LINTER_NAMES_ARRAY['SHELL_SHFMT']="shfmt"
-##LINTER_NAMES_ARRAY['SNAKEMAKE_LINT']="snakemake"
-##LINTER_NAMES_ARRAY['SNAKEMAKE_SNAKEFMT']="snakefmt"
+LINTER_NAMES_ARRAY['SNAKEMAKE_LINT']="snakemake"
+LINTER_NAMES_ARRAY['SNAKEMAKE_SNAKEFMT']="snakefmt"
 ##LINTER_NAMES_ARRAY['STATES']="asl-validator"
 ##LINTER_NAMES_ARRAY['SQL']="sql-lint"
 ##LINTER_NAMES_ARRAY['SQLFLUFF']="sqlfluff"
@@ -344,7 +344,7 @@ LINTER_NAMES_ARRAY['TSX']="eslint"
 LINTER_NAMES_ARRAY['TYPESCRIPT_ES']="eslint"
 LINTER_NAMES_ARRAY["${TYPESCRIPT_STYLE_NAME}"]="${TYPESCRIPT_STYLE}"
 LINTER_NAMES_ARRAY['XML']="xmllint"
-##LINTER_NAMES_ARRAY['YAML']="yamllint"
+LINTER_NAMES_ARRAY['YAML']="yamllint"
 
 ############################################
 # Array for all languages that were linted #
@@ -861,10 +861,10 @@ GetGitHubVars
 ########################################################
 # Initialize variables that depend on GitHub variables #
 ########################################################
-##DEFAULT_ANSIBLE_DIRECTORY="${GITHUB_WORKSPACE}/ansible"                               # Default Ansible Directory
-##export DEFAULT_ANSIBLE_DIRECTORY                                                      # Workaround SC2034
-##DEFAULT_TEST_CASE_ANSIBLE_DIRECTORY="${GITHUB_WORKSPACE}/${TEST_CASE_FOLDER}/ansible" # Default Ansible directory when running test cases
-##export DEFAULT_TEST_CASE_ANSIBLE_DIRECTORY                                            # Workaround SC2034
+DEFAULT_ANSIBLE_DIRECTORY="${GITHUB_WORKSPACE}/ansible"                               # Default Ansible Directory
+export DEFAULT_ANSIBLE_DIRECTORY                                                      # Workaround SC2034
+DEFAULT_TEST_CASE_ANSIBLE_DIRECTORY="${GITHUB_WORKSPACE}/${TEST_CASE_FOLDER}/ansible" # Default Ansible directory when running test cases
+export DEFAULT_TEST_CASE_ANSIBLE_DIRECTORY                                            # Workaround SC2034
 
 ############################
 # Validate the environment #
@@ -894,7 +894,7 @@ GetStandardRules "typescript"
 # Define linter commands #
 ##########################
 declare -A LINTER_COMMANDS_ARRAY
-##LINTER_COMMANDS_ARRAY['ANSIBLE']="ansible-lint -c ${ANSIBLE_LINTER_RULES}"
+LINTER_COMMANDS_ARRAY['ANSIBLE']="ansible-lint -c ${ANSIBLE_LINTER_RULES}"
 LINTER_COMMANDS_ARRAY['ARM']="Import-Module ${ARM_TTK_PSD1} ; \${config} = \$(Import-PowerShellDataFile -Path ${ARM_LINTER_RULES}) ; Test-AzTemplate @config -TemplatePath"
 ##if [ -z "${BASH_SEVERITY}" ]; then
  ## LINTER_COMMANDS_ARRAY['BASH']="shellcheck --color --external-sources"
@@ -904,9 +904,9 @@ LINTER_COMMANDS_ARRAY['ARM']="Import-Module ${ARM_TTK_PSD1} ; \${config} = \$(Im
 LINTER_COMMANDS_ARRAY['BASH_EXEC']="bash-exec"
 ##LINTER_COMMANDS_ARRAY['CLANG_FORMAT']="clang-format --Werror --dry-run"
 ##LINTER_COMMANDS_ARRAY['CLOJURE']="clj-kondo --config ${CLOJURE_LINTER_RULES} --lint"
-##LINTER_COMMANDS_ARRAY['CLOUDFORMATION']="cfn-lint --config-file ${CLOUDFORMATION_LINTER_RULES}"
+LINTER_COMMANDS_ARRAY['CLOUDFORMATION']="cfn-lint --config-file ${CLOUDFORMATION_LINTER_RULES}"
 LINTER_COMMANDS_ARRAY['COFFEESCRIPT']="coffeelint -f ${COFFEESCRIPT_LINTER_RULES}"
-##LINTER_COMMANDS_ARRAY['CPP']="cpplint"
+LINTER_COMMANDS_ARRAY['CPP']="cpplint"
 LINTER_COMMANDS_ARRAY['CSHARP']="dotnet-format --folder --check --exclude / --include"
 ##LINTER_COMMANDS_ARRAY['CSS']="stylelint --config ${CSS_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['DART']="dartanalyzer --fatal-infos --fatal-warnings --options ${DART_LINTER_RULES}"
@@ -965,11 +965,11 @@ fi
 ##LINTER_COMMANDS_ARRAY['PHP_PSALM']="psalm --config=${PHP_PSALM_LINTER_RULES}"
 LINTER_COMMANDS_ARRAY['POWERSHELL']="Invoke-ScriptAnalyzer -EnableExit -Settings ${POWERSHELL_LINTER_RULES} -Path"
 ##LINTER_COMMANDS_ARRAY['PROTOBUF']="protolint lint --config_path ${PROTOBUF_LINTER_RULES}"
-##LINTER_COMMANDS_ARRAY['PYTHON_BLACK']="black --config ${PYTHON_BLACK_LINTER_RULES} --diff --check"
-##LINTER_COMMANDS_ARRAY['PYTHON_PYLINT']="pylint --rcfile ${PYTHON_PYLINT_LINTER_RULES}"
-##LINTER_COMMANDS_ARRAY['PYTHON_FLAKE8']="flake8 --config=${PYTHON_FLAKE8_LINTER_RULES}"
-##LINTER_COMMANDS_ARRAY['PYTHON_ISORT']="isort --check --diff --sp ${PYTHON_ISORT_LINTER_RULES}"
-##LINTER_COMMANDS_ARRAY['PYTHON_MYPY']="mypy --config-file ${PYTHON_MYPY_LINTER_RULES} --install-types --non-interactive"
+LINTER_COMMANDS_ARRAY['PYTHON_BLACK']="black --config ${PYTHON_BLACK_LINTER_RULES} --diff --check"
+LINTER_COMMANDS_ARRAY['PYTHON_PYLINT']="pylint --rcfile ${PYTHON_PYLINT_LINTER_RULES}"
+LINTER_COMMANDS_ARRAY['PYTHON_FLAKE8']="flake8 --config=${PYTHON_FLAKE8_LINTER_RULES}"
+LINTER_COMMANDS_ARRAY['PYTHON_ISORT']="isort --check --diff --sp ${PYTHON_ISORT_LINTER_RULES}"
+LINTER_COMMANDS_ARRAY['PYTHON_MYPY']="mypy --config-file ${PYTHON_MYPY_LINTER_RULES} --install-types --non-interactive"
 ##LINTER_COMMANDS_ARRAY['R']="lintr"
 LINTER_COMMANDS_ARRAY['RAKU']="raku"
 LINTER_COMMANDS_ARRAY['RUBY']="rubocop -c ${RUBY_LINTER_RULES} --force-exclusion --ignore-unrecognized-cops"
@@ -979,8 +979,8 @@ LINTER_COMMANDS_ARRAY['RUBY']="rubocop -c ${RUBY_LINTER_RULES} --force-exclusion
 LINTER_COMMANDS_ARRAY['RUST_CLIPPY']="clippy"
 ##LINTER_COMMANDS_ARRAY['SCALAFMT']="scalafmt --config ${SCALAFMT_LINTER_RULES} --test"
 ##LINTER_COMMANDS_ARRAY['SHELL_SHFMT']="shfmt -d"
-##LINTER_COMMANDS_ARRAY['SNAKEMAKE_LINT']="snakemake --lint -s"
-##LINTER_COMMANDS_ARRAY['SNAKEMAKE_SNAKEFMT']="snakefmt --config ${SNAKEMAKE_SNAKEFMT_LINTER_RULES} --check --compact-diff"
+LINTER_COMMANDS_ARRAY['SNAKEMAKE_LINT']="snakemake --lint -s"
+LINTER_COMMANDS_ARRAY['SNAKEMAKE_SNAKEFMT']="snakefmt --config ${SNAKEMAKE_SNAKEFMT_LINTER_RULES} --check --compact-diff"
 ##LINTER_COMMANDS_ARRAY['STATES']="asl-validator --json-path"
 ##LINTER_COMMANDS_ARRAY['SQL']="sql-lint --config ${SQL_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['SQLFLUFF']="sqlfluff lint --config ${SQLFLUFF_LINTER_RULES}"
@@ -994,11 +994,11 @@ LINTER_COMMANDS_ARRAY['TYPESCRIPT_ES']="eslint --no-eslintrc -c ${TYPESCRIPT_ES_
 LINTER_COMMANDS_ARRAY['TYPESCRIPT_STANDARD']="ts-standard --parser @typescript-eslint/parser --plugin @typescript-eslint/eslint-plugin --project ${TYPESCRIPT_STANDARD_TSCONFIG_LINTER_RULES} ${TYPESCRIPT_STANDARD_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['TYPESCRIPT_PRETTIER']="prettier --check"
 LINTER_COMMANDS_ARRAY['XML']="xmllint"
-##if [ "${YAML_ERROR_ON_WARNING}" == 'false' ]; then
-##  LINTER_COMMANDS_ARRAY['YAML']="yamllint -c ${YAML_LINTER_RULES} -f parsable"
-##else
-##  LINTER_COMMANDS_ARRAY['YAML']="yamllint --strict -c ${YAML_LINTER_RULES} -f parsable"
-##fi
+if [ "${YAML_ERROR_ON_WARNING}" == 'false' ]; then
+  LINTER_COMMANDS_ARRAY['YAML']="yamllint -c ${YAML_LINTER_RULES} -f parsable"
+else
+  LINTER_COMMANDS_ARRAY['YAML']="yamllint --strict -c ${YAML_LINTER_RULES} -f parsable"
+fi
 
 debug "--- Linter commands ---"
 debug "-----------------------"
@@ -1019,7 +1019,7 @@ CheckSSLCert
 ###########################################
 # Build the list of files for each linter #
 ###########################################
-##BuildFileList "${VALIDATE_ALL_CODEBASE}" "${TEST_CASE_RUN}" "${ANSIBLE_DIRECTORY}"
+BuildFileList "${VALIDATE_ALL_CODEBASE}" "${TEST_CASE_RUN}" "${ANSIBLE_DIRECTORY}"
 
 #####################################
 # Run additional Installs as needed #
