@@ -345,7 +345,7 @@ LINTER_NAMES_ARRAY['RUST_CLIPPY']="clippy"
 LINTER_NAMES_ARRAY['TSX']="eslint"
 LINTER_NAMES_ARRAY['TYPESCRIPT_ES']="eslint"
 LINTER_NAMES_ARRAY["${TYPESCRIPT_STYLE_NAME}"]="${TYPESCRIPT_STYLE}"
-LINTER_NAMES_ARRAY['XML']="xmllint"
+##LINTER_NAMES_ARRAY['XML']="xmllint"
 ##LINTER_NAMES_ARRAY['YAML']="yamllint"
 
 ############################################
@@ -995,7 +995,7 @@ LINTER_COMMANDS_ARRAY['TSX']="eslint --no-eslintrc -c ${TSX_LINTER_RULES}"
 LINTER_COMMANDS_ARRAY['TYPESCRIPT_ES']="eslint --no-eslintrc -c ${TYPESCRIPT_ES_LINTER_RULES}"
 LINTER_COMMANDS_ARRAY['TYPESCRIPT_STANDARD']="ts-standard --parser @typescript-eslint/parser --plugin @typescript-eslint/eslint-plugin --project ${TYPESCRIPT_STANDARD_TSCONFIG_LINTER_RULES} ${TYPESCRIPT_STANDARD_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['TYPESCRIPT_PRETTIER']="prettier --check"
-LINTER_COMMANDS_ARRAY['XML']="xmllint"
+##LINTER_COMMANDS_ARRAY['XML']="xmllint"
 ##if [ "${YAML_ERROR_ON_WARNING}" == 'false' ]; then
 ##  LINTER_COMMANDS_ARRAY['YAML']="yamllint -c ${YAML_LINTER_RULES} -f parsable"
 ##else
