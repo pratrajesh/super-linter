@@ -332,6 +332,8 @@ COPY --from=base_image /node_modules/ /node_modules/
 ##COPY --from=base_image /root/.tflint.d/ /root/.tflint.d/
 COPY --from=python_builder /venvs/ /venvs/
 
+RUN ls /usr/lib
+
 ##################################
 # Configure TFLint plugin folder #
 ##################################
