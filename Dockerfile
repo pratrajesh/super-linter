@@ -71,17 +71,13 @@ RUN apk add --no-cache \
     linux-headers \
     lttng-ust-dev \
     make \
-    musl-dev \
-    net-snmp-dev \
     npm nodejs-current \
     openjdk11-jre \
     openssh-client \
     openssl-dev \
     perl perl-dev \
-    readline-dev \
 		R R-dev R-doc \
-    ruby ruby-dev ruby-bundler ruby-rdoc \
-    zlib zlib-dev
+    ruby ruby-dev ruby-bundler ruby-rdoc
 
 ########################################
 # Copy dependencies files to container #
