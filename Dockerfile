@@ -340,7 +340,7 @@ COPY --from=base_image /node_modules/ /node_modules/
 ##COPY --from=python_builder /venvs/snakemake/ /venvs/snakemake/
 ##COPY --from=python_builder /venvs/sqlfluff/ /venvs/sqlfluff/
 ##COPY --from=python_builder /venvs/yamllint/ /venvs/yamllint/
-##COPY --from=python_builder /venvs/yq/ /venvs/yq/
+COPY --from=python_builder /venvs/yq/ /venvs/yq/
 
 ##RUN du -sh /venvs/*/
 
@@ -371,7 +371,7 @@ ENV PATH="${PATH}:/node_modules/.bin"
 ##ENV PATH="${PATH}:/venvs/snakemake/bin"
 ##ENV PATH="${PATH}:/venvs/sqlfluff/bin"
 ##ENV PATH="${PATH}:/venvs/yamllint/bin"
-##ENV PATH="${PATH}:/venvs/yq/bin"
+ENV PATH="${PATH}:/venvs/yq/bin"
 
 #############################
 # Copy scripts to container #
