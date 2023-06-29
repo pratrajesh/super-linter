@@ -87,7 +87,7 @@ export VERSION_FILE                                       # Workaround SC2034
 # Rules files #
 ###############
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-ANSIBLE_FILE_NAME="${ANSIBLE_CONFIG_FILE:-.ansible-lint.yml}"
+##ANSIBLE_FILE_NAME="${ANSIBLE_CONFIG_FILE:-.ansible-lint.yml}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 ARM_FILE_NAME=".arm-ttk.psd1"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
@@ -272,7 +272,7 @@ LANGUAGE_ARRAY=('ANSIBLE' 'ARM' 'BASH' 'BASH_EXEC'
 # Linter command names array #
 ##############################
 declare -A LINTER_NAMES_ARRAY
-LINTER_NAMES_ARRAY['ANSIBLE']="ansible-lint"
+##LINTER_NAMES_ARRAY['ANSIBLE']="ansible-lint"
 LINTER_NAMES_ARRAY['ARM']="arm-ttk"
 ##LINTER_NAMES_ARRAY['BASH']="shellcheck"
 LINTER_NAMES_ARRAY['BASH_EXEC']="bash-exec"
@@ -894,7 +894,7 @@ GetStandardRules "typescript"
 # Define linter commands #
 ##########################
 declare -A LINTER_COMMANDS_ARRAY
-LINTER_COMMANDS_ARRAY['ANSIBLE']="ansible-lint -c ${ANSIBLE_LINTER_RULES}"
+##LINTER_COMMANDS_ARRAY['ANSIBLE']="ansible-lint -c ${ANSIBLE_LINTER_RULES}"
 LINTER_COMMANDS_ARRAY['ARM']="Import-Module ${ARM_TTK_PSD1} ; \${config} = \$(Import-PowerShellDataFile -Path ${ARM_LINTER_RULES}) ; Test-AzTemplate @config -TemplatePath"
 ##if [ -z "${BASH_SEVERITY}" ]; then
  ## LINTER_COMMANDS_ARRAY['BASH']="shellcheck --color --external-sources"
