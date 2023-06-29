@@ -86,7 +86,6 @@ RUN apk add --no-cache \
     R R-dev R-doc \
     readline-dev \
     ruby ruby-dev ruby-bundler ruby-rdoc \
-    rustup \
     zlib zlib-dev
 
 ########################################
