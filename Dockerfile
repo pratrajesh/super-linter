@@ -82,8 +82,8 @@ RUN apk add --no-cache \
     py3-setuptools python3-dev  \
     py3-pyflakes \
     readline-dev \
-		R R-dev R-doc \
     ruby ruby-dev ruby-bundler ruby-rdoc \
+		R R-dev R-doc \
     zlib zlib-dev
 
 ########################################
@@ -327,7 +327,7 @@ COPY --from=base_image /bin/ /bin/
 COPY --from=base_image /node_modules/ /node_modules/
 ##COPY --from=base_image /home/r-library /home/r-library
 ##COPY --from=base_image /root/.tflint.d/ /root/.tflint.d/
-##COPY --from=python_builder /venvs/ /venvs/
+COPY --from=python_builder /venvs/ /venvs/
 
 RUN du -sh /usr/lib/*/
 
@@ -344,19 +344,19 @@ ENV PATH="${PATH}:/node_modules/.bin"
 ###############################
 # Add python packages to path #
 ###############################
-##ENV PATH="${PATH}:/venvs/ansible-lint/bin"
-##ENV PATH="${PATH}:/venvs/black/bin"
-##ENV PATH="${PATH}:/venvs/cfn-lint/bin"
-##ENV PATH="${PATH}:/venvs/cpplint/bin"
-##ENV PATH="${PATH}:/venvs/flake8/bin"
-##ENV PATH="${PATH}:/venvs/isort/bin"
-##ENV PATH="${PATH}:/venvs/mypy/bin"
-##ENV PATH="${PATH}:/venvs/pylint/bin"
-##ENV PATH="${PATH}:/venvs/snakefmt/bin"
-##ENV PATH="${PATH}:/venvs/snakemake/bin"
-##ENV PATH="${PATH}:/venvs/sqlfluff/bin"
-##ENV PATH="${PATH}:/venvs/yamllint/bin"
-##ENV PATH="${PATH}:/venvs/yq/bin"
+ENV PATH="${PATH}:/venvs/ansible-lint/bin"
+ENV PATH="${PATH}:/venvs/black/bin"
+ENV PATH="${PATH}:/venvs/cfn-lint/bin"
+ENV PATH="${PATH}:/venvs/cpplint/bin"
+ENV PATH="${PATH}:/venvs/flake8/bin"
+ENV PATH="${PATH}:/venvs/isort/bin"
+ENV PATH="${PATH}:/venvs/mypy/bin"
+ENV PATH="${PATH}:/venvs/pylint/bin"
+ENV PATH="${PATH}:/venvs/snakefmt/bin"
+ENV PATH="${PATH}:/venvs/snakemake/bin"
+ENV PATH="${PATH}:/venvs/sqlfluff/bin"
+ENV PATH="${PATH}:/venvs/yamllint/bin"
+ENV PATH="${PATH}:/venvs/yq/bin"
 
 #############################
 # Copy scripts to container #
