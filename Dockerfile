@@ -79,8 +79,6 @@ RUN apk add --no-cache \
     openssh-client \
     openssl-dev \
     perl perl-dev \
-    py3-setuptools python3-dev  \
-    py3-pyflakes \
     readline-dev \
     ruby ruby-dev ruby-bundler ruby-rdoc \
 		R R-dev R-doc \
