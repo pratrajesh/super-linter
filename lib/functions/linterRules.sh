@@ -191,11 +191,11 @@ GetStandardRules() {
   #########################################
   # Only env vars that are marked as true
   GET_ENV_ARRAY=()
-  if [[ ${LINTER} == "javascript" ]]; then
-    mapfile -t GET_ENV_ARRAY < <(yq .env "${JAVASCRIPT_STANDARD_LINTER_RULES}" | grep true)
-  elif [[ ${LINTER} == "typescript" ]]; then
-    mapfile -t GET_ENV_ARRAY < <(yq .env "${TYPESCRIPT_STANDARD_LINTER_RULES}" | grep true)
-  fi
+  ##if [[ ${LINTER} == "javascript" ]]; then
+  ##  mapfile -t GET_ENV_ARRAY < <(yq .env "${JAVASCRIPT_STANDARD_LINTER_RULES}" | grep true)
+  ##elif [[ ${LINTER} == "typescript" ]]; then
+  ##  mapfile -t GET_ENV_ARRAY < <(yq .env "${TYPESCRIPT_STANDARD_LINTER_RULES}" | grep true)
+  ##fi
 
   #######################
   # Load the error code #
