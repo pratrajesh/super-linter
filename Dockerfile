@@ -327,7 +327,20 @@ COPY --from=base_image /bin/ /bin/
 COPY --from=base_image /node_modules/ /node_modules/
 ##COPY --from=base_image /home/r-library /home/r-library
 ##COPY --from=base_image /root/.tflint.d/ /root/.tflint.d/
-COPY --from=python_builder /venvs/ /venvs/
+##COPY --from=python_builder /venvs/ /venvs/
+##COPY --from=python_builder /venvs/ansible-lint/ /venvs/ansible-lint/
+COPY --from=python_builder /venvs/black/ /venvs/black/
+COPY --from=python_builder /venvs/cfn-lint/ /venvs/cfn-lint/
+COPY --from=python_builder /venvs/cpplint/ /venvs/cpplint/
+COPY --from=python_builder /venvs/flake8/ /venvs/flake8/
+COPY --from=python_builder /venvs/isort/ /venvs/isort/
+COPY --from=python_builder /venvs/mypy/ /venvs/mypy/
+COPY --from=python_builder /venvs/pylint/ /venvs/pylint/
+COPY --from=python_builder /venvs/snakefmt/ /venvs/snakefmt/
+COPY --from=python_builder /venvs/snakemake/ /venvs/snakemake/
+COPY --from=python_builder /venvs/sqlfluff/ /venvs/sqlfluff/
+COPY --from=python_builder /venvs/yamllint/ /venvs/yamllint/
+COPY --from=python_builder /venvs/yq/ /venvs/yq/
 
 RUN du -sh /venvs/*/
 
