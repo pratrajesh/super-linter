@@ -52,7 +52,11 @@ ARG TARGETARCH
 ####################
 # Run APK installs #
 ####################
-
+RUN apk add --no-cache \
+    bash \
+    npm nodejs-current \
+		R R-dev R-doc \
+    ruby ruby-dev ruby-bundler ruby-rdoc
 
 ########################################
 # Copy dependencies files to container #
