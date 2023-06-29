@@ -329,7 +329,7 @@ COPY --from=base_image /node_modules/ /node_modules/
 ##COPY --from=base_image /root/.tflint.d/ /root/.tflint.d/
 ##COPY --from=python_builder /venvs/ /venvs/
 ##COPY --from=python_builder /venvs/ansible-lint/ /venvs/ansible-lint/
-COPY --from=python_builder /venvs/black/ /venvs/black/
+##COPY --from=python_builder /venvs/black/ /venvs/black/
 ##COPY --from=python_builder /venvs/cfn-lint/ /venvs/cfn-lint/
 ##COPY --from=python_builder /venvs/cpplint/ /venvs/cpplint/
 ##COPY --from=python_builder /venvs/flake8/ /venvs/flake8/
@@ -338,7 +338,7 @@ COPY --from=python_builder /venvs/black/ /venvs/black/
 ##COPY --from=python_builder /venvs/pylint/ /venvs/pylint/
 ##COPY --from=python_builder /venvs/snakefmt/ /venvs/snakefmt/
 ##COPY --from=python_builder /venvs/snakemake/ /venvs/snakemake/
-COPY --from=python_builder /venvs/sqlfluff/ /venvs/sqlfluff/
+##COPY --from=python_builder /venvs/sqlfluff/ /venvs/sqlfluff/
 COPY --from=python_builder /venvs/yamllint/ /venvs/yamllint/
 COPY --from=python_builder /venvs/yq/ /venvs/yq/
 
@@ -360,7 +360,7 @@ ENV PATH="${PATH}:/node_modules/.bin"
 # Add python packages to path #
 ###############################
 ##ENV PATH="${PATH}:/venvs/ansible-lint/bin"
-ENV PATH="${PATH}:/venvs/black/bin"
+##ENV PATH="${PATH}:/venvs/black/bin"
 ##ENV PATH="${PATH}:/venvs/cfn-lint/bin"
 ##ENV PATH="${PATH}:/venvs/cpplint/bin"
 ##ENV PATH="${PATH}:/venvs/flake8/bin"
@@ -369,7 +369,7 @@ ENV PATH="${PATH}:/venvs/black/bin"
 ##ENV PATH="${PATH}:/venvs/pylint/bin"
 ##ENV PATH="${PATH}:/venvs/snakefmt/bin"
 ##ENV PATH="${PATH}:/venvs/snakemake/bin"
-ENV PATH="${PATH}:/venvs/sqlfluff/bin"
+##ENV PATH="${PATH}:/venvs/sqlfluff/bin"
 ENV PATH="${PATH}:/venvs/yamllint/bin"
 ENV PATH="${PATH}:/venvs/yq/bin"
 
