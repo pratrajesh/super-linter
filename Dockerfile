@@ -52,32 +52,7 @@ ARG TARGETARCH
 ####################
 # Run APK installs #
 ####################
-RUN apk add --no-cache \
-    bash \
-    ca-certificates \
-    coreutils \
-    curl \
-    file \
-    g++ \
-    git git-lfs \
-    gnupg \
-    icu-libs \
-    jpeg-dev \
-    jq \
-    krb5-libs \
-    libc-dev libcurl libffi-dev libgcc \
-    libintl libssl1.1 libstdc++ \
-    libxml2-dev libxml2-utils \
-    linux-headers \
-    lttng-ust-dev \
-    make \
-    npm nodejs-current \
-    openjdk11-jre \
-    openssh-client \
-    openssl-dev \
-    perl perl-dev \
-		R R-dev R-doc \
-    ruby ruby-dev ruby-bundler ruby-rdoc
+
 
 ########################################
 # Copy dependencies files to container #
