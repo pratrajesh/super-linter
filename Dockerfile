@@ -330,7 +330,7 @@ COPY --from=base_image /node_modules/ /node_modules/
 ##COPY --from=python_builder /venvs/ /venvs/
 ##COPY --from=python_builder /venvs/ansible-lint/ /venvs/ansible-lint/
 COPY --from=python_builder /venvs/black/ /venvs/black/
-COPY --from=python_builder /venvs/cfn-lint/ /venvs/cfn-lint/
+##COPY --from=python_builder /venvs/cfn-lint/ /venvs/cfn-lint/
 COPY --from=python_builder /venvs/cpplint/ /venvs/cpplint/
 COPY --from=python_builder /venvs/flake8/ /venvs/flake8/
 COPY --from=python_builder /venvs/isort/ /venvs/isort/
@@ -359,9 +359,9 @@ ENV PATH="${PATH}:/node_modules/.bin"
 ###############################
 # Add python packages to path #
 ###############################
-ENV PATH="${PATH}:/venvs/ansible-lint/bin"
+##ENV PATH="${PATH}:/venvs/ansible-lint/bin"
 ENV PATH="${PATH}:/venvs/black/bin"
-ENV PATH="${PATH}:/venvs/cfn-lint/bin"
+##ENV PATH="${PATH}:/venvs/cfn-lint/bin"
 ENV PATH="${PATH}:/venvs/cpplint/bin"
 ENV PATH="${PATH}:/venvs/flake8/bin"
 ENV PATH="${PATH}:/venvs/isort/bin"
