@@ -344,7 +344,7 @@ ENV PATH="${PATH}:/node_modules/.bin"
 ###############################
 # Add python packages to path #
 ###############################
-$$ENV PATH="${PATH}:/venvs/ansible-lint/bin"
+##ENV PATH="${PATH}:/venvs/ansible-lint/bin"
 ##ENV PATH="${PATH}:/venvs/black/bin"
 ##ENV PATH="${PATH}:/venvs/cfn-lint/bin"
 ##ENV PATH="${PATH}:/venvs/cpplint/bin"
