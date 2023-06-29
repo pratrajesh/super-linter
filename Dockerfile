@@ -82,6 +82,8 @@ RUN apk add --no-cache \
     py3-setuptools python3-dev  \
     py3-pyflakes \
     readline-dev \
+    ruby ruby-dev ruby-bundler ruby-rdoc \
+		R R-dev R-doc \
     zlib zlib-dev
 
 ########################################
