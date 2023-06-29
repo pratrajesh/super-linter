@@ -998,7 +998,7 @@ LINTER_COMMANDS_ARRAY['XML']="xmllint"
 ##  LINTER_COMMANDS_ARRAY['YAML']="yamllint -c ${YAML_LINTER_RULES} -f parsable"
 ##else
 ##  LINTER_COMMANDS_ARRAY['YAML']="yamllint --strict -c ${YAML_LINTER_RULES} -f parsable"
-fi
+##fi
 
 debug "--- Linter commands ---"
 debug "-----------------------"
