@@ -75,7 +75,6 @@ RUN apk add --no-cache \
     musl-dev \
     net-snmp-dev \
     npm nodejs-current \
-    openjdk11-jre \
     openssh-client \
     openssl-dev \
     perl perl-dev \
