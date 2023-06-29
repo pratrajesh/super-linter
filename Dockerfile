@@ -421,9 +421,9 @@ RUN /install-dotnet.sh && rm -rf /install-dotnet.sh
 ##############################
 # Install rustfmt & clippy   #
 ##############################
-ENV CRYPTOGRAPHY_DONT_BUILD_RUST=1
-COPY scripts/install-rustfmt.sh /
-RUN /install-rustfmt.sh && rm -rf /install-rustfmt.sh
+##ENV CRYPTOGRAPHY_DONT_BUILD_RUST=1
+##COPY scripts/install-rustfmt.sh /
+##RUN /install-rustfmt.sh && rm -rf /install-rustfmt.sh
 
 #########################################
 # Install Powershell + PSScriptAnalyzer #
