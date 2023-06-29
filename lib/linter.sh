@@ -168,7 +168,7 @@ POWERSHELL_FILE_NAME=".powershell-psscriptanalyzer.psd1"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 ##R_FILE_NAME=".lintr"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-RUBY_FILE_NAME="${RUBY_CONFIG_FILE:-.ruby-lint.yml}"
+##RUBY_FILE_NAME="${RUBY_CONFIG_FILE:-.ruby-lint.yml}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 ##SCALAFMT_FILE_NAME="${SCALAFMT_CONFIG_FILE:-.scalafmt.conf}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
@@ -258,7 +258,7 @@ LANGUAGE_ARRAY=('ANSIBLE' 'ARM' 'BASH' 'BASH_EXEC'
   'KOTLIN' 'KOTLIN_ANDROID' 'LATEX' 'MARKDOWN'
   'NATURAL_LANGUAGE' 'OPENAPI' 'PERL'  
   'POWERSHELL' 'PROTOBUF'
-  'RAKU' 'RUBY' 'RUST_2015'
+  'RAKU' 'RUST_2015'
   'RUST_2018' 'RUST_2021' 'RUST_CLIPPY'
   'STATES'
   'TSX'
@@ -266,7 +266,7 @@ LANGUAGE_ARRAY=('ANSIBLE' 'ARM' 'BASH' 'BASH_EXEC'
 
 ## removed 'SHELL_SHFMT' 'SCALAFMT' 'GITLEAKS' 'GHERKIN' 'JSCPD' 'SQL' 'SQLFLUFF' 'TEKTON' 'SNAKEMAKE_LINT' 'SNAKEMAKE_SNAKEFMT' 'PYTHON_FLAKE8' 'PYTHON_ISORT' 'PYTHON_MYPY' 'PYTHON_PYLINT'   from LANGUAGE_ARRAY
 
-## removed 'PYTHON_BLACK'   from LANGUAGE_ARRAY
+## removed 'PYTHON_BLACK'  'RUBY'  from LANGUAGE_ARRAY
 
 
 ## removed 'PHP_PHPSTAN' 'PHP_BUILTIN' 'PHP_PHPCS' 'PHP_PSALM' 'DART' 'R' 'LUA' 'TERRAFORM_TERRASCAN' 'TERRAGRUNT' 'CLANG_FORMAT' 'TERRAFORM_TFLINT' 'KUBERNETES_KUBECONFORM' 'DOCKERFILE_HADOLINT' 'TERRAFORM_FMT' 'EDITORCONFIG' from LANGUAGE_ARRAY
@@ -325,7 +325,7 @@ LINTER_NAMES_ARRAY['POWERSHELL']="pwsh"
 ##LINTER_NAMES_ARRAY['PYTHON_MYPY']="mypy"
 ##LINTER_NAMES_ARRAY['R']="R"
 LINTER_NAMES_ARRAY['RAKU']="raku"
-LINTER_NAMES_ARRAY['RUBY']="rubocop"
+##LINTER_NAMES_ARRAY['RUBY']="rubocop"
 ##LINTER_NAMES_ARRAY['RUST_2015']="rustfmt"
 ##LINTER_NAMES_ARRAY['RUST_2018']="rustfmt"
 ##LINTER_NAMES_ARRAY['RUST_2021']="rustfmt"
@@ -974,7 +974,7 @@ LINTER_COMMANDS_ARRAY['POWERSHELL']="Invoke-ScriptAnalyzer -EnableExit -Settings
 ##LINTER_COMMANDS_ARRAY['PYTHON_MYPY']="mypy --config-file ${PYTHON_MYPY_LINTER_RULES} --install-types --non-interactive"
 ##LINTER_COMMANDS_ARRAY['R']="lintr"
 LINTER_COMMANDS_ARRAY['RAKU']="raku"
-LINTER_COMMANDS_ARRAY['RUBY']="rubocop -c ${RUBY_LINTER_RULES} --force-exclusion --ignore-unrecognized-cops"
+##LINTER_COMMANDS_ARRAY['RUBY']="rubocop -c ${RUBY_LINTER_RULES} --force-exclusion --ignore-unrecognized-cops"
 ##LINTER_COMMANDS_ARRAY['RUST_2015']="rustfmt --check --edition 2015"
 ##LINTER_COMMANDS_ARRAY['RUST_2018']="rustfmt --check --edition 2018"
 ##LINTER_COMMANDS_ARRAY['RUST_2021']="rustfmt --check --edition 2021"
