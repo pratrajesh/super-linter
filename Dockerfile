@@ -58,7 +58,6 @@ RUN apk add --no-cache \
     coreutils \
     curl \
     file \
-    gcc \
     g++ \
     git git-lfs \
     gnupg \
@@ -80,7 +79,6 @@ RUN apk add --no-cache \
     openssl-dev \
     perl perl-dev \
     readline-dev \
-    ruby ruby-dev ruby-bundler ruby-rdoc \
 		R R-dev R-doc \
     zlib zlib-dev
 
