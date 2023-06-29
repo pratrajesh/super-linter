@@ -342,7 +342,7 @@ COPY --from=base_image /node_modules/ /node_modules/
 ##COPY --from=python_builder /venvs/yamllint/ /venvs/yamllint/
 ##COPY --from=python_builder /venvs/yq/ /venvs/yq/
 
-RUN du -sh /venvs/*/
+##RUN du -sh /venvs/*/
 
 RUN du -sh /usr/lib/*/
 
