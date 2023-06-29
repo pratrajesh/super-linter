@@ -73,7 +73,7 @@ RUN npm install && chown -R "$(id -u)":"$(id -g)" node_modules && bundle install
 ##############################
 # Installs Perl dependencies #
 ##############################
-RUN curl --retry 5 --retry-delay 5 -sL https://cpanmin.us/ | perl - -nq --no-wget Perl::Critic Perl::Critic::Community
+##RUN curl --retry 5 --retry-delay 5 -sL https://cpanmin.us/ | perl - -nq --no-wget Perl::Critic Perl::Critic::Community
 
 ######################
 # Install shellcheck #
