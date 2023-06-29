@@ -80,6 +80,7 @@ RUN apk add --no-cache \
     perl perl-dev \
     readline-dev \
 		R R-dev R-doc \
+    ruby ruby-dev ruby-bundler ruby-rdoc \
     zlib zlib-dev
 
 ########################################
