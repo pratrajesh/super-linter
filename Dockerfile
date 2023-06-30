@@ -318,7 +318,7 @@ COPY --from=base_image /usr/lib/ /usr/lib/
 RUN rm -rf /usr/lib/cmake
 RUN rm -rf /usr/lib/R
 RUN rm -rf /usr/lib/gcc
-RUN rm -rf /usr/lib/perl5
+##RUN rm -rf /usr/lib/perl5
 RUN rm -rf /usr/lib/ruby
 
 ##COPY $(find /usr/lib/ -maxdepth 1 -type f) /usr/lib/
