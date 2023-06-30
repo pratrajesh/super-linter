@@ -344,6 +344,13 @@ COPY --from=base_image /usr/lib/tdbcpostgres1.1.3/ /usr/lib/tdbcpostgres1.1.3/
 COPY --from=base_image /usr/lib/thread2.8.7/ /usr/lib/thread2.8.7/
 COPY --from=base_image /usr/lib/tk8.6/ /usr/lib/tk8.6/
 
+COPY --from=base_image /usr/lib/libuv.so.1 /usr/lib/libuv.so.1
+COPY --from=base_image /usr/lib/libcares.so.2 /usr/lib/libcares.so.2
+COPY --from=base_image /usr/lib/libicui18n.so.72 /usr/lib/libicui18n.so.72
+COPY --from=base_image /usr/lib/libicuuc.so.72 /usr/lib/libicuuc.so.72
+COPY --from=base_image /usr/lib/libstdc++.so.6 /usr/lib/libstdc++.so.6
+COPY --from=base_image /usr/lib/libgcc_s.so.1 /usr/lib/libgcc_s.so.1
+
 ##COPY $(find /usr/lib/ -maxdepth 1 -type f) /usr/lib/
 ##RUN find /usr/lib -maxdepth 1 -type f -exec cp {} /usr/lib \;
 RUN find /usr/lib -maxdepth 1 -type f
