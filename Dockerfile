@@ -312,37 +312,7 @@ COPY --from=base_image /usr/local/bin/ /usr/local/bin/
 COPY --from=base_image /usr/local/lib/ /usr/local/lib/
 COPY --from=base_image /usr/local/share/ /usr/local/share/
 COPY --from=base_image /usr/local/include/ /usr/local/include/
-##COPY --from=base_image /usr/lib/ /usr/lib/
-COPY --from=base_image /usr/lib/R/ /usr/lib/R/
-COPY --from=base_image /usr/lib/bash/ /usr/lib/bash/
-COPY --from=base_image /usr/lib/bfd-plugins/ /usr/lib/bfd-plugins/
-COPY --from=base_image /usr/lib/cmake/ /usr/lib/cmake/
-COPY --from=base_image /usr/lib/engines-1.1/ /usr/lib/engines-1.1/
-COPY --from=base_image /usr/lib/engines-3/ /usr/lib/engines-3/
-COPY --from=base_image /usr/lib/gcc/ /usr/lib/gcc/
-COPY --from=base_image /usr/lib/girepository-1.0/ /usr/lib/girepository-1.0/
-COPY --from=base_image /usr/lib/icu/ /usr/lib/icu/
-COPY --from=base_image /usr/lib/itcl4.2.2/ /usr/lib/itcl4.2.2/
-COPY --from=base_image /usr/lib/jvm/ /usr/lib/jvm/
-COPY --from=base_image /usr/lib/krb5/ /usr/lib/krb5/
-COPY --from=base_image /usr/lib/modules-load.d/ /usr/lib/modules-load.d/
-COPY --from=base_image /usr/lib/node_modules/ /usr/lib/node_modules/
-COPY --from=base_image /usr/lib/ossl-modules/ /usr/lib/ossl-modules/
-COPY --from=base_image /usr/lib/perl5/ /usr/lib/perl5/
-COPY --from=base_image /usr/lib/pkcs11/ /usr/lib/pkcs11/
-COPY --from=base_image /usr/lib/pkgconfig/ /usr/lib/pkgconfig/
-COPY --from=base_image /usr/lib/python3.10/ /usr/lib/python3.10/
-COPY --from=base_image /usr/lib/ruby/ /usr/lib/ruby/
-COPY --from=base_image /usr/lib/sasl2/ /usr/lib/sasl2/
-COPY --from=base_image /usr/lib/ssh/ /usr/lib/ssh/
-COPY --from=base_image /usr/lib/tcl8.6/ /usr/lib/tcl8.6/
-COPY --from=base_image /usr/lib/tcl8/ /usr/lib/tcl8/
-COPY --from=base_image /usr/lib/tdbc1.1.3/ /usr/lib/tdbc1.1.3/
-COPY --from=base_image /usr/lib/tdbcmysql1.1.3/ /usr/lib/tdbcmysql1.1.3/
-COPY --from=base_image /usr/lib/tdbcodbc1.1.3/ /usr/lib/tdbcodbc1.1.3/
-COPY --from=base_image /usr/lib/tdbcpostgres1.1.3/ /usr/lib/tdbcpostgres1.1.3/
-COPY --from=base_image /usr/lib/thread2.8.7/ /usr/lib/thread2.8.7/
-COPY --from=base_image /usr/lib/tk8.6/ /usr/lib/tk8.6/
+COPY --from=base_image /usr/lib/ /usr/lib/
 
 
 COPY --from=base_image /usr/share/ /usr/share/
@@ -368,6 +338,8 @@ COPY --from=base_image /node_modules/ /node_modules/
 COPY --from=python_builder /venvs/yq/ /venvs/yq/
 
 ##RUN du -sh /venvs/*/
+
+RUN ls -R /usr/lib
 
 RUN du -sh /usr/lib/*/
 
