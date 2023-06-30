@@ -50,5 +50,5 @@ jobs:
           secrets: |
             GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
           tags: |
-            prathira/super-linter:63
+            prathira/super-linter:64
           target: "${{ matrix.images.target }}"
