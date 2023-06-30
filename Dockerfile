@@ -315,7 +315,7 @@ COPY --from=base_image /usr/local/include/ /usr/local/include/
 COPY --from=base_image /usr/lib/ /usr/lib/
 
 
-RUN rm -rf /usr/lib/jvm
+RUN rm -rf /usr/lib/cmake
 
 ##COPY $(find /usr/lib/ -maxdepth 1 -type f) /usr/lib/
 ##RUN find /usr/lib -maxdepth 1 -type f -exec cp {} /usr/lib \;
