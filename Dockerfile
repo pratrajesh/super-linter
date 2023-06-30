@@ -371,6 +371,8 @@ COPY --from=python_builder /venvs/yq/ /venvs/yq/
 
 RUN du -sh /usr/lib/*/
 
+RUN du -sh /usr/lib/jvm/*/
+
 RUN du -sh /usr/bin/*
 
 ##################################
