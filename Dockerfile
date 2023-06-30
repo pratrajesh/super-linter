@@ -316,6 +316,7 @@ COPY --from=base_image /usr/lib/ /usr/lib/
 
 
 RUN rm -rf /usr/lib/cmake
+RUN rm -rf /usr/lib/R
 
 ##COPY $(find /usr/lib/ -maxdepth 1 -type f) /usr/lib/
 ##RUN find /usr/lib -maxdepth 1 -type f -exec cp {} /usr/lib \;
