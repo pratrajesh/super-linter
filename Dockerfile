@@ -345,7 +345,8 @@ COPY --from=base_image /usr/lib/thread2.8.7/ /usr/lib/thread2.8.7/
 COPY --from=base_image /usr/lib/tk8.6/ /usr/lib/tk8.6/
 
 ##COPY $(find /usr/lib/ -maxdepth 1 -type f) /usr/lib/
-RUN find /usr/lib -maxdepth 1 -type f -exec cp {} /usr/lib \;
+##RUN find /usr/lib -maxdepth 1 -type f -exec cp {} /usr/lib \;
+RUN find /usr/lib -maxdepth 1 -type f
 
 COPY --from=base_image /usr/share/ /usr/share/
 COPY --from=base_image /usr/include/ /usr/include/
