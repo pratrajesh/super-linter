@@ -344,7 +344,7 @@ COPY --from=base_image /usr/lib/tdbcpostgres1.1.3/ /usr/lib/tdbcpostgres1.1.3/
 COPY --from=base_image /usr/lib/thread2.8.7/ /usr/lib/thread2.8.7/
 COPY --from=base_image /usr/lib/tk8.6/ /usr/lib/tk8.6/
 
-COPY $(find /usr/lib -maxdepth 1 -type f) /usr/lib
+COPY $(find /usr/lib/ -maxdepth 1 -type f) /usr/lib/
 
 
 COPY --from=base_image /usr/share/ /usr/share/
