@@ -57,8 +57,7 @@ RUN apk add --no-cache \
     curl \
     jq \
     npm nodejs-current \
-    make \
-    ruby ruby-dev ruby-bundler ruby-rdoc
+    make
   
 ########################################
 # Copy dependencies files to container #
