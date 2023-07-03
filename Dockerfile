@@ -62,6 +62,7 @@ RUN apk add --no-cache \
     icu-libs \
     jpeg-dev \
     jq \
+    g++ \
     krb5-libs \
     libc-dev libcurl libffi-dev libgcc \
     libintl libssl1.1 libstdc++ \
