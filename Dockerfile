@@ -61,7 +61,6 @@ RUN apk add --no-cache \
     jpeg-dev \
     jq \
     g++ \
-    libc-dev libcurl libffi-dev libgcc \
     npm nodejs-current \
     lttng-ust-dev \
     make \
