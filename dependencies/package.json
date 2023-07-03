@@ -1,7 +1,6 @@
 {
   "name": "super-linter",
   "dependencies": {
-    "@coffeelint/cli": "^5.2.11",
     "@stoplight/spectral": "^6.5.0",
     "ini": "^4.1.0",
     "node-fetch": "^3.3.1",
