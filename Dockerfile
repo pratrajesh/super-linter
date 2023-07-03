@@ -64,7 +64,6 @@ RUN apk add --no-cache \
     libc-dev libcurl libffi-dev libgcc \
     libintl libssl1.1 libstdc++ \
     libxml2-dev libxml2-utils \
-    linux-headers \
     npm nodejs-current \
     lttng-ust-dev \
     make \
