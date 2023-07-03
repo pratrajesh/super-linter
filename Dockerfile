@@ -102,6 +102,10 @@ COPY --from=base_image /bin/ /bin/
 COPY --from=base_image /node_modules/ /node_modules/
 COPY --from=python_builder /venvs/yq/ /venvs/yq/
 
+RUN ls -R /usr/local/lib
+
+RUN du -sh /usr/local/lib/*/
+
 ########################################
 # Add node packages to path and dotnet #
 ########################################
