@@ -75,9 +75,8 @@ RUN apk add --no-cache \
     openssh-client \
     openssl-dev \
     perl perl-dev \
-		R R-dev R-doc \
-    ruby ruby-dev ruby-bundler ruby-rdoc
-
+		R R-dev R-doc 
+  
 ########################################
 # Copy dependencies files to container #
 ########################################
