@@ -56,8 +56,7 @@ RUN apk add --no-cache \
     bash \
     curl \
     jq \
-    npm nodejs-current \
-    make
+    npm nodejs-current
   
 ########################################
 # Copy dependencies files to container #
