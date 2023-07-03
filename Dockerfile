@@ -72,8 +72,6 @@ RUN apk add --no-cache \
     lttng-ust-dev \
     make \
     npm nodejs-current \
-    openssh-client \
-    openssl-dev \
     ruby ruby-dev ruby-bundler ruby-rdoc
   
 ########################################
