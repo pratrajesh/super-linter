@@ -58,7 +58,6 @@ RUN apk add --no-cache \
     coreutils \
     curl \
     file \
-    gnupg \
     icu-libs \
     jpeg-dev \
     jq \
@@ -68,6 +67,8 @@ RUN apk add --no-cache \
     libxml2-dev libxml2-utils \
     linux-headers \
     npm nodejs-current \
+    lttng-ust-dev \
+    make \
     ruby ruby-dev ruby-bundler ruby-rdoc
   
 ########################################
