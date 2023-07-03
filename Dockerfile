@@ -74,7 +74,6 @@ RUN apk add --no-cache \
     npm nodejs-current \
     openssh-client \
     openssl-dev \
-    perl perl-dev \
     ruby ruby-dev ruby-bundler ruby-rdoc
   
 ########################################
