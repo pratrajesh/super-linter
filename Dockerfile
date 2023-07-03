@@ -58,8 +58,6 @@ RUN apk add --no-cache \
     coreutils \
     curl \
     file \
-    g++ \
-    git git-lfs \
     gnupg \
     icu-libs \
     jpeg-dev \
