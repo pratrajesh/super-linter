@@ -55,7 +55,6 @@ ARG TARGETARCH
 RUN apk add --no-cache \
     bash \
     ca-certificates \
-    coreutils \
     curl \
     file \
     icu-libs \
