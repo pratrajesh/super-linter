@@ -172,4 +172,78 @@ GetLinterRules() {
 }
 ################################################################################
 #### Function GetStandardRules #################################################
+GetStandardRules() {
+  ################
+  # Pull In Vars #
+  ################
+  LINTER="${1}" # Type: javascript | typescript
 
+  #########################################################################
+  # Need to get the ENV vars from the linter rules to run in command line #
+  #########################################################################
+  # Copy orig IFS to var
+  ORIG_IFS="${IFS}"
+  # Set the IFS to newline
+  IFS=$'\n'
+
+  #########################################
+  # Get list of all environment variables #
+  #########################################
+  # Only env vars that are marked as true
+  GET_ENV_ARRAY=()
+  if [[ ${LINTER} == "javascript" ]]; then
+    mapfile -t GET_ENV_ARRAY < <(yq .env "${JAVASCRIPT_STANDARD_LINTER_RULES}" | grep true)
+  elif [[ ${LINTER} == "typescript" ]]; then
+    mapfile -t GET_ENV_ARRAY < <(yq .env "${TYPESCRIPT_STANDARD_LINTER_RULES}" | grep true)
+  fi
+
+  #######################
+  # Load the error code #
+  #######################
+  ERROR_CODE=$?
+
+  ##############################
+  # Check the shell for errors #
+  ##############################
+  if [ ${ERROR_CODE} -ne 0 ]; then
+    # ERROR
+    error "Failed to gain list of ENV vars to load!"
+    fatal "[${GET_ENV_ARRAY[*]}]"
+  fi
+
+  ##########################
+  # Set IFS back to normal #
+  ##########################
+  # Set IFS back to Orig
+  IFS="${ORIG_IFS}"
+
+  ######################
+  # Set the env string #
+  ######################
+  ENV_STRING=''
+
+  #############################
+  # Pull out the envs to load #
+  #############################
+  for ENV in "${GET_ENV_ARRAY[@]}"; do
+    #############################
+    # remove spaces from return #
+    #############################
+    ENV="$(echo -e "${ENV}" | tr -d '[:space:]')"
+    ################################
+    # Get the env to add to string #
+    ################################
+    ENV="$(echo "${ENV}" | cut -d'"' -f2)"
+    debug "ENV:[${ENV}]"
+    ENV_STRING+="--env ${ENV} "
+  done
+
+  #########################################
+  # Remove trailing and ending whitespace #
+  #########################################
+  if [[ ${LINTER} == "javascript" ]]; then
+    JAVASCRIPT_STANDARD_LINTER_RULES="$(echo -e "${ENV_STRING}" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')"
+  elif [[ ${LINTER} == "typescript" ]]; then
+    TYPESCRIPT_STANDARD_LINTER_RULES="$(echo -e "${ENV_STRING}" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')"
+  fi
+}
