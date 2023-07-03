@@ -72,7 +72,6 @@ RUN apk add --no-cache \
     lttng-ust-dev \
     make \
     npm nodejs-current \
-    openjdk11-jre \
     openssh-client \
     openssl-dev \
     perl perl-dev \
