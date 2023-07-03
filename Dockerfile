@@ -100,7 +100,7 @@ COPY --from=base_image /usr/share/ /usr/share/
 COPY --from=base_image /lib/ /lib/
 COPY --from=base_image /bin/ /bin/
 COPY --from=base_image /node_modules/ /node_modules/
-COPY --from=python_builder /venvs/yq/ /venvs/yq/
+##COPY --from=python_builder /venvs/yq/ /venvs/yq/
 
 ########################################
 # Add node packages to path and dotnet #
@@ -110,7 +110,7 @@ ENV PATH="${PATH}:/node_modules/.bin"
 ###############################
 # Add python packages to path #
 ###############################
-ENV PATH="${PATH}:/venvs/yq/bin"
+##ENV PATH="${PATH}:/venvs/yq/bin"
 
 #############################
 # Copy scripts to container #
