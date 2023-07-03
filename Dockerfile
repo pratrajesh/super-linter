@@ -30,19 +30,10 @@ COPY dependencies/* /
 ###################################################################
 RUN npm install && chown -R "$(id -u)":"$(id -g)" node_modules
 
-# Source: https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub
-# Store the key here because the above host is sometimes down, and breaks our builds
-##COPY dependencies/sgerrand.rsa.pub /etc/apk/keys/sgerrand.rsa.pub
-
 ################################
 # Install Bash-Exec #
 ################################
 COPY --chmod=555 scripts/bash-exec.sh /usr/bin/bash-exec
-
-#################################################
-# Install Raku and additional Edge dependencies #
-#################################################
-##RUN apk add --no-cache rakudo zef
 
 ################################################################################
 # Grab small clean image to build python packages ##############################
@@ -91,10 +82,6 @@ ENV BUILD_REVISION=$BUILD_REVISION
 ENV BUILD_VERSION=$BUILD_VERSION
 ENV IMAGE="slim"
 
-# Source: https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub
-# Store the key here because the above host is sometimes down, and breaks our builds
-##COPY dependencies/sgerrand.rsa.pub /etc/apk/keys/sgerrand.rsa.pub
-
 ###############
 # Install Git #
 ###############
@@ -123,7 +110,7 @@ ENV PATH="${PATH}:/node_modules/.bin"
 ###############################
 # Add python packages to path #
 ###############################
-##ENV PATH="${PATH}:/venvs/yq/bin"
+ENV PATH="${PATH}:/venvs/yq/bin"
 
 #############################
 # Copy scripts to container #
