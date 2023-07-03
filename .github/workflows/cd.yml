@@ -22,9 +22,6 @@ jobs:
           - environment: Production-SLIM
             prefix: slim-
             target: slim
-          - environment: Production
-            prefix: ""
-            image-id: standard
     timeout-minutes: 60
     steps:
       - name: Checkout Code
@@ -38,14 +35,6 @@ jobs:
         with:
           username: prathira
           password: dckr_pat_YC40q1ZsK_cLlxe5AXgSQSzKNK4
-
-      - name: Start ${{ matrix.images.environment }} Deployment
-        uses: bobheadxi/deployments@v1.4.0
-        id: deployment
-        with:
-          step: start
-          token: ${{ secrets.GITHUB_TOKEN }}
-          env: ${{ matrix.images.environment }}
 
       - name: Build and Push Image
         uses: docker/build-push-action@v3
@@ -61,5 +50,5 @@ jobs:
           secrets: |
             GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
           tags: |
-            prathira/super-linter:1
+            prathira/super-linter:211
           target: "${{ matrix.images.target }}"
