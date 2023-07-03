@@ -89,7 +89,7 @@ export VERSION_FILE                                       # Workaround SC2034
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 ##ANSIBLE_FILE_NAME="${ANSIBLE_CONFIG_FILE:-.ansible-lint.yml}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-ARM_FILE_NAME=".arm-ttk.psd1"
+##ARM_FILE_NAME=".arm-ttk.psd1"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 ##CLOJURE_FILE_NAME=".clj-kondo/config.edn"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
@@ -112,23 +112,23 @@ GITHUB_ACTIONS_COMMAND_ARGS="${GITHUB_ACTIONS_COMMAND_ARGS:-null}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 ##GO_FILE_NAME=".golangci.yml"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-GROOVY_FILE_NAME=".groovylintrc.json"
+##GROOVY_FILE_NAME=".groovylintrc.json"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 ##HTML_FILE_NAME=".htmlhintrc"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-JAVA_FILE_NAME="${JAVA_FILE_NAME:-sun_checks.xml}"
+##JAVA_FILE_NAME="${JAVA_FILE_NAME:-sun_checks.xml}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-JAVASCRIPT_ES_FILE_NAME="${JAVASCRIPT_ES_CONFIG_FILE:-.eslintrc.yml}"
+##JAVASCRIPT_ES_FILE_NAME="${JAVASCRIPT_ES_CONFIG_FILE:-.eslintrc.yml}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-JAVASCRIPT_DEFAULT_STYLE="${JAVASCRIPT_DEFAULT_STYLE:-standard}"
-JAVASCRIPT_STYLE_NAME='' # Variable for the style
-JAVASCRIPT_STYLE=''      # Variable for the style
+##JAVASCRIPT_DEFAULT_STYLE="${JAVASCRIPT_DEFAULT_STYLE:-standard}"
+##JAVASCRIPT_STYLE_NAME='' # Variable for the style
+##JAVASCRIPT_STYLE=''      # Variable for the style
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-JAVASCRIPT_STANDARD_FILE_NAME="${JAVASCRIPT_ES_CONFIG_FILE:-.eslintrc.yml}"
+##JAVASCRIPT_STANDARD_FILE_NAME="${JAVASCRIPT_ES_CONFIG_FILE:-.eslintrc.yml}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 ##JSCPD_FILE_NAME="${JSCPD_CONFIG_FILE:-.jscpd.json}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-JSX_FILE_NAME="${JAVASCRIPT_ES_CONFIG_FILE:-.eslintrc.yml}"
+##JSX_FILE_NAME="${JAVASCRIPT_ES_CONFIG_FILE:-.eslintrc.yml}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 ##KUBERNETES_KUBECONFORM_OPTIONS="${KUBERNETES_KUBECONFORM_OPTIONS:-null}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
@@ -136,13 +136,13 @@ JSX_FILE_NAME="${JAVASCRIPT_ES_CONFIG_FILE:-.eslintrc.yml}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 ##LUA_FILE_NAME=".luacheckrc"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-LOCAL_UPDATES="${LOCAL_UPDATES:-false}"
+##LOCAL_UPDATES="${LOCAL_UPDATES:-false}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-MARKDOWN_FILE_NAME="${MARKDOWN_CONFIG_FILE:-.markdown-lint.yml}"
+##MARKDOWN_FILE_NAME="${MARKDOWN_CONFIG_FILE:-.markdown-lint.yml}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 OPENAPI_FILE_NAME=".openapirc.yml"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-PERL_PERLCRITIC_OPTIONS="${PERL_PERLCRITIC_OPTIONS:-null}"
+##PERL_PERLCRITIC_OPTIONS="${PERL_PERLCRITIC_OPTIONS:-null}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 ##PHP_BUILTIN_FILE_NAME="${PHP_CONFIG_FILE:-php.ini}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
@@ -152,7 +152,7 @@ PERL_PERLCRITIC_OPTIONS="${PERL_PERLCRITIC_OPTIONS:-null}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 ##PHP_PSALM_FILE_NAME="psalm.xml"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-POWERSHELL_FILE_NAME=".powershell-psscriptanalyzer.psd1"
+##POWERSHELL_FILE_NAME=".powershell-psscriptanalyzer.psd1"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 ##PROTOBUF_FILE_NAME="${PROTOBUF_CONFIG_FILE:-.protolintrc.yml}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
@@ -193,21 +193,21 @@ SSH_INSECURE_NO_VERIFY_GITHUB_KEY="${SSH_INSECURE_NO_VERIFY_GITHUB_KEY:-false}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 ##NATURAL_LANGUAGE_FILE_NAME="${NATURAL_LANGUAGE_CONFIG_FILE:-.textlintrc}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-TSX_FILE_NAME="${TYPESCRIPT_ES_CONFIG_FILE:-.eslintrc.yml}"
+##TSX_FILE_NAME="${TYPESCRIPT_ES_CONFIG_FILE:-.eslintrc.yml}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-TYPESCRIPT_DEFAULT_STYLE="${TYPESCRIPT_DEFAULT_STYLE:-ts-standard}"
-TYPESCRIPT_STYLE_NAME='' # Variable for the style
-TYPESCRIPT_STYLE=''      # Variable for the style
+##TYPESCRIPT_DEFAULT_STYLE="${TYPESCRIPT_DEFAULT_STYLE:-ts-standard}"
+##TYPESCRIPT_STYLE_NAME='' # Variable for the style
+##TYPESCRIPT_STYLE=''      # Variable for the style
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-TYPESCRIPT_ES_FILE_NAME="${TYPESCRIPT_ES_CONFIG_FILE:-.eslintrc.yml}"
+##TYPESCRIPT_ES_FILE_NAME="${TYPESCRIPT_ES_CONFIG_FILE:-.eslintrc.yml}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-TYPESCRIPT_STANDARD_FILE_NAME="${TYPESCRIPT_ES_CONFIG_FILE:-.eslintrc.yml}"
+##TYPESCRIPT_STANDARD_FILE_NAME="${TYPESCRIPT_ES_CONFIG_FILE:-.eslintrc.yml}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-TYPESCRIPT_STANDARD_TSCONFIG_FILE_NAME="${TYPESCRIPT_STANDARD_TSCONFIG_FILE:-tsconfig.json}"
+##TYPESCRIPT_STANDARD_TSCONFIG_FILE_NAME="${TYPESCRIPT_STANDARD_TSCONFIG_FILE:-tsconfig.json}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-USE_FIND_ALGORITHM="${USE_FIND_ALGORITHM:-false}"
+##USE_FIND_ALGORITHM="${USE_FIND_ALGORITHM:-false}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-YAML_FILE_NAME="${YAML_CONFIG_FILE:-.yaml-lint.yml}"
+##YAML_FILE_NAME="${YAML_CONFIG_FILE:-.yaml-lint.yml}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 YAML_ERROR_ON_WARNING="${YAML_ERROR_ON_WARNING:-false}"
 
@@ -215,9 +215,9 @@ YAML_ERROR_ON_WARNING="${YAML_ERROR_ON_WARNING:-false}"
 # Parse if we are using JS standard or prettier #
 #################################################
 # Remove spaces
-JAVASCRIPT_DEFAULT_STYLE=$(echo "${JAVASCRIPT_DEFAULT_STYLE}" | tr -d ' ')
+##JAVASCRIPT_DEFAULT_STYLE=$(echo "${JAVASCRIPT_DEFAULT_STYLE}" | tr -d ' ')
 # lowercase
-JAVASCRIPT_DEFAULT_STYLE=$(echo "${JAVASCRIPT_DEFAULT_STYLE}" | tr '[:upper:]' '[:lower:]')
+##JAVASCRIPT_DEFAULT_STYLE=$(echo "${JAVASCRIPT_DEFAULT_STYLE}" | tr '[:upper:]' '[:lower:]')
 # Check and set
 ##if [ "${JAVASCRIPT_DEFAULT_STYLE}" == "prettier" ]; then
   # Set to prettier
@@ -225,17 +225,17 @@ JAVASCRIPT_DEFAULT_STYLE=$(echo "${JAVASCRIPT_DEFAULT_STYLE}" | tr '[:upper:]' '
   ##JAVASCRIPT_STYLE='prettier'
 ##else
   # Default to standard
-  JAVASCRIPT_STYLE_NAME='JAVASCRIPT_STANDARD'
-  JAVASCRIPT_STYLE='standard'
+ ## JAVASCRIPT_STYLE_NAME='JAVASCRIPT_STANDARD'
+ ## JAVASCRIPT_STYLE='standard'
 ##fi
 
 #################################################
 # Parse if we are using JS standard or prettier #
 #################################################
 # Remove spaces
-TYPESCRIPT_DEFAULT_STYLE=$(echo "${TYPESCRIPT_DEFAULT_STYLE}" | tr -d ' ')
+##TYPESCRIPT_DEFAULT_STYLE=$(echo "${TYPESCRIPT_DEFAULT_STYLE}" | tr -d ' ')
 # lowercase
-TYPESCRIPT_DEFAULT_STYLE=$(echo "${TYPESCRIPT_DEFAULT_STYLE}" | tr '[:upper:]' '[:lower:]')
+##TYPESCRIPT_DEFAULT_STYLE=$(echo "${TYPESCRIPT_DEFAULT_STYLE}" | tr '[:upper:]' '[:lower:]')
 # Check and set
 ##if [ "${TYPESCRIPT_DEFAULT_STYLE}" == "prettier" ]; then
   # Set to prettier
@@ -243,8 +243,8 @@ TYPESCRIPT_DEFAULT_STYLE=$(echo "${TYPESCRIPT_DEFAULT_STYLE}" | tr '[:upper:]' '
   ##TYPESCRIPT_STYLE='prettier'
 ##else
   # Default to standard
-  TYPESCRIPT_STYLE_NAME='TYPESCRIPT_STANDARD'
-  TYPESCRIPT_STYLE='ts-standard'
+ ## TYPESCRIPT_STYLE_NAME='TYPESCRIPT_STANDARD'
+ ## TYPESCRIPT_STYLE='ts-standard'
 ##fi
 
 ##################
@@ -263,15 +263,15 @@ LANGUAGE_ARRAY=('OPENAPI')
 ##############################
 declare -A LINTER_NAMES_ARRAY
 ##LINTER_NAMES_ARRAY['ANSIBLE']="ansible-lint"
-LINTER_NAMES_ARRAY['ARM']="arm-ttk"
+##LINTER_NAMES_ARRAY['ARM']="arm-ttk"
 ##LINTER_NAMES_ARRAY['BASH']="shellcheck"
-LINTER_NAMES_ARRAY['BASH_EXEC']="bash-exec"
+##LINTER_NAMES_ARRAY['BASH_EXEC']="bash-exec"
 ##LINTER_NAMES_ARRAY['CLANG_FORMAT']="clang-format"
 ##LINTER_NAMES_ARRAY['CLOJURE']="clj-kondo"
 ##LINTER_NAMES_ARRAY['CLOUDFORMATION']="cfn-lint"
 ##LINTER_NAMES_ARRAY['COFFEESCRIPT']="coffeelint"
 ##LINTER_NAMES_ARRAY['CPP']="cpplint"
-LINTER_NAMES_ARRAY['CSHARP']="dotnet-format"
+##LINTER_NAMES_ARRAY['CSHARP']="dotnet-format"
 ##LINTER_NAMES_ARRAY['CSS']="stylelint"
 ##LINTER_NAMES_ARRAY['DART']="dart"
 ##LINTER_NAMES_ARRAY['DOCKERFILE_HADOLINT']="hadolint"
@@ -285,12 +285,12 @@ LINTER_NAMES_ARRAY['CSHARP']="dotnet-format"
 ##LINTER_NAMES_ARRAY['GROOVY']="npm-groovy-lint"
 ##LINTER_NAMES_ARRAY['HTML']="htmlhint"
 ##LINTER_NAMES_ARRAY['JAVA']="checkstyle"
-LINTER_NAMES_ARRAY['JAVASCRIPT_ES']="eslint"
-LINTER_NAMES_ARRAY["${JAVASCRIPT_STYLE_NAME}"]="${JAVASCRIPT_STYLE}"
+##LINTER_NAMES_ARRAY['JAVASCRIPT_ES']="eslint"
+##LINTER_NAMES_ARRAY["${JAVASCRIPT_STYLE_NAME}"]="${JAVASCRIPT_STYLE}"
 ##LINTER_NAMES_ARRAY['JSCPD']="jscpd"
-LINTER_NAMES_ARRAY['JSON']="eslint"
-LINTER_NAMES_ARRAY['JSONC']="eslint"
-LINTER_NAMES_ARRAY['JSX']="eslint"
+##LINTER_NAMES_ARRAY['JSON']="eslint"
+##LINTER_NAMES_ARRAY['JSONC']="eslint"
+##LINTER_NAMES_ARRAY['JSX']="eslint"
 ##LINTER_NAMES_ARRAY['KOTLIN']="ktlint"
 ##LINTER_NAMES_ARRAY['KOTLIN_ANDROID']="ktlint"
 ##LINTER_NAMES_ARRAY['KUBERNETES_KUBECONFORM']="kubeconform"
@@ -299,12 +299,12 @@ LINTER_NAMES_ARRAY['JSX']="eslint"
 ##LINTER_NAMES_ARRAY['MARKDOWN']="markdownlint"
 ##LINTER_NAMES_ARRAY['NATURAL_LANGUAGE']="textlint"
 LINTER_NAMES_ARRAY['OPENAPI']="spectral"
-LINTER_NAMES_ARRAY['PERL']="perl"
+##LINTER_NAMES_ARRAY['PERL']="perl"
 ##LINTER_NAMES_ARRAY['PHP_BUILTIN']="php"
 ##LINTER_NAMES_ARRAY['PHP_PHPCS']="phpcs"
 ##LINTER_NAMES_ARRAY['PHP_PHPSTAN']="phpstan"
 ##LINTER_NAMES_ARRAY['PHP_PSALM']="psalm"
-LINTER_NAMES_ARRAY['POWERSHELL']="pwsh"
+##LINTER_NAMES_ARRAY['POWERSHELL']="pwsh"
 ##LINTER_NAMES_ARRAY['PROTOBUF']="protolint"
 ##LINTER_NAMES_ARRAY['PYTHON_BLACK']="black"
 ##LINTER_NAMES_ARRAY['PYTHON_PYLINT']="pylint"
@@ -312,12 +312,12 @@ LINTER_NAMES_ARRAY['POWERSHELL']="pwsh"
 ##LINTER_NAMES_ARRAY['PYTHON_ISORT']="isort"
 ##LINTER_NAMES_ARRAY['PYTHON_MYPY']="mypy"
 ##LINTER_NAMES_ARRAY['R']="R"
-LINTER_NAMES_ARRAY['RAKU']="raku"
+##LINTER_NAMES_ARRAY['RAKU']="raku"
 ##LINTER_NAMES_ARRAY['RUBY']="rubocop"
 ##LINTER_NAMES_ARRAY['RUST_2015']="rustfmt"
 ##LINTER_NAMES_ARRAY['RUST_2018']="rustfmt"
 ##LINTER_NAMES_ARRAY['RUST_2021']="rustfmt"
-LINTER_NAMES_ARRAY['RUST_CLIPPY']="clippy"
+##LINTER_NAMES_ARRAY['RUST_CLIPPY']="clippy"
 ##LINTER_NAMES_ARRAY['SCALAFMT']="scalafmt"
 ##LINTER_NAMES_ARRAY['SHELL_SHFMT']="shfmt"
 ##LINTER_NAMES_ARRAY['SNAKEMAKE_LINT']="snakemake"
@@ -330,9 +330,9 @@ LINTER_NAMES_ARRAY['RUST_CLIPPY']="clippy"
 ##LINTER_NAMES_ARRAY['TERRAFORM_TFLINT']="tflint"
 ##LINTER_NAMES_ARRAY['TERRAFORM_TERRASCAN']="terrascan"
 ##LINTER_NAMES_ARRAY['TERRAGRUNT']="terragrunt"
-LINTER_NAMES_ARRAY['TSX']="eslint"
-LINTER_NAMES_ARRAY['TYPESCRIPT_ES']="eslint"
-LINTER_NAMES_ARRAY["${TYPESCRIPT_STYLE_NAME}"]="${TYPESCRIPT_STYLE}"
+##LINTER_NAMES_ARRAY['TSX']="eslint"
+##LINTER_NAMES_ARRAY['TYPESCRIPT_ES']="eslint"
+##LINTER_NAMES_ARRAY["${TYPESCRIPT_STYLE_NAME}"]="${TYPESCRIPT_STYLE}"
 ##LINTER_NAMES_ARRAY['XML']="xmllint"
 ##LINTER_NAMES_ARRAY['YAML']="yamllint"
 
@@ -885,19 +885,19 @@ GetStandardRules "typescript"
 ##########################
 declare -A LINTER_COMMANDS_ARRAY
 ##LINTER_COMMANDS_ARRAY['ANSIBLE']="ansible-lint -c ${ANSIBLE_LINTER_RULES}"
-LINTER_COMMANDS_ARRAY['ARM']="Import-Module ${ARM_TTK_PSD1} ; \${config} = \$(Import-PowerShellDataFile -Path ${ARM_LINTER_RULES}) ; Test-AzTemplate @config -TemplatePath"
+##LINTER_COMMANDS_ARRAY['ARM']="Import-Module ${ARM_TTK_PSD1} ; \${config} = \$(Import-PowerShellDataFile -Path ${ARM_LINTER_RULES}) ; Test-AzTemplate @config -TemplatePath"
 ##if [ -z "${BASH_SEVERITY}" ]; then
  ## LINTER_COMMANDS_ARRAY['BASH']="shellcheck --color --external-sources"
 ##else
  ## LINTER_COMMANDS_ARRAY['BASH']="shellcheck --color --external-sources --severity=${BASH_SEVERITY}"
 ##fi
-LINTER_COMMANDS_ARRAY['BASH_EXEC']="bash-exec"
+##LINTER_COMMANDS_ARRAY['BASH_EXEC']="bash-exec"
 ##LINTER_COMMANDS_ARRAY['CLANG_FORMAT']="clang-format --Werror --dry-run"
 ##LINTER_COMMANDS_ARRAY['CLOJURE']="clj-kondo --config ${CLOJURE_LINTER_RULES} --lint"
 ##LINTER_COMMANDS_ARRAY['CLOUDFORMATION']="cfn-lint --config-file ${CLOUDFORMATION_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['COFFEESCRIPT']="coffeelint -f ${COFFEESCRIPT_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['CPP']="cpplint"
-LINTER_COMMANDS_ARRAY['CSHARP']="dotnet-format --folder --check --exclude / --include"
+##LINTER_COMMANDS_ARRAY['CSHARP']="dotnet-format --folder --check --exclude / --include"
 ##LINTER_COMMANDS_ARRAY['CSS']="stylelint --config ${CSS_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['DART']="dartanalyzer --fatal-infos --fatal-warnings --options ${DART_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['DOCKERFILE_HADOLINT']="hadolint -c ${DOCKERFILE_HADOLINT_LINTER_RULES}"
@@ -915,13 +915,13 @@ LINTER_COMMANDS_ARRAY['CSHARP']="dotnet-format --folder --check --exclude / --in
 ##LINTER_COMMANDS_ARRAY['GROOVY']="npm-groovy-lint -c ${GROOVY_LINTER_RULES} --failon warning --no-insight"
 ##LINTER_COMMANDS_ARRAY['HTML']="htmlhint --config ${HTML_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['JAVA']="java -jar /usr/bin/checkstyle -c ${JAVA_LINTER_RULES}"
-LINTER_COMMANDS_ARRAY['JAVASCRIPT_ES']="eslint --no-eslintrc -c ${JAVASCRIPT_ES_LINTER_RULES}"
-LINTER_COMMANDS_ARRAY['JAVASCRIPT_STANDARD']="standard ${JAVASCRIPT_STANDARD_LINTER_RULES}"
+##LINTER_COMMANDS_ARRAY['JAVASCRIPT_ES']="eslint --no-eslintrc -c ${JAVASCRIPT_ES_LINTER_RULES}"
+##LINTER_COMMANDS_ARRAY['JAVASCRIPT_STANDARD']="standard ${JAVASCRIPT_STANDARD_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['JAVASCRIPT_PRETTIER']="prettier --check"
 ##LINTER_COMMANDS_ARRAY['JSCPD']="jscpd --config ${JSCPD_LINTER_RULES}"
-LINTER_COMMANDS_ARRAY['JSON']="eslint --no-eslintrc -c ${JAVASCRIPT_ES_LINTER_RULES} --ext .json"
-LINTER_COMMANDS_ARRAY['JSONC']="eslint --no-eslintrc -c ${JAVASCRIPT_ES_LINTER_RULES} --ext .json5,.jsonc"
-LINTER_COMMANDS_ARRAY['JSX']="eslint --no-eslintrc -c ${JSX_LINTER_RULES}"
+##LINTER_COMMANDS_ARRAY['JSON']="eslint --no-eslintrc -c ${JAVASCRIPT_ES_LINTER_RULES} --ext .json"
+##LINTER_COMMANDS_ARRAY['JSONC']="eslint --no-eslintrc -c ${JAVASCRIPT_ES_LINTER_RULES} --ext .json5,.jsonc"
+##LINTER_COMMANDS_ARRAY['JSX']="eslint --no-eslintrc -c ${JSX_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['KOTLIN']="ktlint"
 ##LINTER_COMMANDS_ARRAY['KOTLIN_ANDROID']="ktlint --android"
 ##if [ "${KUBERNETES_KUBECONFORM_OPTIONS}" == "null" ] || [ -z "${KUBERNETES_KUBECONFORM_OPTIONS}" ]; then
@@ -932,28 +932,28 @@ LINTER_COMMANDS_ARRAY['JSX']="eslint --no-eslintrc -c ${JSX_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['LATEX']="chktex -q -l ${LATEX_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['LUA']="luacheck --config ${LUA_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['MARKDOWN']="markdownlint -c ${MARKDOWN_LINTER_RULES}"
-if [ -n "${MARKDOWN_CUSTOM_RULE_GLOBS}" ]; then
-  IFS="," read -r -a MARKDOWN_CUSTOM_RULE_GLOBS_ARRAY <<<"${MARKDOWN_CUSTOM_RULE_GLOBS}"
-  for glob in "${MARKDOWN_CUSTOM_RULE_GLOBS_ARRAY[@]}"; do
-    if [ -z "${LINTER_RULES_PATH}" ]; then
-      LINTER_COMMANDS_ARRAY['MARKDOWN']="${LINTER_COMMANDS_ARRAY['MARKDOWN']} -r ${GITHUB_WORKSPACE}/${glob}"
-    else
-      LINTER_COMMANDS_ARRAY['MARKDOWN']="${LINTER_COMMANDS_ARRAY['MARKDOWN']} -r ${GITHUB_WORKSPACE}/${LINTER_RULES_PATH}/${glob}"
-    fi
-  done
-fi
+##if [ -n "${MARKDOWN_CUSTOM_RULE_GLOBS}" ]; then
+ ## IFS="," read -r -a MARKDOWN_CUSTOM_RULE_GLOBS_ARRAY <<<"${MARKDOWN_CUSTOM_RULE_GLOBS}"
+  ##for glob in "${MARKDOWN_CUSTOM_RULE_GLOBS_ARRAY[@]}"; do
+   ## if [ -z "${LINTER_RULES_PATH}" ]; then
+     ## LINTER_COMMANDS_ARRAY['MARKDOWN']="${LINTER_COMMANDS_ARRAY['MARKDOWN']} -r ${GITHUB_WORKSPACE}/${glob}"
+    ##else
+     ## LINTER_COMMANDS_ARRAY['MARKDOWN']="${LINTER_COMMANDS_ARRAY['MARKDOWN']} -r ${GITHUB_WORKSPACE}/${LINTER_RULES_PATH}/${glob}"
+    ##fi
+  ##done
+##fi
 ##LINTER_COMMANDS_ARRAY['NATURAL_LANGUAGE']="textlint -c ${NATURAL_LANGUAGE_LINTER_RULES}"
 LINTER_COMMANDS_ARRAY['OPENAPI']="spectral lint -r ${OPENAPI_LINTER_RULES} -D"
-if [ "${PERL_PERLCRITIC_OPTIONS}" == "null" ] || [ -z "${PERL_PERLCRITIC_OPTIONS}" ]; then
-  LINTER_COMMANDS_ARRAY['PERL']="perlcritic"
-else
-  LINTER_COMMANDS_ARRAY['PERL']="perlcritic ${PERL_PERLCRITIC_OPTIONS}"
-fi
+##if [ "${PERL_PERLCRITIC_OPTIONS}" == "null" ] || [ -z "${PERL_PERLCRITIC_OPTIONS}" ]; then
+ ## LINTER_COMMANDS_ARRAY['PERL']="perlcritic"
+##else
+ ## LINTER_COMMANDS_ARRAY['PERL']="perlcritic ${PERL_PERLCRITIC_OPTIONS}"
+##fi
 ##LINTER_COMMANDS_ARRAY['PHP_BUILTIN']="php -l -c ${PHP_BUILTIN_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['PHP_PHPCS']="phpcs --standard=${PHP_PHPCS_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['PHP_PHPSTAN']="phpstan analyse --no-progress --no-ansi --memory-limit 1G -c ${PHP_PHPSTAN_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['PHP_PSALM']="psalm --config=${PHP_PSALM_LINTER_RULES}"
-LINTER_COMMANDS_ARRAY['POWERSHELL']="Invoke-ScriptAnalyzer -EnableExit -Settings ${POWERSHELL_LINTER_RULES} -Path"
+##LINTER_COMMANDS_ARRAY['POWERSHELL']="Invoke-ScriptAnalyzer -EnableExit -Settings ${POWERSHELL_LINTER_RULES} -Path"
 ##LINTER_COMMANDS_ARRAY['PROTOBUF']="protolint lint --config_path ${PROTOBUF_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['PYTHON_BLACK']="black --config ${PYTHON_BLACK_LINTER_RULES} --diff --check"
 ##LINTER_COMMANDS_ARRAY['PYTHON_PYLINT']="pylint --rcfile ${PYTHON_PYLINT_LINTER_RULES}"
@@ -961,12 +961,12 @@ LINTER_COMMANDS_ARRAY['POWERSHELL']="Invoke-ScriptAnalyzer -EnableExit -Settings
 ##LINTER_COMMANDS_ARRAY['PYTHON_ISORT']="isort --check --diff --sp ${PYTHON_ISORT_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['PYTHON_MYPY']="mypy --config-file ${PYTHON_MYPY_LINTER_RULES} --install-types --non-interactive"
 ##LINTER_COMMANDS_ARRAY['R']="lintr"
-LINTER_COMMANDS_ARRAY['RAKU']="raku"
+##LINTER_COMMANDS_ARRAY['RAKU']="raku"
 ##LINTER_COMMANDS_ARRAY['RUBY']="rubocop -c ${RUBY_LINTER_RULES} --force-exclusion --ignore-unrecognized-cops"
 ##LINTER_COMMANDS_ARRAY['RUST_2015']="rustfmt --check --edition 2015"
 ##LINTER_COMMANDS_ARRAY['RUST_2018']="rustfmt --check --edition 2018"
 ##LINTER_COMMANDS_ARRAY['RUST_2021']="rustfmt --check --edition 2021"
-LINTER_COMMANDS_ARRAY['RUST_CLIPPY']="clippy"
+##LINTER_COMMANDS_ARRAY['RUST_CLIPPY']="clippy"
 ##LINTER_COMMANDS_ARRAY['SCALAFMT']="scalafmt --config ${SCALAFMT_LINTER_RULES} --test"
 ##LINTER_COMMANDS_ARRAY['SHELL_SHFMT']="shfmt -d"
 ##LINTER_COMMANDS_ARRAY['SNAKEMAKE_LINT']="snakemake --lint -s"
@@ -979,9 +979,9 @@ LINTER_COMMANDS_ARRAY['RUST_CLIPPY']="clippy"
 ##LINTER_COMMANDS_ARRAY['TERRAFORM_TFLINT']="tflint -c ${TERRAFORM_TFLINT_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['TERRAFORM_TERRASCAN']="terrascan scan -i terraform -t all -c ${TERRAFORM_TERRASCAN_LINTER_RULES} -f"
 ##LINTER_COMMANDS_ARRAY['TERRAGRUNT']="terragrunt hclfmt --terragrunt-check --terragrunt-log-level error --terragrunt-hclfmt-file"
-LINTER_COMMANDS_ARRAY['TSX']="eslint --no-eslintrc -c ${TSX_LINTER_RULES}"
-LINTER_COMMANDS_ARRAY['TYPESCRIPT_ES']="eslint --no-eslintrc -c ${TYPESCRIPT_ES_LINTER_RULES}"
-LINTER_COMMANDS_ARRAY['TYPESCRIPT_STANDARD']="ts-standard --parser @typescript-eslint/parser --plugin @typescript-eslint/eslint-plugin --project ${TYPESCRIPT_STANDARD_TSCONFIG_LINTER_RULES} ${TYPESCRIPT_STANDARD_LINTER_RULES}"
+##LINTER_COMMANDS_ARRAY['TSX']="eslint --no-eslintrc -c ${TSX_LINTER_RULES}"
+##LINTER_COMMANDS_ARRAY['TYPESCRIPT_ES']="eslint --no-eslintrc -c ${TYPESCRIPT_ES_LINTER_RULES}"
+##LINTER_COMMANDS_ARRAY['TYPESCRIPT_STANDARD']="ts-standard --parser @typescript-eslint/parser --plugin @typescript-eslint/eslint-plugin --project ${TYPESCRIPT_STANDARD_TSCONFIG_LINTER_RULES} ${TYPESCRIPT_STANDARD_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['TYPESCRIPT_PRETTIER']="prettier --check"
 ##LINTER_COMMANDS_ARRAY['XML']="xmllint"
 ##if [ "${YAML_ERROR_ON_WARNING}" == 'false' ]; then
