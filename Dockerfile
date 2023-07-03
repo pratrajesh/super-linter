@@ -305,7 +305,7 @@ RUN rm -rf /usr/lib/ruby
 ##RUN find /usr/lib -maxdepth 1 -type f
 
 COPY --from=base_image /usr/share/ /usr/share/
-COPY --from=base_image /usr/include/ /usr/include/
+##COPY --from=base_image /usr/include/ /usr/include/
 COPY --from=base_image /lib/ /lib/
 COPY --from=base_image /bin/ /bin/
 COPY --from=base_image /node_modules/ /node_modules/
