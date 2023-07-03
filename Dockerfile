@@ -58,7 +58,6 @@ RUN apk add --no-cache \
     curl \
     file \
     icu-libs \
-    jpeg-dev \
     jq \
     g++ \
     npm nodejs-current \
