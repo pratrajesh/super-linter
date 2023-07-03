@@ -889,8 +889,8 @@ for LANGUAGE in "${LANGUAGE_ARRAY_FOR_LINTER_RULES[@]}"; do
 done
 
 # Load rules for a couple of special cases
-GetStandardRules "javascript"
-GetStandardRules "typescript"
+##GetStandardRules "javascript"
+##GetStandardRules "typescript"
 
 ##########################
 # Define linter commands #
