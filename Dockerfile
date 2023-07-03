@@ -138,7 +138,7 @@ COPY TEMPLATES /action/lib/.automation
 ################
 # Pull in libs #
 ################
-COPY --from=base_image /usr/libexec/ /usr/libexec/
+##COPY --from=base_image /usr/libexec/ /usr/libexec/
 
 ################################################
 # Run to build version file and validate image #
