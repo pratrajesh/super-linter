@@ -67,8 +67,6 @@ RUN apk add --no-cache \
     libintl libssl1.1 libstdc++ \
     libxml2-dev libxml2-utils \
     linux-headers \
-    lttng-ust-dev \
-    make \
     npm nodejs-current \
     ruby ruby-dev ruby-bundler ruby-rdoc
   
