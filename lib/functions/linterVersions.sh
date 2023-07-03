@@ -97,7 +97,7 @@ BuildLinterVersions() {
         GET_VERSION_CMD="$("${LINTER}" version 2>&1)"
       else
         # Standard version command
-        GET_VERSION_CMD="$("${LINTER}" --version 2>&1)"
+        ##GET_VERSION_CMD="$("${LINTER}" --version 2>&1)"
       fi
 
       #######################
