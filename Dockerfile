@@ -70,7 +70,7 @@ COPY dependencies/* /
 # The chown fixes broken uid/gid in ast-types-flow dependency     #
 # (see https://github.com/github/super-linter/issues/3901)        #
 ###################################################################
-RUN npm install && chown -R "$(id -u)":"$(id -g)" node_modules && bundle install
+RUN npm install && chown -R "$(id -u)":"$(id -g)" node_modules
 
 ##############################
 # Installs Perl dependencies #
