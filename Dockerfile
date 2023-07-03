@@ -4,27 +4,6 @@
 ###########################################
 ###########################################
 
-#########################################
-# Get dependency images as build stages #
-#########################################
-##FROM tenable/terrascan:1.18.1 as terrascan
-##FROM alpine/terragrunt:1.5.1 as terragrunt
-##FROM assignuser/chktex-alpine:v0.1.1 as chktex
-##FROM dotenvlinter/dotenv-linter:3.3.0 as dotenv-linter
-##FROM ghcr.io/awkbar-devops/clang-format:v1.0.2 as clang-format
-##FROM ghcr.io/terraform-linters/tflint-bundle:v0.46.1.1 as tflint
-##FROM ghcr.io/yannh/kubeconform:v0.6.2 as kubeconfrm
-##FROM golangci/golangci-lint:v1.53.3 as golangci-lint
-##FROM hadolint/hadolint:latest-alpine as dockerfile-lint
-##FROM hashicorp/terraform:1.5.1 as terraform
-##FROM koalaman/shellcheck:v0.9.0 as shellcheck
-##FROM mstruebing/editorconfig-checker:2.7.0 as editorconfig-checker
-##FROM mvdan/shfmt:v3.7.0 as shfmt
-##FROM rhysd/actionlint:1.6.25 as actionlint
-##FROM scalameta/scalafmt:v3.7.3 as scalafmt
-##FROM zricethezav/gitleaks:v8.17.0 as gitleaks
-##FROM yoheimuta/protolint:0.44.0 as protolint
-
 ##################
 # Get base image #
 ##################
@@ -38,16 +17,16 @@ FROM python:3.11.4-alpine3.17 as base_image
 # Dart Linter
 ## stable dart sdk: https://dart.dev/get-dart#release-channels
 ##ARG DART_VERSION='2.8.4'
-ARG GOOGLE_JAVA_FORMAT_VERSION='1.15.0'
+##ARG GOOGLE_JAVA_FORMAT_VERSION='1.15.0'
 ## install alpine-pkg-glibc (glibc compatibility layer package for Alpine Linux)
-ARG GLIBC_VERSION='2.34-r0'
+##ARG GLIBC_VERSION='2.34-r0'
 ##ARG KTLINT_VERSION='0.47.1'
 # PowerShell & PSScriptAnalyzer linter
-ARG PSSA_VERSION='1.21.0'
-ARG PWSH_DIRECTORY='/usr/lib/microsoft/powershell'
-ARG PWSH_VERSION='v7.3.1'
+##ARG PSSA_VERSION='1.21.0'
+##ARG PWSH_DIRECTORY='/usr/lib/microsoft/powershell'
+##ARG PWSH_VERSION='v7.3.1'
 # https://docs.docker.com/engine/reference/builder/#automatic-platform-args-in-the-global-scope
-ARG TARGETARCH
+##ARG TARGETARCH
 
 ####################
 # Run APK installs #
@@ -233,9 +212,9 @@ ARG BUILD_DATE
 ARG BUILD_REVISION
 ARG BUILD_VERSION
 ## install alpine-pkg-glibc (glibc compatibility layer package for Alpine Linux)
-ARG GLIBC_VERSION='2.34-r0'
+##ARG GLIBC_VERSION='2.34-r0'
 # https://docs.docker.com/engine/reference/builder/#automatic-platform-args-in-the-global-scope
-ARG TARGETARCH
+##ARG TARGETARCH
 
 #########################################
 # Label the instance and set maintainer #
