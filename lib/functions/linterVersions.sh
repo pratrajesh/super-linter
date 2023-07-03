@@ -95,7 +95,7 @@ BuildLinterVersions() {
         GET_VERSION_CMD="$("${LINTER}" -v 2>&1)"
       elif [[ ${LINTER} == "terrascan" ]]; then
         GET_VERSION_CMD="$("${LINTER}" version 2>&1)"
-      else
+      ##else
         # Standard version command
         ##GET_VERSION_CMD="$("${LINTER}" --version 2>&1)"
       fi
