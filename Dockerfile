@@ -7,23 +7,23 @@
 #########################################
 # Get dependency images as build stages #
 #########################################
-FROM tenable/terrascan:1.18.1 as terrascan
-FROM alpine/terragrunt:1.5.1 as terragrunt
-FROM assignuser/chktex-alpine:v0.1.1 as chktex
-FROM dotenvlinter/dotenv-linter:3.3.0 as dotenv-linter
-FROM ghcr.io/awkbar-devops/clang-format:v1.0.2 as clang-format
-FROM ghcr.io/terraform-linters/tflint-bundle:v0.46.1.1 as tflint
-FROM ghcr.io/yannh/kubeconform:v0.6.2 as kubeconfrm
-FROM golangci/golangci-lint:v1.53.3 as golangci-lint
-FROM hadolint/hadolint:latest-alpine as dockerfile-lint
-FROM hashicorp/terraform:1.5.1 as terraform
-FROM koalaman/shellcheck:v0.9.0 as shellcheck
-FROM mstruebing/editorconfig-checker:2.7.0 as editorconfig-checker
-FROM mvdan/shfmt:v3.7.0 as shfmt
-FROM rhysd/actionlint:1.6.25 as actionlint
-FROM scalameta/scalafmt:v3.7.3 as scalafmt
-FROM zricethezav/gitleaks:v8.17.0 as gitleaks
-FROM yoheimuta/protolint:0.44.0 as protolint
+##FROM tenable/terrascan:1.18.1 as terrascan
+##FROM alpine/terragrunt:1.5.1 as terragrunt
+##FROM assignuser/chktex-alpine:v0.1.1 as chktex
+##FROM dotenvlinter/dotenv-linter:3.3.0 as dotenv-linter
+##FROM ghcr.io/awkbar-devops/clang-format:v1.0.2 as clang-format
+##FROM ghcr.io/terraform-linters/tflint-bundle:v0.46.1.1 as tflint
+##FROM ghcr.io/yannh/kubeconform:v0.6.2 as kubeconfrm
+##FROM golangci/golangci-lint:v1.53.3 as golangci-lint
+##FROM hadolint/hadolint:latest-alpine as dockerfile-lint
+##FROM hashicorp/terraform:1.5.1 as terraform
+##FROM koalaman/shellcheck:v0.9.0 as shellcheck
+##FROM mstruebing/editorconfig-checker:2.7.0 as editorconfig-checker
+##FROM mvdan/shfmt:v3.7.0 as shfmt
+##FROM rhysd/actionlint:1.6.25 as actionlint
+##FROM scalameta/scalafmt:v3.7.3 as scalafmt
+##FROM zricethezav/gitleaks:v8.17.0 as gitleaks
+##FROM yoheimuta/protolint:0.44.0 as protolint
 
 ##################
 # Get base image #
@@ -33,15 +33,15 @@ FROM python:3.11.4-alpine3.17 as base_image
 ################################
 # Set ARG values used in Build #
 ################################
-ARG CHECKSTYLE_VERSION='10.3.4'
-ARG CLJ_KONDO_VERSION='2023.05.18'
+##ARG CHECKSTYLE_VERSION='10.3.4'
+##ARG CLJ_KONDO_VERSION='2023.05.18'
 # Dart Linter
 ## stable dart sdk: https://dart.dev/get-dart#release-channels
-ARG DART_VERSION='2.8.4'
+##ARG DART_VERSION='2.8.4'
 ARG GOOGLE_JAVA_FORMAT_VERSION='1.15.0'
 ## install alpine-pkg-glibc (glibc compatibility layer package for Alpine Linux)
 ARG GLIBC_VERSION='2.34-r0'
-ARG KTLINT_VERSION='0.47.1'
+##ARG KTLINT_VERSION='0.47.1'
 # PowerShell & PSScriptAnalyzer linter
 ARG PSSA_VERSION='1.21.0'
 ARG PWSH_DIRECTORY='/usr/lib/microsoft/powershell'
@@ -109,95 +109,95 @@ RUN curl --retry 5 --retry-delay 5 -sL https://cpanmin.us/ | perl - -nq --no-wge
 ######################
 # Install shellcheck #
 ######################
-COPY --from=shellcheck /bin/shellcheck /usr/bin/
+##COPY --from=shellcheck /bin/shellcheck /usr/bin/
 
 #####################
 # Install Go Linter #
 #####################
-COPY --from=golangci-lint /usr/bin/golangci-lint /usr/bin/
+##COPY --from=golangci-lint /usr/bin/golangci-lint /usr/bin/
 
 #####################
 # Install Terraform #
 #####################
-COPY --from=terraform /bin/terraform /usr/bin/
+##COPY --from=terraform /bin/terraform /usr/bin/
 
 ##################
 # Install TFLint #
 ##################
-COPY --from=tflint /usr/local/bin/tflint /usr/bin/
-COPY --from=tflint /root/.tflint.d /root/.tflint.d
+##COPY --from=tflint /usr/local/bin/tflint /usr/bin/
+##COPY --from=tflint /root/.tflint.d /root/.tflint.d
 
 #####################
 # Install Terrascan #
 #####################
-COPY --from=terrascan /go/bin/terrascan /usr/bin/
+##COPY --from=terrascan /go/bin/terrascan /usr/bin/
 
 ######################
 # Install Terragrunt #
 ######################
-COPY --from=terragrunt /usr/local/bin/terragrunt /usr/bin/
+##COPY --from=terragrunt /usr/local/bin/terragrunt /usr/bin/
 
 ######################
 # Install protolint #
 ######################
-COPY --from=protolint /usr/local/bin/protolint /usr/bin/
+##COPY --from=protolint /usr/local/bin/protolint /usr/bin/
 
 ################################
 # Install editorconfig-checker #
 ################################
-COPY --from=editorconfig-checker /usr/bin/ec /usr/bin/editorconfig-checker
+##COPY --from=editorconfig-checker /usr/bin/ec /usr/bin/editorconfig-checker
 
 ###############################
 # Install hadolint dockerfile #
 ###############################
-COPY --from=dockerfile-lint /bin/hadolint /usr/bin/hadolint
+##COPY --from=dockerfile-lint /bin/hadolint /usr/bin/hadolint
 
 ##################
 # Install chktex #
 ##################
-COPY --from=chktex /usr/bin/chktex /usr/bin/
+##COPY --from=chktex /usr/bin/chktex /usr/bin/
 
 #################
 # Install shfmt #
 #################
-COPY --from=shfmt /bin/shfmt /usr/bin/
+##COPY --from=shfmt /bin/shfmt /usr/bin/
 
 ########################
 # Install clang-format #
 ########################
-COPY --from=clang-format /usr/bin/clang-format /usr/bin/
+##COPY --from=clang-format /usr/bin/clang-format /usr/bin/
 
 ####################
 # Install GitLeaks #
 ####################
-COPY --from=gitleaks /usr/bin/gitleaks /usr/bin/
+##COPY --from=gitleaks /usr/bin/gitleaks /usr/bin/
 
 ####################
 # Install scalafmt #
 ####################
-COPY --from=scalafmt /bin/scalafmt /usr/bin/
+##COPY --from=scalafmt /bin/scalafmt /usr/bin/
 
 ######################
 # Install actionlint #
 ######################
-COPY --from=actionlint /usr/local/bin/actionlint /usr/bin/
+##COPY --from=actionlint /usr/local/bin/actionlint /usr/bin/
 
 ######################
 # Install kubeconform #
 ######################
-COPY --from=kubeconfrm /kubeconform /usr/bin/
+##COPY --from=kubeconfrm /kubeconform /usr/bin/
 
 #################
 # Install Lintr #
 #################
-COPY scripts/install-lintr.sh /
-RUN /install-lintr.sh && rm -rf /install-lintr.sh
+##COPY scripts/install-lintr.sh /
+##RUN /install-lintr.sh && rm -rf /install-lintr.sh
 
 #####################
 # Install clj-kondo #
 #####################
-COPY scripts/install-clj-kondo.sh /
-RUN /install-clj-kondo.sh && rm -rf /install-clj-kondo.sh
+##COPY scripts/install-clj-kondo.sh /
+##RUN /install-clj-kondo.sh && rm -rf /install-clj-kondo.sh
 
 # Source: https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub
 # Store the key here because the above host is sometimes down, and breaks our builds
@@ -206,14 +206,14 @@ COPY dependencies/sgerrand.rsa.pub /etc/apk/keys/sgerrand.rsa.pub
 ##################
 # Install ktlint #
 ##################
-COPY scripts/install-ktlint.sh /
-RUN --mount=type=secret,id=GITHUB_TOKEN /install-ktlint.sh && rm -rf /install-ktlint.sh
+##COPY scripts/install-ktlint.sh /
+##RUN --mount=type=secret,id=GITHUB_TOKEN /install-ktlint.sh && rm -rf /install-ktlint.sh
 
 ####################
 # Install dart-sdk #
 ####################
-COPY scripts/install-dart-sdk.sh /
-RUN --mount=type=secret,id=GITHUB_TOKEN /install-dart-sdk.sh && rm -rf /install-dart-sdk.sh
+##COPY scripts/install-dart-sdk.sh /
+##RUN --mount=type=secret,id=GITHUB_TOKEN /install-dart-sdk.sh && rm -rf /install-dart-sdk.sh
 
 ################################
 # Install Bash-Exec #
@@ -228,20 +228,20 @@ RUN apk add --no-cache rakudo zef
 ######################
 # Install CheckStyle #
 ######################
-COPY scripts/install-checkstyle.sh /
-RUN --mount=type=secret,id=GITHUB_TOKEN /install-checkstyle.sh && rm -rf /install-checkstyle.sh
+##COPY scripts/install-checkstyle.sh /
+##RUN --mount=type=secret,id=GITHUB_TOKEN /install-checkstyle.sh && rm -rf /install-checkstyle.sh
 
 ##############################
 # Install google-java-format #
 ##############################
-COPY scripts/install-google-java-format.sh /
-RUN --mount=type=secret,id=GITHUB_TOKEN /install-google-java-format.sh && rm -rf /install-google-java-format.sh
+##COPY scripts/install-google-java-format.sh /
+##RUN --mount=type=secret,id=GITHUB_TOKEN /install-google-java-format.sh && rm -rf /install-google-java-format.sh
 
 #################################
 # Install luacheck and luarocks #
 #################################
-COPY scripts/install-lua.sh /
-RUN --mount=type=secret,id=GITHUB_TOKEN /install-lua.sh && rm -rf /install-lua.sh
+##COPY scripts/install-lua.sh /
+##RUN --mount=type=secret,id=GITHUB_TOKEN /install-lua.sh && rm -rf /install-lua.sh
 
 ################################################################################
 # Grab small clean image to build python packages ##############################
@@ -306,13 +306,13 @@ RUN apk add --no-cache bash git git-lfs
 ##############################
 # Install Phive dependencies #
 ##############################
-COPY scripts/install-phive.sh /
-RUN --mount=type=secret,id=GITHUB_TOKEN /install-phive.sh && rm -rf /install-phive.sh
+##COPY scripts/install-phive.sh /
+##RUN --mount=type=secret,id=GITHUB_TOKEN /install-phive.sh && rm -rf /install-phive.sh
 
 ####################################################
 # Install Composer after all Libs have been copied #
 ####################################################
-RUN sh -c 'curl --retry 5 --retry-delay 5 --show-error -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer'
+##RUN sh -c 'curl --retry 5 --retry-delay 5 --show-error -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer'
 
 #################################
 # Copy the libraries into image #
@@ -328,14 +328,14 @@ COPY --from=base_image /usr/include/ /usr/include/
 COPY --from=base_image /lib/ /lib/
 COPY --from=base_image /bin/ /bin/
 COPY --from=base_image /node_modules/ /node_modules/
-COPY --from=base_image /home/r-library /home/r-library
-COPY --from=base_image /root/.tflint.d/ /root/.tflint.d/
+##COPY --from=base_image /home/r-library /home/r-library
+##COPY --from=base_image /root/.tflint.d/ /root/.tflint.d/
 COPY --from=python_builder /venvs/ /venvs/
 
 ##################################
 # Configure TFLint plugin folder #
 ##################################
-ENV TFLINT_PLUGIN_DIR="/root/.tflint.d/plugins"
+##ENV TFLINT_PLUGIN_DIR="/root/.tflint.d/plugins"
 
 ########################################
 # Add node packages to path and dotnet #
@@ -409,7 +409,7 @@ ENV PATH="${PATH}:/var/cache/dotnet/tools:/usr/share/dotnet"
 #########################
 # Install dotenv-linter #
 #########################
-COPY --from=dotenv-linter /dotenv-linter /usr/bin/
+##COPY --from=dotenv-linter /dotenv-linter /usr/bin/
 
 ###################################
 # Install DotNet and Dependencies #
