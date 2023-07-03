@@ -92,7 +92,7 @@ RUN apk add --no-cache bash git git-lfs
 #################################
 COPY --from=base_image /usr/bin/ /usr/bin/
 COPY --from=base_image /usr/local/bin/ /usr/local/bin/
-COPY --from=base_image /usr/local/lib/ /usr/local/lib/
+##COPY --from=base_image /usr/local/lib/ /usr/local/lib/
 COPY --from=base_image /usr/local/share/ /usr/local/share/
 COPY --from=base_image /usr/local/include/ /usr/local/include/
 COPY --from=base_image /usr/lib/ /usr/lib/
@@ -101,10 +101,6 @@ COPY --from=base_image /lib/ /lib/
 COPY --from=base_image /bin/ /bin/
 COPY --from=base_image /node_modules/ /node_modules/
 COPY --from=python_builder /venvs/yq/ /venvs/yq/
-
-RUN ls -R /usr/local/lib
-
-RUN du -sh /usr/local/lib/*/
 
 ########################################
 # Add node packages to path and dotnet #
