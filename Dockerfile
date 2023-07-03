@@ -55,7 +55,6 @@ ARG TARGETARCH
 RUN apk add --no-cache \
     bash \
     curl \
-    file \
     jq \
     g++ \
     npm nodejs-current \
