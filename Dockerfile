@@ -58,7 +58,6 @@ RUN apk add --no-cache \
     jq \
     g++ \
     npm nodejs-current \
-    make \
     ruby ruby-dev ruby-bundler ruby-rdoc
   
 ########################################
