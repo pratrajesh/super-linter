@@ -57,7 +57,6 @@ RUN apk add --no-cache \
     ca-certificates \
     curl \
     file \
-    icu-libs \
     jq \
     g++ \
     npm nodejs-current \
