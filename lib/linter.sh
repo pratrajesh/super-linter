@@ -120,11 +120,11 @@ JAVA_FILE_NAME="${JAVA_FILE_NAME:-sun_checks.xml}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 JAVASCRIPT_ES_FILE_NAME="${JAVASCRIPT_ES_CONFIG_FILE:-.eslintrc.yml}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-##JAVASCRIPT_DEFAULT_STYLE="${JAVASCRIPT_DEFAULT_STYLE:-standard}"
+JAVASCRIPT_DEFAULT_STYLE="${JAVASCRIPT_DEFAULT_STYLE:-standard}"
 JAVASCRIPT_STYLE_NAME='' # Variable for the style
 JAVASCRIPT_STYLE=''      # Variable for the style
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-##JAVASCRIPT_STANDARD_FILE_NAME="${JAVASCRIPT_ES_CONFIG_FILE:-.eslintrc.yml}"
+JAVASCRIPT_STANDARD_FILE_NAME="${JAVASCRIPT_ES_CONFIG_FILE:-.eslintrc.yml}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 ##JSCPD_FILE_NAME="${JSCPD_CONFIG_FILE:-.jscpd.json}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
@@ -195,7 +195,7 @@ SSH_INSECURE_NO_VERIFY_GITHUB_KEY="${SSH_INSECURE_NO_VERIFY_GITHUB_KEY:-false}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 TSX_FILE_NAME="${TYPESCRIPT_ES_CONFIG_FILE:-.eslintrc.yml}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-##TYPESCRIPT_DEFAULT_STYLE="${TYPESCRIPT_DEFAULT_STYLE:-ts-standard}"
+TYPESCRIPT_DEFAULT_STYLE="${TYPESCRIPT_DEFAULT_STYLE:-ts-standard}"
 TYPESCRIPT_STYLE_NAME='' # Variable for the style
 TYPESCRIPT_STYLE=''      # Variable for the style
 # shellcheck disable=SC2034  # Variable is referenced indirectly
@@ -203,7 +203,7 @@ TYPESCRIPT_ES_FILE_NAME="${TYPESCRIPT_ES_CONFIG_FILE:-.eslintrc.yml}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 TYPESCRIPT_STANDARD_FILE_NAME="${TYPESCRIPT_ES_CONFIG_FILE:-.eslintrc.yml}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-##TYPESCRIPT_STANDARD_TSCONFIG_FILE_NAME="${TYPESCRIPT_STANDARD_TSCONFIG_FILE:-tsconfig.json}"
+TYPESCRIPT_STANDARD_TSCONFIG_FILE_NAME="${TYPESCRIPT_STANDARD_TSCONFIG_FILE:-tsconfig.json}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 USE_FIND_ALGORITHM="${USE_FIND_ALGORITHM:-false}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
@@ -243,8 +243,8 @@ TYPESCRIPT_DEFAULT_STYLE=$(echo "${TYPESCRIPT_DEFAULT_STYLE}" | tr '[:upper:]' '
   ##TYPESCRIPT_STYLE='prettier'
 ##else
   # Default to standard
-  ##TYPESCRIPT_STYLE_NAME='TYPESCRIPT_STANDARD'
-  ##TYPESCRIPT_STYLE='ts-standard'
+  TYPESCRIPT_STYLE_NAME='TYPESCRIPT_STANDARD'
+  TYPESCRIPT_STYLE='ts-standard'
 ##fi
 
 ##################
@@ -344,7 +344,7 @@ LINTER_NAMES_ARRAY['RUST_CLIPPY']="clippy"
 ##LINTER_NAMES_ARRAY['TERRAGRUNT']="terragrunt"
 LINTER_NAMES_ARRAY['TSX']="eslint"
 LINTER_NAMES_ARRAY['TYPESCRIPT_ES']="eslint"
-##LINTER_NAMES_ARRAY["${TYPESCRIPT_STYLE_NAME}"]="${TYPESCRIPT_STYLE}"
+LINTER_NAMES_ARRAY["${TYPESCRIPT_STYLE_NAME}"]="${TYPESCRIPT_STYLE}"
 ##LINTER_NAMES_ARRAY['XML']="xmllint"
 ##LINTER_NAMES_ARRAY['YAML']="yamllint"
 
@@ -881,16 +881,16 @@ LinterRulesLocation
 ########################
 # Get the linter rules #
 ########################
-##LANGUAGE_ARRAY_FOR_LINTER_RULES=("${LANGUAGE_ARRAY[@]}" "TYPESCRIPT_STANDARD_TSCONFIG")
+LANGUAGE_ARRAY_FOR_LINTER_RULES=("${LANGUAGE_ARRAY[@]}" "TYPESCRIPT_STANDARD_TSCONFIG")
 
-##for LANGUAGE in "${LANGUAGE_ARRAY_FOR_LINTER_RULES[@]}"; do
-##  debug "Loading rules for ${LANGUAGE}..."
-##  eval "GetLinterRules ${LANGUAGE} ${DEFAULT_RULES_LOCATION}"
-##done
+for LANGUAGE in "${LANGUAGE_ARRAY_FOR_LINTER_RULES[@]}"; do
+  debug "Loading rules for ${LANGUAGE}..."
+  eval "GetLinterRules ${LANGUAGE} ${DEFAULT_RULES_LOCATION}"
+done
 
 # Load rules for a couple of special cases
-##GetStandardRules "javascript"
-##GetStandardRules "typescript"
+GetStandardRules "javascript"
+GetStandardRules "typescript"
 
 ##########################
 # Define linter commands #
@@ -928,7 +928,7 @@ LINTER_COMMANDS_ARRAY['CSHARP']="dotnet-format --folder --check --exclude / --in
 ##LINTER_COMMANDS_ARRAY['HTML']="htmlhint --config ${HTML_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['JAVA']="java -jar /usr/bin/checkstyle -c ${JAVA_LINTER_RULES}"
 LINTER_COMMANDS_ARRAY['JAVASCRIPT_ES']="eslint --no-eslintrc -c ${JAVASCRIPT_ES_LINTER_RULES}"
-##LINTER_COMMANDS_ARRAY['JAVASCRIPT_STANDARD']="standard ${JAVASCRIPT_STANDARD_LINTER_RULES}"
+LINTER_COMMANDS_ARRAY['JAVASCRIPT_STANDARD']="standard ${JAVASCRIPT_STANDARD_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['JAVASCRIPT_PRETTIER']="prettier --check"
 ##LINTER_COMMANDS_ARRAY['JSCPD']="jscpd --config ${JSCPD_LINTER_RULES}"
 LINTER_COMMANDS_ARRAY['JSON']="eslint --no-eslintrc -c ${JAVASCRIPT_ES_LINTER_RULES} --ext .json"
@@ -993,7 +993,7 @@ LINTER_COMMANDS_ARRAY['RUST_CLIPPY']="clippy"
 ##LINTER_COMMANDS_ARRAY['TERRAGRUNT']="terragrunt hclfmt --terragrunt-check --terragrunt-log-level error --terragrunt-hclfmt-file"
 LINTER_COMMANDS_ARRAY['TSX']="eslint --no-eslintrc -c ${TSX_LINTER_RULES}"
 LINTER_COMMANDS_ARRAY['TYPESCRIPT_ES']="eslint --no-eslintrc -c ${TYPESCRIPT_ES_LINTER_RULES}"
-##LINTER_COMMANDS_ARRAY['TYPESCRIPT_STANDARD']="ts-standard --parser @typescript-eslint/parser --plugin @typescript-eslint/eslint-plugin --project ${TYPESCRIPT_STANDARD_TSCONFIG_LINTER_RULES} ${TYPESCRIPT_STANDARD_LINTER_RULES}"
+LINTER_COMMANDS_ARRAY['TYPESCRIPT_STANDARD']="ts-standard --parser @typescript-eslint/parser --plugin @typescript-eslint/eslint-plugin --project ${TYPESCRIPT_STANDARD_TSCONFIG_LINTER_RULES} ${TYPESCRIPT_STANDARD_LINTER_RULES}"
 ##LINTER_COMMANDS_ARRAY['TYPESCRIPT_PRETTIER']="prettier --check"
 ##LINTER_COMMANDS_ARRAY['XML']="xmllint"
 ##if [ "${YAML_ERROR_ON_WARNING}" == 'false' ]; then
