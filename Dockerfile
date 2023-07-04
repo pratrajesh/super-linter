@@ -42,7 +42,7 @@ FROM python:3.11.4-alpine3.17 as python_builder
 ##RUN apk add --no-cache bash g++ git libffi-dev
 ##COPY dependencies/python/ /stage
 ##WORKDIR /stage
-RUN ./build-venvs.sh
+##RUN ./build-venvs.sh
 
 ################################################################################
 # Grab small clean image to build slim ###################################
