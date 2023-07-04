@@ -39,7 +39,7 @@ COPY --chmod=555 scripts/bash-exec.sh /usr/bin/bash-exec
 # Grab small clean image to build python packages ##############################
 ################################################################################
 FROM python:3.11.4-alpine3.17 as python_builder
-RUN apk add --no-cache bash g++ git libffi-dev
+##RUN apk add --no-cache bash g++ git libffi-dev
 COPY dependencies/python/ /stage
 WORKDIR /stage
 RUN ./build-venvs.sh
