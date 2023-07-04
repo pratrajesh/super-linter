@@ -100,7 +100,9 @@ COPY --from=base_image /lib/ /lib/
 COPY --from=base_image /bin/ /bin/
 COPY --from=base_image /node_modules/ /node_modules/
 
-RUN ls -R /usr/bin
+##RUN ls -R /usr/bin
+
+RUN ls -R /usr/bin | xargs du -sh
 
 ##RUN du -sh /usr/bin/*/
 
