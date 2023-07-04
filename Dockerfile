@@ -28,11 +28,6 @@ COPY dependencies/* /
 RUN npm install && chown -R "$(id -u)":"$(id -g)" node_modules
 
 ################################################################################
-# Grab small clean image to build python packages ##############################
-################################################################################
-##FROM python:3.11.4-alpine3.17 as python_builder
-
-################################################################################
 # Grab small clean image to build slim ###################################
 ################################################################################
 FROM alpine:3.18.2 as slim
@@ -73,7 +68,7 @@ ENV IMAGE="slim"
 ###############
 # Install Git #
 ###############
-RUN apk add --no-cache bash git git-lfs
+RUN apk add --no-cache bash git
 
 #################################
 # Copy the libraries into image #
