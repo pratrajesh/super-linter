@@ -91,22 +91,9 @@ RUN apk add --no-cache bash git git-lfs
 # Copy the libraries into image #
 #################################
 COPY --from=base_image /usr/bin/ /usr/bin/
-##COPY --from=base_image /usr/local/bin/ /usr/local/bin/
-##COPY --from=base_image /usr/local/share/ /usr/local/share/
-##COPY --from=base_image /usr/local/include/ /usr/local/include/
-##COPY --from=base_image /usr/lib/ /usr/lib/
+COPY --from=base_image /usr/lib/ /usr/lib/
 COPY --from=base_image /usr/share/ /usr/share/
-##COPY --from=base_image /lib/ /lib/
-##COPY --from=base_image /bin/ /bin/
 COPY --from=base_image /node_modules/ /node_modules/
-
-##RUN ls -R /usr/bin
-
-##RUN ls -R /usr/bin | xargs du -sh
-
-##RUN du -sh /usr/bin/*
-
-##RUN du -sh  /usr/bin/node/*
 
 ########################################
 # Add node packages to path and dotnet #
