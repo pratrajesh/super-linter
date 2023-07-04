@@ -12,8 +12,7 @@ FROM python:3.11.4-alpine3.17 as base_image
 ####################
 # Run APK installs #
 ####################
-RUN apk add --no-cache \
-    npm nodejs-current
+RUN apk add --no-cache
   
 ########################################
 # Copy dependencies files to container #
