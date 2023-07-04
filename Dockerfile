@@ -13,7 +13,9 @@ FROM alpine:3.18.2 as base_image
 # Run APK installs #
 ####################
 RUN apk add --no-cache \
+    bash \
     curl \
+    jq \
     npm nodejs-current
   
 ########################################
