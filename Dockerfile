@@ -85,7 +85,7 @@ ENV IMAGE="slim"
 ###############
 # Install Git #
 ###############
-RUN apk add --no-cache bash git git-lfs
+##RUN apk add --no-cache bash git git-lfs
 
 #################################
 # Copy the libraries into image #
