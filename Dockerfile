@@ -97,7 +97,7 @@ COPY --from=base_image /usr/bin/ /usr/bin/
 COPY --from=base_image /usr/lib/ /usr/lib/
 COPY --from=base_image /usr/share/ /usr/share/
 ##COPY --from=base_image /lib/ /lib/
-COPY --from=base_image /bin/ /bin/
+##COPY --from=base_image /bin/ /bin/
 COPY --from=base_image /node_modules/ /node_modules/
 
 ##RUN ls -R /usr/bin
