@@ -27,19 +27,10 @@ COPY dependencies/* /
 ###################################################################
 RUN npm install && chown -R "$(id -u)":"$(id -g)" node_modules
 
-################################
-# Install Bash-Exec #
-################################
-##COPY --chmod=555 scripts/bash-exec.sh /usr/bin/bash-exec
-
 ################################################################################
 # Grab small clean image to build python packages ##############################
 ################################################################################
-FROM python:3.11.4-alpine3.17 as python_builder
-##RUN apk add --no-cache bash g++ git libffi-dev
-##COPY dependencies/python/ /stage
-##WORKDIR /stage
-##RUN ./build-venvs.sh
+##FROM python:3.11.4-alpine3.17 as python_builder
 
 ################################################################################
 # Grab small clean image to build slim ###################################
