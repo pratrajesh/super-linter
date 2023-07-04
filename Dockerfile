@@ -85,7 +85,7 @@ ENV IMAGE="slim"
 ###############
 # Install Git #
 ###############
-##RUN apk add --no-cache bash git git-lfs
+RUN apk add --no-cache bash git git-lfs
 
 #################################
 # Copy the libraries into image #
@@ -99,6 +99,10 @@ COPY --from=base_image /usr/share/ /usr/share/
 COPY --from=base_image /lib/ /lib/
 COPY --from=base_image /bin/ /bin/
 COPY --from=base_image /node_modules/ /node_modules/
+
+##RUN ls -R /usr/local/lib
+
+RUN du -sh /usr/bin/*/
 
 ########################################
 # Add node packages to path and dotnet #
