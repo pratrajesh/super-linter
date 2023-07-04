@@ -98,15 +98,15 @@ COPY --from=base_image /usr/lib/ /usr/lib/
 COPY --from=base_image /usr/share/ /usr/share/
 COPY --from=base_image /lib/ /lib/
 COPY --from=base_image /bin/ /bin/
-COPY --from=base_image /node_modules/ /node_modules/
+##COPY --from=base_image /node_modules/ /node_modules/
 
 ##RUN ls -R /usr/bin
 
 ##RUN ls -R /usr/bin | xargs du -sh
 
-RUN du -sh /usr/bin/*
+##RUN du -sh /usr/bin/*
 
-RUN du -sh  /usr/bin/node/*
+##RUN du -sh  /usr/bin/node/*
 
 ########################################
 # Add node packages to path and dotnet #
