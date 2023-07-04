@@ -68,7 +68,7 @@ ENV IMAGE="slim"
 ###############
 # Install Git #
 ###############
-RUN apk add --no-cache bash git
+RUN apk add --no-cache git
 
 #################################
 # Copy the libraries into image #
