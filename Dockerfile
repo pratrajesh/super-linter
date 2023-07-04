@@ -14,7 +14,6 @@ FROM python:3.11.4-alpine3.17 as base_image
 ####################
 RUN apk add --no-cache \
     bash \
-    curl \
     npm nodejs-current
   
 ########################################
