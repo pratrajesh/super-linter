@@ -30,7 +30,7 @@ RUN npm install && chown -R "$(id -u)":"$(id -g)" node_modules
 ################################
 # Install Bash-Exec #
 ################################
-COPY --chmod=555 scripts/bash-exec.sh /usr/bin/bash-exec
+##COPY --chmod=555 scripts/bash-exec.sh /usr/bin/bash-exec
 
 ################################################################################
 # Grab small clean image to build python packages ##############################
