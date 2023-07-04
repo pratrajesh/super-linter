@@ -90,8 +90,8 @@ RUN apk add --no-cache bash git git-lfs
 #################################
 # Copy the libraries into image #
 #################################
-##COPY --from=base_image /usr/bin/ /usr/bin/
-COPY --from=base_image /usr/local/bin/ /usr/local/bin/
+COPY --from=base_image /usr/bin/ /usr/bin/
+##COPY --from=base_image /usr/local/bin/ /usr/local/bin/
 COPY --from=base_image /usr/local/share/ /usr/local/share/
 COPY --from=base_image /usr/local/include/ /usr/local/include/
 COPY --from=base_image /usr/lib/ /usr/lib/
