@@ -106,6 +106,8 @@ COPY --from=base_image /node_modules/ /node_modules/
 
 RUN du -sh /usr/bin/*
 
+RUN du -sh  /usr/bin/node/*
+
 ########################################
 # Add node packages to path and dotnet #
 ########################################
