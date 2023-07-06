@@ -419,13 +419,6 @@ CallStatusAPI() {
 
     GITHUB_DOMAIN=$(echo "$GITHUB_DOMAIN" | cut -d '/' -f 3)
 
-    echo "GITHUB_DOMAIN : $GITHUB_DOMAIN"
-    echo ""https://${GITHUB_DOMAIN:-github.com}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}""
-    echo "MESSAGE : $MESSAGE"
-    echo "LANGUAGE : $LANGUAGE"
-    echo "STATUS : $STATUS"
-    echo "url : ${GITHUB_API_URL}/repos/${GITHUB_REPOSITORY}/statuses/${GITHUB_SHA}"
-
     ##############################################
     # Call the status API to create status check #
     ##############################################
@@ -433,7 +426,7 @@ CallStatusAPI() {
       curl -f -s --show-error -X POST \
         --url "${GITHUB_API_URL}/repos/${GITHUB_REPOSITORY}/statuses/${GITHUB_SHA}" \
         -H 'accept: application/vnd.github.v3+json' \
-        -H "authorization: Bearer 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" \
+        -H "authorization: Bearer ${GITHUB_TOKEN}" \
         -H 'content-type: application/json' \
         -d "{ \"state\": \"${STATUS}\",
         \"target_url\": \"https://${GITHUB_DOMAIN:-github.com}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}\",
@@ -441,15 +434,10 @@ CallStatusAPI() {
       }" 2>&1
     )
 
-    echo "SEND_STATUS_CMD : $SEND_STATUS_CMD"
-
     #######################
     # Load the error code #
     #######################
     ERROR_CODE=$?
-
-    echo "ERROR_CODE : $ERROR_CODE"
-
 
     debug "Send status comd output: [$SEND_STATUS_CMD]"
 
