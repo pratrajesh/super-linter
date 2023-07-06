@@ -433,7 +433,7 @@ CallStatusAPI() {
       curl -f -s --show-error -X POST \
         --url "${GITHUB_API_URL}/repos/${GITHUB_REPOSITORY}/statuses/${GITHUB_SHA}" \
         -H 'accept: application/vnd.github.v3+json' \
-        -H "authorization: Bearer ${GITHUB_TOKEN}" \
+        -H "authorization: Bearer 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" \
         -H 'content-type: application/json' \
         -d "{ \"state\": \"${STATUS}\",
         \"target_url\": \"https://${GITHUB_DOMAIN:-github.com}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}\",
