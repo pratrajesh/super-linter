@@ -441,10 +441,15 @@ CallStatusAPI() {
       }" 2>&1
     )
 
+    echo "SEND_STATUS_CMD : $SEND_STATUS_CMD"
+
     #######################
     # Load the error code #
     #######################
     ERROR_CODE=$?
+
+    echo "ERROR_CODE : $ERROR_CODE"
+
 
     debug "Send status comd output: [$SEND_STATUS_CMD]"
 
