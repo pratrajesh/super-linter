@@ -7,22 +7,6 @@ jobs:
   test:
     name: Build and Test
     runs-on: ubuntu-latest
-    concurrency:
-      group: ${{ github.workflow }}-main-${{ matrix.images.target }}
-      cancel-in-progress: true
-    permissions:
-      contents: read
-      deployments: write
-      issues: write
-      packages: write
-    strategy:
-      fail-fast: false
-      matrix:
-        images:
-          - environment: Production-SLIM
-            prefix: slim-
-            target: slim
-    timeout-minutes: 60
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
@@ -50,5 +34,4 @@ jobs:
           secrets: |
             GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
           tags: |
-            prathira/super-linter:151
-          target: "${{ matrix.images.target }}"
+            prathira/super-linter:301
