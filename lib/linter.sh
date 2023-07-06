@@ -419,6 +419,16 @@ CallStatusAPI() {
 
     GITHUB_DOMAIN=$(echo "$GITHUB_DOMAIN" | cut -d '/' -f 3)
 
+    echo "url ::::  curl -f -s --show-error -X POST \
+        --url "${GITHUB_API_URL}/repos/${GITHUB_REPOSITORY}/statuses/${GITHUB_SHA}" \
+        -H 'accept: application/vnd.github.v3+json' \
+        -H "authorization: Bearer ${GITHUB_TOKEN}" \
+        -H 'content-type: application/json' \
+        -d "{ \"state\": \"${STATUS}\",
+        \"target_url\": \"https://${GITHUB_DOMAIN:-github.com}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}\",
+        \"description\": \"${MESSAGE}\", \"context\": \"--> Linted: ${LANGUAGE}\"
+      }""
+
     ##############################################
     # Call the status API to create status check #
     ##############################################
